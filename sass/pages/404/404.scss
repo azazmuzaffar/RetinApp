@@ -1,0 +1,217 @@
+/* >>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>> Konfidencial <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<< */
+
+/* >>>>>>>>>>>>>> Colors <<<<<<<<<<<<<< */
+/* >>> You change the whole theme <<<< */
+/* >>> by changing these colors <<<< */
+
+$bgcolor: #121212;
+$black: #000000;
+$white: #ffffff;
+$white05: rgba(255, 255, 255, 0.5);
+$golden: #c9a882;
+$golden04: #c9a8825b;
+$golden06: #c9a882d2;
+$sharpGolden: rgba(154, 136, 2, 0.4);
+$lightGolden: rgba(255, 255, 255, 0.45);
+
+/* >>>>>>>> Fonts Sizes <<<<<<<<< */
+
+:root {
+  --paragraph: 16px;
+}
+
+@media screen and (max-width: 1024px) {
+  :root {
+    --paragraph: 14px;
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>> Common <<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+/* >>>>>>>>>>>>>> Font Family <<<<<<<<<<<<<< */
+/* >> Fonts are directly coming from fonts folder << */
+
+/* >>>>>>>>> Montserrat <<<<<<<<< */
+@import url("../../../fonts/Montserrat/stylesheet.css");
+
+/* >>>>>>>>> Spectral <<<<<<<<< */
+@import url("../../../fonts/Spectral/stylesheet.css");
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> Body <<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+@import url("../../../sass/common/body/body.css");
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>> Navbar <<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+@import url("../../../sass/common/header/navbar.css");
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>> Banner <<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+@import url("../../../sass/common/banner/banner.css");
+
+.--banner-bg-- {
+  position: relative;
+  background: url("../../../images/404/banner-desk.jpg");
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+}
+
+.--banner-content-- {
+  top: 56.7%;
+  left: 67.9%;
+  bottom: unset;
+  transform: translate(-50%, -50%);
+  text-align: left;
+  /* Main Heading */
+  h1 {
+    font-family: "Spectral";
+    font-size: 150px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    color: $golden;
+    margin-bottom: 6px;
+    text-align: left;
+  }
+  /* Sub Heading */
+  h2 {
+    font-family: "Spectral";
+    font-size: 60px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    color: $golden;
+    margin-bottom: 16px;
+    text-align: left;
+  }
+  /* Paragraph */
+  P {
+    font-family: "Spectral";
+    font-size: 20px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    color: $golden;
+    margin-bottom: 35px;
+  }
+  /* Button */
+  a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: $black;
+    padding: 11px 30px;
+    background: $golden06;
+    transition: 0.3s;
+    &:hover {
+      background: $golden;
+      transition: 0.3s;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .--banner-bg-- {
+    height: calc(100vh - 160px);
+  }
+  .--banner-content-- {
+    top: 55.8%;
+    left: 55.9%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .--banner-bg-- {
+    background: url("../../../images/404/banner-tab.jpg");
+  }
+  .--banner-content-- {
+    /* Main Heading */
+    h1 {
+      font-size: 130px;
+    }
+    /* Sub Heading */
+    h2 {
+      font-size: 50px;
+    }
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .--banner-content-- {
+    /* Main Heading */
+    h1 {
+      font-size: 100px;
+    }
+    /* Sub Heading */
+    h2 {
+      font-size: 40px;
+    }
+    /* Paragraph */
+    P {
+      font-size: 16px;
+      padding-right: 80px;
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .--banner-bg-- {
+    background: url("../../../images/404/banner-mob.jpg");
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>> Footer <<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+@import url("../../../sass/common/footer/footer.css");
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>> Login to Konfidential Pop Up <<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+@import url("../../../sass/common/login/login-pop-up.css");
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */

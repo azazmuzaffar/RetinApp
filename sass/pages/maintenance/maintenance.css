@@ -1,0 +1,294 @@
+/* >>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>> Konfidencial <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>> Colors <<<<<<<<<<<<<< */
+/* >>> You change the whole theme <<<< */
+/* >>> by changing these colors <<<< */
+/* >>>>>>>> Fonts Sizes <<<<<<<<< */
+@import url("../../../fonts/Montserrat/stylesheet.css");
+@import url("../../../fonts/Spectral/stylesheet.css");
+@import url("../../../sass/common/body/body.css");
+@import url("../../../sass/common/header/navbar.css");
+@import url("../../../sass/common/banner/banner.css");
+@import url("../../../sass/common/login/login-pop-up.css");
+:root {
+  --paragraph: 16px;
+}
+
+@media screen and (max-width: 1024px) {
+  :root {
+    --paragraph: 14px;
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>> Common <<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>> Font Family <<<<<<<<<<<<<< */
+/* >> Fonts are directly coming from fonts folder << */
+/* >>>>>>>>> Montserrat <<<<<<<<< */
+/* >>>>>>>>> Spectral <<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> Body <<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>> Navbar <<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* Hiding all the non required sections of header on Desktop  */
+.navbar .--navbar--left-- {
+  display: none;
+}
+
+.navbar .--navbar--right-- {
+  display: none !important;
+}
+
+.navbar .--navbar--center-- {
+  margin-top: 72px;
+}
+
+.navbar .--navbar--center-- .--center--list-- {
+  display: none;
+}
+
+/* Showing all the sections of header back on Tablet/Mobile  */
+@media screen and (max-width: 1334px) {
+  .--navbar--left-- {
+    display: block !important;
+  }
+  .--navbar--right-- {
+    display: block !important;
+  }
+  .--navbar--center-- {
+    margin-top: 0px !important;
+  }
+  .--navbar--center-- .--center--list-- {
+    display: block;
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>> Banner <<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+.--banner-- .--banner-bg-- {
+  position: relative;
+  background: url("../../../images/maintenance/banner-desk.jpg");
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+}
+
+.--banner-- .--banner-overlay-- {
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(12%, rgba(0, 0, 0, 0.91)), color-stop(43%, rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)));
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.91) 12%, rgba(0, 0, 0, 0.5) 43%, rgba(0, 0, 0, 0));
+}
+
+.--banner-- .--banner-content-- {
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  bottom: unset;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 99;
+  /* Main Heading */
+  /* Sub Heading */
+  /* Paragraph */
+  /* Phone/Whatsapp/Email */
+}
+
+.--banner-- .--banner-content-- h1 {
+  font-family: "Spectral";
+  font-size: 60px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  margin-bottom: 25px;
+  color: #c9a882;
+}
+
+.--banner-- .--banner-content-- h6 {
+  font-family: "Spectral";
+  font-size: 20px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 37px;
+  color: #c9a882;
+}
+
+.--banner-- .--banner-content-- p {
+  font-family: "Spectral";
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.88;
+  letter-spacing: normal;
+  margin-bottom: 27px;
+  color: #c9a882;
+}
+
+.--banner-- .--banner-content-- .container {
+  width: 1036px !important;
+}
+
+.--banner-- .--banner-content-- .container .row {
+  margin: 0;
+  padding: 0;
+  max-width: 1036px;
+}
+
+.--banner-- .--banner-content-- .container .row .col-lg-4 {
+  margin: 0;
+  text-align: center;
+  padding: 14px 0px;
+  border: 1px solid #c9a882;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  cursor: pointer;
+  border-right: none;
+}
+
+.--banner-- .--banner-content-- .container .row .col-lg-4.-phone {
+  border-left: none;
+}
+
+.--banner-- .--banner-content-- .container .row .col-lg-4.-email {
+  border-right: none;
+}
+
+.--banner-- .--banner-content-- .container .row .col-lg-4 a {
+  text-decoration: none;
+  color: unset;
+}
+
+.--banner-- .--banner-content-- .container .row .col-lg-4 span {
+  color: #c9a882;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.--banner-- .--banner-content-- .container .row .col-lg-4 span svg .svg-fill {
+  fill: #c9a882;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.--banner-- .--banner-content-- .container .row .col-lg-4:hover {
+  background: #c9a882;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.--banner-- .--banner-content-- .container .row .col-lg-4:hover span {
+  color: #000000;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.--banner-- .--banner-content-- .container .row .col-lg-4:hover span svg .svg-fill {
+  fill: #000000;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+@media screen and (max-width: 1024px) {
+  .--banner-- .--banner-content-- {
+    /* Phone/Whatsapp/Email */
+  }
+  .--banner-- .--banner-content-- .container {
+    padding: 0px 10%;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .--banner-- .--banner-content-- {
+    /* Paragraph */
+    /* Phone/Whatsapp/Email */
+  }
+  .--banner-- .--banner-content-- p {
+    margin-bottom: 22px;
+  }
+  .--banner-- .--banner-content-- .container {
+    padding: 0;
+  }
+  .--banner-- .--banner-content-- .container .row {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .--banner-- .--banner-content-- .container .row .col-lg-4 {
+    max-width: 171px;
+    margin: 0;
+  }
+  .--banner-- .--banner-content-- .container .row .col-lg-4.-email {
+    max-width: 228px;
+  }
+  .--banner-- .--banner-content-- .container .row .col-lg-4 span {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .--banner-- .--banner-content-- {
+    top: 55%;
+    padding: 0px 20px;
+    /* Main Heading */
+    /* Sub Heading */
+    /* Paragraph */
+    /* Phone/Whatsapp/Email */
+  }
+  .--banner-- .--banner-content-- h1 {
+    font-size: 45px;
+    margin-bottom: 3px;
+  }
+  .--banner-- .--banner-content-- h6 {
+    font-size: 18px;
+    margin-bottom: 24px;
+  }
+  .--banner-- .--banner-content-- p {
+    margin-bottom: 18px;
+  }
+  .--banner-- .--banner-content-- .container {
+    padding: 0;
+    max-width: 100%;
+  }
+  .--banner-- .--banner-content-- .container .row .col-lg-4 {
+    max-width: 100%;
+    margin: 0;
+    border-bottom: none;
+    border-left: none;
+  }
+  .--banner-- .--banner-content-- .container .row .col-lg-4.-email {
+    max-width: 100%;
+    border-bottom: 1px solid #c9a882;
+  }
+  .--banner-- .--banner-content-- .container .row .col-lg-4 span {
+    font-size: 14px;
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>> Login to Konfidential Pop Up <<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/*# sourceMappingURL=maintenance.css.map */

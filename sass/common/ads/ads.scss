@@ -1,0 +1,37 @@
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> Ads <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+.--ad-- {
+  max-width: 1240px;
+  margin-bottom: 100px;
+  padding: 0;
+  cursor: pointer;
+}
+.--ad-- img {
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 1350px) {
+  .--ad-- {
+    max-width: 100%;
+    padding: 0px 45px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .--ad-- {
+    margin-bottom: 60px;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .--ad-- {
+    padding: 0;
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */

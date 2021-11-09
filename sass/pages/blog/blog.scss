@@ -1,0 +1,347 @@
+/* >>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>> Konfidencial <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<< */
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>> Common <<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+/* >>>>>>>>>>>>>> Font Family <<<<<<<<<<<<<< */
+/* >> Fonts are directly coming from fonts folder << */
+
+/* >>>>>>>>> Montserrat <<<<<<<<< */
+@import url("../../../fonts/Montserrat/stylesheet.css");
+
+/* >>>>>>>>> Spectral <<<<<<<<< */
+@import url("../../../fonts/Poppins/stylesheet.css");
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> Body <<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+@import url("../../../sass/common/body/body.css");
+
+body {
+  background: white;
+}
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>> Navbar <<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+@import url("../../../sass/common/header/navbar.css");
+
+.navbar {
+  .--navbar--left-- {
+    margin-top: -104px;
+  }
+  .--navbar--right-- {
+    margin-top: -106px;
+  }
+}
+@media screen and (max-width: 1334px) {
+  .navbar {
+    .--navbar--left-- {
+      margin-top: 0px;
+    }
+    .--navbar--right-- {
+      margin-top: 0px;
+    }
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>> Banner <<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+@import url("../../../sass/common/banner/banner.css");
+
+.--banner-- {
+  .--banner-overlay-- {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.91) 12%, rgba(0, 0, 0, 0.5) 43%, rgba(0, 0, 0, 0.5));
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .--banner-- {
+    .--banner-content-- {
+      top: unset;
+      bottom: 136px;
+    }
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .--banner-- {
+    .--banner-content-- {
+      top: unset;
+      bottom: 157px;
+    }
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>> Our Blogs <<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+.--konfidential-blogs-- {
+  padding: 65px 20px 100px 20px;
+  .container {
+    max-width: 1250px;
+    /* >>>>> Main Heading <<<< */
+    h1 {
+      font-family: "Montserrat";
+      font-size: 35px;
+      font-weight: 700;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.29;
+      letter-spacing: normal;
+      color: #c9a882;
+    }
+    /* >>>>> Row <<<< */
+    .row {
+      /* >>>>> Columns <<<< */
+      .col-lg-4 {
+        margin-top: 50px;
+        a {
+          text-decoration: none;
+        }
+        .blog {
+          .--blog-img-- {
+            img {
+              width: 100%;
+            }
+          }
+          .--blog--details-- {
+            margin-top: 20px;
+            /* >>>>> Blog Title <<<< */
+            .title {
+              h2 {
+                font-family: "Montserrat";
+                font-size: 18px;
+                font-weight: 700;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.25;
+                letter-spacing: normal;
+                transition: 0.2s;
+                color: #2f2e41;
+                margin-bottom: 12px;
+              }
+            }
+            /* >>>>> Blog Description <<<< */
+            .description {
+              p {
+                font-family: "Montserrat";
+                font-size: 14px;
+                font-weight: normal;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.57;
+                letter-spacing: normal;
+                color: #2f2e41;
+              }
+            }
+            .-date-and-readmore- {
+              display: flex;
+              margin-top: 24px;
+              /* >>>>> Publish Date <<<< */
+              .-publish-date- {
+                p {
+                  font-family: "Poppins";
+                  font-size: 14px;
+                  font-weight: normal;
+                  font-stretch: normal;
+                  font-style: normal;
+                  line-height: 1.57;
+                  letter-spacing: normal;
+                  color: #2f2e41;
+                }
+              }
+              /* >>>>> Read More <<<< */
+              .-read-more- {
+                margin-right: 0;
+                margin-left: auto;
+                span {
+                  font-family: "Poppins";
+                  font-size: 14px;
+                  font-weight: normal;
+                  font-stretch: normal;
+                  font-style: normal;
+                  line-height: 1.57;
+                  letter-spacing: normal;
+                  text-align: right;
+                  text-transform: capitalize;
+                  color: #2f2e41;
+                  text-decoration: none;
+                  transition: 0.2s;
+                }
+              }
+            }
+          }
+          &:hover {
+            .--blog--details-- {
+              /* >>>>> Title on Hover <<<< */
+              .title {
+                h2 {
+                  color: #ef4126;
+                  transition: 0.2s;
+                }
+              }
+              .-date-and-readmore- {
+                /* >>>>> Readmore on Hover <<<< */
+                .-read-more- {
+                  span {
+                    transition: 0.2s;
+                    color: #ef4126;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      /* >>>>> Load More <<<< */
+      .dot-flashing {
+        position: relative;
+        width: 10px;
+        height: 10px;
+        border-radius: 5px;
+        background-color: #ef4126;
+        color: #ef4126;
+        animation: dotisFlashing 1s infinite linear alternate;
+        animation-delay: 0.5s;
+        margin: 0 auto;
+        margin-top: 96px;
+        &::before,
+        &::after {
+          content: "";
+          display: inline-block;
+          position: absolute;
+          top: 0;
+        }
+        &::before {
+          left: -15px;
+          width: 10px;
+          height: 10px;
+          border-radius: 5px;
+          background-color: #ef4126;
+          color: #ef4126;
+          animation: dotisFlashing 1s infinite alternate;
+          animation-delay: 0s;
+        }
+        &::after {
+          left: 15px;
+          width: 10px;
+          height: 10px;
+          border-radius: 5px;
+          background-color: #ef4126;
+          color: #ef4126;
+          animation: dotisFlashing 1s infinite alternate;
+          animation-delay: 1s;
+        }
+      }
+      @keyframes dotisFlashing {
+        0% {
+          background-color: #ef4126;
+        }
+        50%,
+        100% {
+          background-color: rgba(235, 230, 255, 0.767);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .--konfidential-blogs-- {
+    padding: 65px 20px 70px 20px;
+    .container {
+      .row {
+        .dot-flashing {
+          margin-top: 60px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .--konfidential-blogs-- {
+    padding: 35px 5px 70px 5px;
+    .container {
+      h1 {
+        font-size: 24px;
+      }
+      .row {
+        .col-lg-4 {
+          margin-top: 39px;
+          &:first-of-type {
+            margin-top: 30px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>> Signature <<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+@import url("../../../sass/common/signature/signature.css");
+
+/* >>>>>>>> Signature position <<<<<<< */
+.--signature-- {
+  top: 389px;
+  right: 175px;
+}
+
+@media screen and (max-width: 768px) {
+  /* >>>>>>>> Signature position <<<<<<< */
+  .--signature-- {
+    right: 51px;
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>> Footer <<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+@import url("../../../sass/common/footer/footer.css");
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>> Login to Konfidential Pop Up <<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+@import url("../../../sass/common/login/login-pop-up.css");
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */

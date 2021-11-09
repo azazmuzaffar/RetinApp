@@ -1,0 +1,416 @@
+/* >>>>>>>>>>>>>> Colors <<<<<<<<<<<<<< */
+/* >>> You change the whole theme <<<< */
+/* >>> by changing these colors <<<< */
+
+$bgcolor: #121212;
+$black: #000000;
+$white: #ffffff;
+$golden: #c9a882;
+$golden04: #c9a8825b;
+$golden06: #c9a882d2;
+$sharpGolden: rgba(154, 136, 2, 0.4);
+$lightGolden: rgba(255, 255, 255, 0.45);
+
+/* >>>>>>>> Fonts Sizes <<<<<<<<< */
+
+:root {
+  --paragraph: 16px;
+}
+
+@media screen and (max-width: 1024px) {
+  :root {
+    --paragraph: 14px;
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>> Models <<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+.--escorts--portugal-- {
+  position: relative;
+  padding: 103px 40px 92px 40px;
+  text-align: center;
+  h1 {
+    font-family: "Spectral", serif;
+    font-size: 35px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.29;
+    letter-spacing: normal;
+    text-align: center;
+    color: $golden;
+  }
+
+  /* >>>> All Girls <<<< */
+  .--all--girls-- {
+    .container {
+      max-width: 1288px;
+      .col-lg-4 {
+        padding: 0px 44px 0px 44px;
+      }
+    }
+    a {
+      text-decoration: none;
+      width: 100%;
+    }
+    /* >>>> Girls <<<< */
+    .--girls-- {
+      height: fit-content;
+      cursor: pointer;
+      margin-top: 55px;
+
+      /* >>>> Girl Image <<<< */
+      img {
+        width: 100%;
+        height: 100%;
+      }
+
+      /* >>>> Image Overlay Border <<<< */
+      .--image-- {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        .--overlay-- {
+          position: absolute;
+          top: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+      &:hover {
+        .--image-- {
+          .--overlay-- {
+            border: 5px solid $golden;
+          }
+        }
+        .--details-- {
+          .--booking--details-- {
+            .--calender-- {
+              background: $golden;
+              transition: 0.6s;
+              svg {
+                .--calender--icon-- {
+                  fill: $black;
+                  transition: 0.6s;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      /* >>>> Details About Girls <<<< */
+      .--details-- {
+        width: 100%;
+        display: flex;
+
+        /* >>>> Name/Location <<<< */
+        .--name--and--location-- {
+          text-align: left;
+          width: 100%;
+          padding: 20px 0px 0px 0px;
+
+          /* >>>> Name <<<< */
+          h3 {
+            font-size: 16px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.88;
+            letter-spacing: normal;
+            color: $golden;
+            margin: 0;
+          }
+
+          /* >>>> Location <<<< */
+          h2 {
+            font-size: 14px;
+            font-weight: 600;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.57;
+            letter-spacing: normal;
+            color: $golden;
+          }
+        }
+
+        /* >>>> Booking Details <<<< */
+        .--booking--details-- {
+          position: relative;
+          width: fit-content;
+          text-align: right;
+          vertical-align: middle;
+
+          /* >>>> Calender Icon <<<< */
+          .--calender-- {
+            position: relative;
+            width: 45px;
+            height: 45px;
+            padding: 13px 12px 12px 13px;
+            border: 1px solid $golden;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+
+          /* >>>> Calender Icon SVG <<<< */
+          svg {
+            position: absolute;
+            top: 48%;
+            left: 50.3%;
+            transform: translate(-50%, -50%);
+            transition: 0.3s;
+            .--calender--icon-- {
+              fill: $golden;
+              transition: 0.3s;
+            }
+          }
+        }
+      }
+    }
+
+    /* >>>> View All Button <<<< */
+    .--view--all-- {
+      width: 100%;
+      text-align: center;
+      margin-top: 55px;
+      a {
+        font-size: 16px;
+        font-weight: 500;
+        text-decoration: none;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.88;
+        opacity: 0.6;
+        letter-spacing: normal;
+        text-transform: uppercase;
+        text-align: center;
+        color: $golden06;
+        padding: 10px 27px;
+        border-bottom: 1px solid $golden06;
+        transition: 0.3s;
+        &:hover {
+          opacity: 1;
+          transition: 0.3s;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  /* >>>> All Girls <<<< */
+  .--all--girls-- {
+    .container {
+      width: 90% !important;
+      /* Raducing padding along with width of device */
+      .col-lg-4 {
+        padding: 0px 2% 0px 2% !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .--escorts--portugal-- {
+    padding: 90px 40px 72px 40px;
+    h1 {
+      margin-bottom: 20px;
+    }
+    /* >>>> All Girls <<<< */
+    .--all--girls-- {
+      .container {
+        width: 100% !important;
+        /* Raducing padding along with width of device */
+        .col-lg-4 {
+          padding: 0px 1.5% 0px 1.5% !important;
+        }
+      }
+
+      /* >>>> Girls <<<< */
+      .--girls-- {
+        margin-top: 40px !important;
+        /* >>>> Name/Location <<<< */
+        .--name--and--location-- {
+          /* >>>> Name <<<< */
+          h3 {
+            font-size: 14px !important;
+          }
+        }
+      }
+
+      /* >>>> View All Button <<<< */
+      .--view--all-- {
+        margin-top: 40px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .--escorts--portugal-- {
+    padding: 50px 10px 72px 10px;
+    h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    /* >>>> All Girls <<<< */
+    .--all--girls-- {
+      .container {
+        /* Raducing padding along with width of device */
+        .col-lg-4 {
+          padding: 0px 10px 0px 10px !important;
+        }
+      }
+
+      /* >>>> Girls <<<< */
+      .--girls-- {
+        margin-top: 30px !important;
+        .--details-- {
+          position: relative;
+
+          /* >>>> Booking Details <<<< */
+          .--booking--details-- {
+            position: absolute;
+            right: 6px;
+            top: -30px;
+            /* >>>> Calender Icon <<<< */
+            .--calender-- {
+              background: $golden;
+            }
+
+            /* >>>> Calender Icon SVG <<<< */
+            svg {
+              .--calender--icon-- {
+                fill: $black;
+              }
+            }
+          }
+        }
+      }
+      /* last class is just added to hide the last */
+      /* odd girl just to meet the design */
+      .--last-- {
+        display: none;
+      }
+    }
+  }
+}
+
+/* >>>> Adding Dropdown and Back option <<<< */
+
+.--select-or-go-back-- {
+  color: #c9a882;
+  display: flex;
+  max-width: 1250px;
+  padding: 0px 25px;
+  margin-bottom: 26px;
+  align-items: center;
+  .--go-back-- {
+    float: right;
+    margin-left: auto;
+    margin-right: 0;
+    a {
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.57;
+      letter-spacing: normal;
+      color: $golden;
+      transition: 0.3s;
+      &:hover {
+        transition: 0.3s;
+        color: $white;
+      }
+    }
+  }
+  .--select-city-- {
+    .dropdown {
+      width: 202px;
+      display: inline-block;
+      background-color: transparent;
+      transition: all 0.5s ease;
+      position: relative;
+      font-size: 14px;
+      color: $golden;
+      height: 100%;
+      text-align: left;
+      outline: none;
+      border: none;
+      border-bottom: 1px solid $golden;
+      .select {
+        cursor: pointer;
+        display: block;
+        padding: 10px;
+        i {
+          font-size: 13px;
+          cursor: pointer;
+          transition: all 0.3s ease-in-out;
+          float: right;
+          line-height: 20px;
+        }
+      }
+      .dropdown-menu {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        background: rgba(0, 0, 0, 0.61);
+        margin-top: 0px;
+        border-radius: 0 1px 2px 2px;
+        overflow: hidden;
+        display: none;
+        max-height: fit-content;
+        overflow-y: auto;
+        padding: 0;
+        list-style: none;
+        z-index: 9;
+        li {
+          font-size: 14px;
+          color: $golden06;
+          padding: 10px;
+          transition: all 0.2s ease-in-out;
+          cursor: pointer;
+          &:hover {
+            background: rgba(0, 0, 0, 0.849);
+            color: $golden;
+          }
+        }
+      }
+      &.active {
+        i {
+          transform: rotate(-180deg);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .--select-or-go-back-- {
+    margin-bottom: 40px;
+    padding: 0px 10px;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .--select-or-go-back-- {
+    .--go-back-- {
+      display: none;
+    }
+    .--select-city-- {
+      width: 100%;
+      .dropdown {
+        width: 100%;
+      }
+    }
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */

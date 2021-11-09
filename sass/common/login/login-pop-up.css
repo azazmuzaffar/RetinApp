@@ -1,0 +1,198 @@
+/* >>>>>>>>>>>>>> Colors <<<<<<<<<<<<<< */
+/* >>> You change the whole theme <<<< */
+/* >>> by changing these colors <<<< */
+/* >>>>>>>> Fonts Sizes <<<<<<<<< */
+:root {
+  --paragraph: 16px;
+}
+
+@media screen and (max-width: 1024px) {
+  :root {
+    --paragraph: 14px;
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>> Login to Konfidential Pop Up <<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+.pop-up.login-to-konfidential {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: 999999999;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  /* Main Area */
+}
+
+.pop-up.login-to-konfidential .pop-up-contant {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: white;
+}
+
+.pop-up.login-to-konfidential .pop-up-contant .inner-content {
+  position: relative;
+  padding: 63px 100px;
+  /* Heading */
+  /* Form */
+  /* Close Pop Up Icon */
+}
+
+.pop-up.login-to-konfidential .pop-up-contant .inner-content p {
+  font-family: "Montserrat";
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: 700;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: center;
+  margin-bottom: 15px;
+  color: #2f2e41;
+}
+
+.pop-up.login-to-konfidential .pop-up-contant .inner-content p span {
+  color: #ef4126;
+}
+
+.pop-up.login-to-konfidential .pop-up-contant .inner-content form {
+  text-align: left;
+  /* Email */
+  /* Password */
+  /* Labels */
+  /* Inputs */
+}
+
+.pop-up.login-to-konfidential .pop-up-contant .inner-content form .fetch-email {
+  margin-bottom: 16px;
+}
+
+.pop-up.login-to-konfidential .pop-up-contant .inner-content form .fetch-password {
+  position: relative;
+  margin-bottom: 30px;
+  /* Eye ICon */
+}
+
+.pop-up.login-to-konfidential .pop-up-contant .inner-content form .fetch-password svg {
+  position: absolute;
+  bottom: 11px;
+  right: 11px;
+  cursor: pointer;
+}
+
+.pop-up.login-to-konfidential .pop-up-contant .inner-content form label {
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.67;
+  letter-spacing: normal;
+  color: #2f2e41;
+  margin-bottom: 3px;
+}
+
+.pop-up.login-to-konfidential .pop-up-contant .inner-content form input {
+  display: block;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.57;
+  letter-spacing: normal;
+  color: #2f2e41;
+  border: 1px solid #2f2e41;
+  outline: none;
+  padding: 11px 10px;
+  width: 415px;
+}
+
+.pop-up.login-to-konfidential .pop-up-contant .inner-content form input[type="submit"] {
+  font-size: 16px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  margin: 0 auto;
+  cursor: pointer;
+  color: #ffffff;
+  padding: 8px 42px;
+  max-width: 100%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-transform: capitalize;
+  background-color: #ef4126;
+  border: none;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  border-radius: 30px;
+}
+
+.pop-up.login-to-konfidential .pop-up-contant .inner-content form input[type="submit"]:hover {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  background-color: #2f2e41;
+  color: #ffffff;
+}
+
+.pop-up.login-to-konfidential .pop-up-contant .inner-content .--close-login-- {
+  position: absolute;
+  cursor: pointer;
+  right: 30px;
+  top: 27px;
+}
+
+.pop-up.login-to-konfidential .pop-up-contant .inner-content .--close-login-- svg .icon {
+  fill: #2f2e41;
+}
+
+@media screen and (max-width: 650px) {
+  .pop-up.login-to-konfidential {
+    /* Main Area */
+  }
+  .pop-up.login-to-konfidential .pop-up-contant {
+    width: 100%;
+    padding: 0px 20px;
+  }
+  .pop-up.login-to-konfidential .pop-up-contant .inner-content {
+    padding: 8% 2%;
+    /* Form */
+    /* Close Pop Up Icon */
+  }
+  .pop-up.login-to-konfidential .pop-up-contant .inner-content p {
+    padding: 0px 40px;
+  }
+  .pop-up.login-to-konfidential .pop-up-contant .inner-content form {
+    /* Email */
+    /* Password */
+    /* Inputs */
+  }
+  .pop-up.login-to-konfidential .pop-up-contant .inner-content form .fetch-email {
+    margin-bottom: 10px;
+  }
+  .pop-up.login-to-konfidential .pop-up-contant .inner-content form .fetch-password {
+    margin-bottom: 25px;
+  }
+  .pop-up.login-to-konfidential .pop-up-contant .inner-content form input {
+    width: 100%;
+  }
+  .pop-up.login-to-konfidential .pop-up-contant .inner-content .--close-login-- {
+    right: 0px;
+    top: 17px;
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>> Navbar <<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/*# sourceMappingURL=login-pop-up.css.map */

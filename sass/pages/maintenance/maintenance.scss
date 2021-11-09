@@ -1,0 +1,313 @@
+/* >>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>> Konfidencial <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<< */
+
+/* >>>>>>>>>>>>>> Colors <<<<<<<<<<<<<< */
+/* >>> You change the whole theme <<<< */
+/* >>> by changing these colors <<<< */
+
+$bgcolor: #121212;
+$black: #000000;
+$white: #ffffff;
+$white05: rgba(255, 255, 255, 0.5);
+$golden: #c9a882;
+$golden04: #c9a8825b;
+$golden06: #c9a882d2;
+$sharpGolden: rgba(154, 136, 2, 0.4);
+$lightGolden: rgba(255, 255, 255, 0.45);
+
+/* >>>>>>>> Fonts Sizes <<<<<<<<< */
+
+:root {
+  --paragraph: 16px;
+}
+
+@media screen and (max-width: 1024px) {
+  :root {
+    --paragraph: 14px;
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>> Common <<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+/* >>>>>>>>>>>>>> Font Family <<<<<<<<<<<<<< */
+/* >> Fonts are directly coming from fonts folder << */
+
+/* >>>>>>>>> Montserrat <<<<<<<<< */
+@import url("../../../fonts/Montserrat/stylesheet.css");
+
+/* >>>>>>>>> Spectral <<<<<<<<< */
+@import url("../../../fonts/Spectral/stylesheet.css");
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> Body <<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+@import url("../../../sass/common/body/body.css");
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>> Navbar <<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+@import url("../../../sass/common/header/navbar.css");
+
+/* Hiding all the non required sections of header on Desktop  */
+.navbar {
+  .--navbar--left-- {
+    display: none;
+  }
+  .--navbar--right-- {
+    display: none !important;
+  }
+  .--navbar--center-- {
+    margin-top: 72px;
+    .--center--list-- {
+      display: none;
+    }
+  }
+}
+/* Showing all the sections of header back on Tablet/Mobile  */
+@media screen and (max-width: 1334px) {
+  .--navbar--left-- {
+    display: block !important;
+  }
+  .--navbar--right-- {
+    display: block !important;
+  }
+  .--navbar--center-- {
+    margin-top: 0px !important;
+    .--center--list-- {
+      display: block;
+    }
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>> Banner <<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+@import url("../../../sass/common/banner/banner.css");
+
+.--banner-- {
+  .--banner-bg-- {
+    position: relative;
+    background: url("../../../images/maintenance/banner-desk.jpg");
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+  }
+  .--banner-overlay-- {
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.91) 12%,
+      rgba(0, 0, 0, 0.5) 43%,
+      rgba(0, 0, 0, 0)
+    );
+  }
+  .--banner-content-- {
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    bottom: unset;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 99;
+
+    /* Main Heading */
+    h1 {
+      font-family: "Spectral";
+      font-size: 60px;
+      font-weight: 300;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1;
+      letter-spacing: normal;
+      margin-bottom: 25px;
+      color: $golden;
+    }
+    /* Sub Heading */
+    h6 {
+      font-family: "Spectral";
+      font-size: 20px;
+      font-weight: 300;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.5;
+      letter-spacing: 1px;
+      text-align: center;
+      margin-bottom: 37px;
+      color: $golden;
+    }
+    /* Paragraph */
+    p {
+      font-family: "Spectral";
+      font-size: 16px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.88;
+      letter-spacing: normal;
+      margin-bottom: 27px;
+      color: $golden;
+    }
+    /* Phone/Whatsapp/Email */
+    .container {
+      width: 1036px !important;
+      .row {
+        margin: 0;
+        padding: 0;
+        max-width: 1036px;
+        .col-lg-4 {
+          margin: 0;
+          text-align: center;
+          padding: 14px 0px;
+          border: 1px solid $golden;
+          transition: 0.5s;
+          cursor: pointer;
+          border-right: none;
+          &.-phone {
+            border-left: none;
+          }
+          &.-email {
+            border-right: none;
+          }
+          a {
+            text-decoration: none;
+            color: unset;
+          }
+          span {
+            color: $golden;
+            transition: 0.3s;
+            svg {
+              .svg-fill {
+                fill: $golden;
+                transition: 0.3s;
+              }
+            }
+          }
+          &:hover {
+            background: $golden;
+            transition: 0.5s;
+            span {
+              color: $black;
+              transition: 0.3s;
+              svg {
+                .svg-fill {
+                  fill: $black;
+                  transition: 0.3s;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .--banner-- {
+    .--banner-content-- {
+      /* Phone/Whatsapp/Email */
+      .container {
+        padding: 0px 10%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .--banner-- {
+    .--banner-content-- {
+      /* Paragraph */
+      p {
+        margin-bottom: 22px;
+      }
+      /* Phone/Whatsapp/Email */
+      .container {
+        padding: 0;
+        .row {
+          justify-content: center;
+          .col-lg-4 {
+            max-width: 171px;
+            margin: 0;
+            &.-email {
+              max-width: 228px;
+            }
+            span {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .--banner-- {
+    .--banner-content-- {
+      top: 55%;
+      padding: 0px 20px;
+      /* Main Heading */
+      h1 {
+        font-size: 45px;
+        margin-bottom: 3px;
+      }
+      /* Sub Heading */
+      h6 {
+        font-size: 18px;
+        margin-bottom: 24px;
+      }
+      /* Paragraph */
+      p {
+        margin-bottom: 18px;
+      }
+      /* Phone/Whatsapp/Email */
+      .container {
+        padding: 0;
+        max-width: 100%;
+        .row {
+          .col-lg-4 {
+            max-width: 100%;
+            margin: 0;
+            border-bottom: none;
+            border-left: none;
+            &.-email {
+              max-width: 100%;
+              border-bottom: 1px solid $golden;
+            }
+            span {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>> Login to Konfidential Pop Up <<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+@import url("../../../sass/common/login/login-pop-up.css");
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */

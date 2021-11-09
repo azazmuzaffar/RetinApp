@@ -1,0 +1,523 @@
+/* >>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>> Konfidencial <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<< */
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>> Common <<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+/* >>>>>>>>>>>>>> Colors <<<<<<<<<<<<<< */
+/* >>> You change the whole theme <<<< */
+/* >>> by changing these colors <<<< */
+
+$bgcolor: #121212;
+$black: #000000;
+$white: #ffffff;
+$golden: #c9a882;
+$golden04: #c9a8825b;
+$golden06: #c9a882d2;
+$sharpGolden: rgba(154, 136, 2, 0.4);
+$lightGolden: rgba(255, 255, 255, 0.45);
+$almostWhite: #d8d8d8;
+$inputBG: #242424;
+$messageError: #ce3737;
+
+/* >>>>>>>>>>>>>> Font Family <<<<<<<<<<<<<< */
+/* >> Fonts are directly coming from fonts folder << */
+
+/* >>>>>>>>> Montserrat <<<<<<<<< */
+@import url("../../../fonts/Montserrat/stylesheet.css");
+
+/* >>>>>>>>> Spectral <<<<<<<<< */
+@import url("../../../fonts/Spectral/stylesheet.css");
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> Body <<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+@import url("../../../sass/common/body/body.css");
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>> Navbar <<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+@import url("../../../sass/common/header/navbar.css");
+
+.navbar {
+  .--navbar--left-- {
+    margin-top: -104px;
+  }
+  .--navbar--right-- {
+    margin-top: -106px;
+  }
+}
+@media screen and (max-width: 1334px) {
+  .navbar {
+    .--navbar--left-- {
+      margin-top: 0px;
+    }
+    .--navbar--right-- {
+      margin-top: 0px;
+    }
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>> Banner <<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+@import url("../../../sass/common/banner/banner.css");
+
+.--banner-- {
+  .--banner-content-- {
+    bottom: 163px;
+    .advertise-here {
+      text-align: center;
+      margin-top: 40px;
+      a {
+        font-size: 14px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-transform: uppercase;
+        text-align: center;
+        color: $black;
+        background: $golden06;
+        text-decoration: none;
+        transition: 0.4s;
+        padding: 11px 30px;
+        &:hover {
+          background: $golden;
+          transition: 0.4s;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .--banner-- {
+    .--banner-content-- {
+      top: unset;
+      bottom: 113px;
+    }
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .--banner-- {
+    .--banner-content-- {
+      top: unset;
+      bottom: 69px;
+    }
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>> Contact Konfidential <<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+.--contact-konfidential-- {
+  padding: 100px 20px 87px 20px;
+
+  /* How to advertise on Konfidential */
+  .container.how {
+    max-width: 1179px;
+    margin-bottom: 117px;
+    padding: 0;
+    h1 {
+      font-family: "Spectral";
+      font-size: 35px;
+      font-weight: 300;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.29;
+      letter-spacing: normal;
+      margin-bottom: 50px;
+      color: $golden;
+    }
+    h3 {
+      font-family: "Spectral";
+      font-size: 24px;
+      font-weight: 300;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.25;
+      letter-spacing: normal;
+      margin-bottom: 35px;
+      color: #c9a882;
+    }
+    .--steps-- {
+      padding: 0px 20px 0px 50px;
+      margin-top: 102px;
+      .col-lg-4 {
+        position: relative;
+        margin: 0;
+        padding: 23px 40px 0px 33px;
+        border-left: 1px solid $golden;
+        .--step-- {
+          .--number-- {
+            position: absolute;
+            top: -67px;
+            left: -34px;
+            width: 67px;
+            height: 67px;
+            border-radius: 50%;
+            border: 1px solid $golden;
+            text-align: center;
+            .-number {
+              position: relative;
+              height: 100%;
+              width: 100%;
+              span {
+                font-family: "Spectral";
+                font-size: 35px;
+                font-weight: 300;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.29;
+                letter-spacing: normal;
+                text-align: center;
+                color: $golden;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+              }
+            }
+          }
+          h4 {
+            font-family: "Spectral";
+            font-size: 24px;
+            font-weight: 300;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.25;
+            letter-spacing: normal;
+            margin-bottom: 14px;
+            color: $golden;
+          }
+          p {
+            margin: 0;
+            font-size: 14px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.57;
+            letter-spacing: normal;
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+
+  /* Why to advertise on Konfidential */
+  .container.why {
+    padding: 0;
+    max-width: 1036px;
+    .--why-konfidential-- {
+      /* heading */
+      h2 {
+        font-family: "Spectral";
+        font-size: 24px;
+        font-weight: 300;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.25;
+        letter-spacing: normal;
+        margin-bottom: 15px;
+        color: $golden;
+      }
+      /* Our Timings */
+      .--timing-- {
+        p {
+          font-size: 14px;
+          font-weight: normal;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: 1.57;
+          letter-spacing: normal;
+          color: $white;
+          &:first-of-type {
+            margin-bottom: 25px;
+          }
+        }
+      }
+      /* Phone/Whatsapp/Email */
+      .--contact--through-- {
+        margin-top: 38px;
+        .row {
+          margin: 0;
+          padding: 0;
+          .col-lg-4 {
+            margin: 0;
+            text-align: center;
+            padding: 14px 0px;
+            border: 1px solid $golden;
+            border-right: none;
+            transition: 0.5s;
+            cursor: pointer;
+            &.-phone {
+              border-left: none;
+            }
+            &.-email {
+              border-right: none;
+            }
+            a {
+              text-decoration: none;
+              color: unset;
+            }
+            span {
+              color: $golden;
+              transition: 0.3s;
+              svg {
+                .svg-fill {
+                  fill: $golden;
+                  transition: 0.3s;
+                }
+              }
+            }
+            &:hover {
+              background: $golden;
+              transition: 0.5s;
+              span {
+                color: $black;
+                transition: 0.3s;
+                svg {
+                  .svg-fill {
+                    fill: $black;
+                    transition: 0.3s;
+                  }
+                }
+              }
+            }
+          }
+          text-align: center;
+          .advertise-here {
+            margin-top: 55px;
+            a {
+              font-size: 14px;
+              font-weight: 500;
+              font-stretch: normal;
+              font-style: normal;
+              line-height: normal;
+              letter-spacing: normal;
+              text-decoration: none;
+              text-transform: uppercase;
+              text-align: center;
+              color: $black;
+              padding: 11px 90px;
+              background: $golden06;
+              transition: 0.3s;
+              &:hover {
+                background: $golden;
+                transition: 0.3s;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .--contact-konfidential-- {
+    padding: 100px 50px 87px 50px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .--contact-konfidential-- {
+    padding: 100px 100px 87px 100px;
+    .container.how {
+      .--steps-- {
+        display: block;
+        .col-lg-4 {
+          max-width: 100%;
+          padding: 5px 0px 30px 33px;
+          margin-top: 67px;
+          &:first-of-type {
+            margin-top: 0px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .--contact-konfidential-- {
+    .container {
+      /* Phone/Whatsapp/Email */
+      .--contact--through-- {
+        .row {
+          justify-content: center;
+          .col-lg-4 {
+            max-width: 171px;
+            &.-email {
+              border-right: none;
+              max-width: 226px !important;
+            }
+            span {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .--contact-konfidential-- {
+    padding: 81px 94px 60px 94px;
+    .container.how {
+      margin-bottom: 68px;
+      h3 {
+        display: none;
+      }
+      .--steps-- {
+        margin-top: 110px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .--contact-konfidential-- {
+    padding: 81px 40px 60px 40px;
+    .container {
+      /* Phone/Whatsapp/Email */
+      .--contact--through-- {
+        .row {
+          justify-content: center;
+          display: block;
+          .col-lg-4 {
+            max-width: 100%;
+            border-left: none !important;
+            border-bottom: none !important;
+            &.-email {
+              max-width: 100% !important;
+              border-bottom: 1px solid $golden !important;
+            }
+            span {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .--contact-konfidential-- {
+    padding: 44px 20px 60px 20px;
+    .container.how {
+      margin-bottom: 60px;
+      h1 {
+        font-size: 24px;
+      }
+      .--steps-- {
+        margin-top: 90px;
+        padding: 0px 20px 0px 40px;
+        .col-lg-4 {
+          margin-top: 51px;
+          .--step-- {
+            .--number-- {
+              position: absolute;
+              top: -51px;
+              left: -26px;
+              width: 51px;
+              height: 51px;
+              .-number {
+                span {
+                  font-size: 25px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .container.why {
+      .--why-konfidential-- {
+        /* heading */
+        h2 {
+          font-size: 20px;
+        }
+        .advertise-here {
+          margin-top: 40px !important;
+          background: $golden;
+          a {
+            display: block;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>> Signature <<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+@import url("../../../sass/common/signature/signature.css");
+
+/* >>>>>>>> Signature position <<<<<<< */
+.--signature-- {
+  top: 574px;
+  right: 175px;
+}
+
+@media screen and (max-width: 768px) {
+  /* >>>>>>>> Signature position <<<<<<< */
+  .--signature-- {
+    right: 51px;
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>> Footer <<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+@import url("../../../sass/common/footer/footer.css");
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>> Login to Konfidential Pop Up <<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+@import url("../../../sass/common/login/login-pop-up.css");
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */

@@ -1,0 +1,177 @@
+/* >>>>>>>>>>>>>> Colors <<<<<<<<<<<<<< */
+/* >>> You change the whole theme <<<< */
+/* >>> by changing these colors <<<< */
+/* >>>>>>>> Fonts Sizes <<<<<<<<< */
+:root {
+  --paragraph: 16px;
+}
+
+@media screen and (max-width: 1024px) {
+  :root {
+    --paragraph: 14px;
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>> About Us <<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+.--about--us-- {
+  position: relative;
+  padding: 52px 0px 80px 0px;
+  width: 100%;
+  background: #f7f5fb;
+}
+
+.--about--us-- .container {
+  max-width: 860px;
+  /* >>>>> Input responsible for <<<<< */
+  /* >>>>> toggling showText/hideText <<<<< */
+  /* >>>>> Question <<<<< */
+  /* >>>>> Hidden Text <<<<< */
+}
+
+.--about--us-- .container input[type="checkbox"] {
+  display: none;
+}
+
+.--about--us-- .container .--question-- {
+  cursor: pointer;
+  display: block;
+  position: relative;
+  margin-bottom: 0;
+  -webkit-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+  margin-top: 30px;
+  font-family: "Poppins", serif;
+  font-size: 18px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  color: #000000;
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
+}
+
+.--about--us-- .container .--question--::after {
+  float: right;
+  border-style: solid;
+  border-width: 1px 1px 0 0;
+  content: " ";
+  display: inline-block;
+  height: 10px;
+  left: 2px;
+  position: relative;
+  right: 20px;
+  top: 2px;
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+  -webkit-transition: 0.35s ease-in-out;
+  transition: 0.35s ease-in-out;
+  vertical-align: top;
+  width: 10px;
+}
+
+.--about--us-- .container .faq-drawer__content-wrapper {
+  max-height: 0px;
+  overflow: hidden;
+  -webkit-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+.--about--us-- .container .faq-drawer__content-wrapper p {
+  font-size: var(--paragraph);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.88;
+  letter-spacing: normal;
+  color: #000000;
+  margin: 0px 0px 20px 0px;
+}
+
+.--about--us-- .container .faq-drawer__content-wrapper p:last-child {
+  margin: 0px 0px 10px 0px;
+}
+
+/* >>>>> it will make sure that only check item display <<<<< */
+.--toggle--.active + .--question-- + .faq-drawer__content-wrapper {
+  max-height: -webkit-fit-content;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+  padding-top: 30px;
+  -webkit-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+.--toggle--.active + .--question--::after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  -webkit-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+.--toggle--:hover + .--question-- {
+  color: #ef4126;
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
+}
+
+.--toggle--.active + .--question-- {
+  color: #ef4126;
+}
+
+@media screen and (max-width: 1024px) {
+  .--about--us-- {
+    padding: 90px 0px 60px 0px;
+  }
+  .--about--us-- .container {
+    max-width: 100%;
+    padding: 0px 99px 0px 99px;
+    /* >>>>> Hidden Text <<<<< */
+    /* >>>>> Question <<<<< */
+  }
+  .--about--us-- .container .faq-drawer__content-wrapper p {
+    font-size: var(--paragraph);
+    margin: 0px 0px 20px 0px;
+  }
+  .--about--us-- .container .faq-drawer__content-wrapper p br {
+    display: none;
+  }
+  .--about--us-- .container .--question-- {
+    position: relative;
+    padding-right: 40px;
+  }
+  .--about--us-- .container .--question--::after {
+    position: absolute;
+    left: unset;
+    width: 10px;
+    position: absolute;
+    top: 10px;
+    right: 0;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .--about--us-- {
+    padding: 35px 0px 60px 0px;
+  }
+  .--about--us-- .container {
+    max-width: 100%;
+    padding: 0px 22px 0px 20px;
+    /* >>>>> Hidden Text <<<<< */
+  }
+  .--about--us-- .container .faq-drawer__content-wrapper p {
+    font-size: var(--paragraph);
+    margin: 0px 0px 20px 0px;
+  }
+  .--about--us-- .container .faq-drawer__content-wrapper p br {
+    display: none;
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/*# sourceMappingURL=FAQ.css.map */

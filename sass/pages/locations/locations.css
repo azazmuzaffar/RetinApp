@@ -1,0 +1,263 @@
+/* >>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>> Konfidencial <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>> Colors <<<<<<<<<<<<<< */
+/* >>> You change the whole theme <<<< */
+/* >>> by changing these colors <<<< */
+/* >>>>>>>> Fonts Sizes <<<<<<<<< */
+@import url("../../../fonts/Montserrat/stylesheet.css");
+@import url("../../../fonts/Spectral/stylesheet.css");
+@import url("../../../sass/common/body/body.css");
+@import url("../../../sass/common/header/navbar.css");
+@import url("../../../sass/common/banner/banner.css");
+@import url("../../../sass/common/signature/signature.css");
+@import url("../../../sass/common/footer/footer.css");
+@import url("../../../sass/common/login/login-pop-up.css");
+:root {
+  --paragraph: 16px;
+}
+
+@media screen and (max-width: 1024px) {
+  :root {
+    --paragraph: 14px;
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>> Common <<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>> Font Family <<<<<<<<<<<<<< */
+/* >> Fonts are directly coming from fonts folder << */
+/* >>>>>>>>> Montserrat <<<<<<<<< */
+/* >>>>>>>>> Spectral <<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> Body <<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>> Navbar <<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+.navbar .--navbar--left-- {
+  margin-top: -104px;
+}
+
+.navbar .--navbar--right-- {
+  margin-top: -106px;
+}
+
+@media screen and (max-width: 1334px) {
+  .navbar .--navbar--left-- {
+    margin-top: 0px;
+  }
+  .navbar .--navbar--right-- {
+    margin-top: 0px;
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>> Banner <<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+.--banner-content-- {
+  bottom: 109px;
+}
+
+@media screen and (max-width: 768px) {
+  .--banner-- .--banner-content-- {
+    top: unset;
+    bottom: 76px;
+  }
+  .--banner-- .--banner-content-- h2 br {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .--banner-content-- {
+    top: unset;
+    bottom: 66px;
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>> Signature <<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>> Signature position <<<<<<< */
+.--signature-- {
+  top: 570px;
+  right: 175px;
+}
+
+@media screen and (max-width: 768px) {
+  /* >>>>>>>> Signature position <<<<<<< */
+  .--signature-- {
+    top: 394px;
+    right: 51px;
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>> Locations <<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+.--all--locations-- {
+  padding: 100px 20px 90px 20px;
+}
+
+.--all--locations-- .container {
+  padding: 0px;
+  /* >>>>>>>> Heading <<<<<<< */
+  /* >>>>>>>> Row <<<<<<< */
+}
+
+.--all--locations-- .container h1 {
+  font-family: "Spectral";
+  font-size: 35px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.29;
+  letter-spacing: normal;
+  color: #c9a882;
+  margin-bottom: 41px;
+}
+
+.--all--locations-- .container h1 span {
+  font-family: "Spectral";
+  font-size: 24px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  color: #c9a882;
+}
+
+.--all--locations-- .container .row {
+  padding: 0px 15px;
+  margin-bottom: 47px;
+  /* >>>>>>>> Columns <<<<<<< */
+  /* >>>>>>>> Remove Bottom margin from last row <<<<<<< */
+}
+
+.--all--locations-- .container .row .col-lg-3 {
+  padding: 0;
+  /* >>>>>>>> Each List <<<<<<< */
+}
+
+.--all--locations-- .container .row .col-lg-3 .--lists-of-locations-- ul {
+  list-style: none;
+  padding: 0;
+  /* >>>>>>>> Each li element <<<<<<< */
+}
+
+.--all--locations-- .container .row .col-lg-3 .--lists-of-locations-- ul li {
+  margin-bottom: 10px;
+  /* State */
+}
+
+.--all--locations-- .container .row .col-lg-3 .--lists-of-locations-- ul li h2 {
+  font-family: "Spectral";
+  font-size: 24px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  color: #c9a882;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.--all--locations-- .container .row .col-lg-3 .--lists-of-locations-- ul li a {
+  text-decoration: none;
+  /* City */
+}
+
+.--all--locations-- .container .row .col-lg-3 .--lists-of-locations-- ul li a h3 {
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.88;
+  letter-spacing: normal;
+  color: #ffffff;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.--all--locations-- .container .row .col-lg-3 .--lists-of-locations-- ul li a h3:hover {
+  color: #c9a882;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.--all--locations-- .container .row:last-child {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 1334px) {
+  .--all--locations-- {
+    padding: 81px 20px 60px 100px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .--all--locations-- .container .row {
+    margin-bottom: 35px;
+  }
+  .--all--locations-- .container .row .col-lg-3 {
+    margin-bottom: 35px;
+  }
+  .--all--locations-- .container .row .col-lg-3:nth-last-of-type(-n + 2) {
+    margin-bottom: 0;
+  }
+  .--all--locations-- .container .row .col-lg-3 .--lists-of-locations-- ul li h2 {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .--all--locations-- {
+    padding: 44px 20px 60px 20px;
+    margin: 0;
+  }
+  .--all--locations-- .container h1 {
+    font-size: 24px;
+  }
+  .--all--locations-- .container .row .col-lg-3 {
+    margin-bottom: 35px;
+  }
+  .--all--locations-- .container .row .col-lg-3:nth-last-of-type(-n + 2) {
+    margin-bottom: 35px;
+  }
+  .--all--locations-- .container .row .col-lg-3:last-of-type {
+    margin-bottom: 0px;
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>> Footer <<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>> Login to Konfidential Pop Up <<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/*# sourceMappingURL=locations.css.map */

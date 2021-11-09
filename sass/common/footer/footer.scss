@@ -1,0 +1,120 @@
+/* >>>>>>>>>>>>>> Colors <<<<<<<<<<<<<< */
+/* >>> You change the whole theme <<<< */
+/* >>> by changing these colors <<<< */
+
+$bgcolor: #121212;
+$black: #000000;
+$white: #ffffff;
+$golden: #c9a882;
+$golden04: #c9a8825b;
+$golden06: #c9a882d2;
+$sharpGolden: rgba(154, 136, 2, 0.4);
+$lightGolden: rgba(255, 255, 255, 0.45);
+$orange: #ef4126;
+
+/* >>>>>>>> Fonts Sizes <<<<<<<<< */
+
+:root {
+  --paragraph: 16px;
+}
+$navigations: 16px;
+
+@media screen and (max-width: 1024px) {
+  :root {
+    --paragraph: 14px;
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>> Footer <<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+footer {
+  position: relative;
+  width: 100%;
+  padding: 50px 0px;
+  background: $white;
+  text-align: center;
+  font-family: "Poppins";
+
+  .container {
+    max-width: 100% !important;
+
+    /* >>>> Navigations <<<< */
+    .--pages-- {
+      ul {
+        margin: 0 auto;
+        list-style: none;
+        margin-bottom: 30px;
+        width: fit-content;
+
+        li {
+          display: inline;
+          margin: 0px 15px;
+          a {
+            font-size: $navigations;
+            font-weight: 500;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            text-transform: capitalize;
+            letter-spacing: normal;
+            color: $black;
+            transition: 0.5s;
+            &:hover {
+              text-decoration: none;
+              transition: 0.5s;
+              color: $orange;
+            }
+            &.active {
+              color: $orange;
+            }
+          }
+        }
+      }
+    }
+    /* >>>> Copyright <<<< */
+    .--copyright-- {
+      p {
+        font-size: 14px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: center;
+        text-decoration: none;
+        color: $black;
+        margin: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  footer {
+    padding: 42px 0px 43px 0px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  footer {
+    padding: 42px 0px 33px 0px;
+  }
+  .--pages-- {
+    ul {
+      margin-bottom: 30px;
+      li {
+        margin: 0 !important;
+        a {
+          display: block;
+          margin-bottom: 26px;
+        }
+      }
+    }
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */

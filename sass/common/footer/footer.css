@@ -1,0 +1,109 @@
+/* >>>>>>>>>>>>>> Colors <<<<<<<<<<<<<< */
+/* >>> You change the whole theme <<<< */
+/* >>> by changing these colors <<<< */
+/* >>>>>>>> Fonts Sizes <<<<<<<<< */
+:root {
+  --paragraph: 16px;
+}
+
+@media screen and (max-width: 1024px) {
+  :root {
+    --paragraph: 14px;
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>> Footer <<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+footer {
+  position: relative;
+  width: 100%;
+  padding: 50px 0px;
+  background: #ffffff;
+  text-align: center;
+  font-family: "Poppins";
+}
+
+footer .container {
+  max-width: 100% !important;
+  /* >>>> Navigations <<<< */
+  /* >>>> Copyright <<<< */
+}
+
+footer .container .--pages-- ul {
+  margin: 0 auto;
+  list-style: none;
+  margin-bottom: 30px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+footer .container .--pages-- ul li {
+  display: inline;
+  margin: 0px 15px;
+}
+
+footer .container .--pages-- ul li a {
+  font-size: 16px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  text-transform: capitalize;
+  letter-spacing: normal;
+  color: #000000;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+footer .container .--pages-- ul li a:hover {
+  text-decoration: none;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  color: #ef4126;
+}
+
+footer .container .--pages-- ul li a.active {
+  color: #ef4126;
+}
+
+footer .container .--copyright-- p {
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  text-decoration: none;
+  color: #000000;
+  margin: 0;
+}
+
+@media screen and (max-width: 1024px) {
+  footer {
+    padding: 42px 0px 43px 0px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  footer {
+    padding: 42px 0px 33px 0px;
+  }
+  .--pages-- ul {
+    margin-bottom: 30px;
+  }
+  .--pages-- ul li {
+    margin: 0 !important;
+  }
+  .--pages-- ul li a {
+    display: block;
+    margin-bottom: 26px;
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/*# sourceMappingURL=footer.css.map */

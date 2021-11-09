@@ -1,0 +1,179 @@
+/* >>>>>>>>>>>>>> Colors <<<<<<<<<<<<<< */
+/* >>> You change the whole theme <<<< */
+/* >>> by changing these colors <<<< */
+
+$bgcolor: #121212;
+$black: #000000;
+$white: #ffffff;
+$golden: black;
+$golden04: #c9a8825b;
+$golden06: #c9a882d2;
+$sharpGolden: rgba(154, 136, 2, 0.4);
+$lightGolden: rgba(255, 255, 255, 0.45);
+
+$orange: #ef4126af;
+
+/* >>>>>>>> Fonts Sizes <<<<<<<<< */
+
+:root {
+  --paragraph: 16px;
+}
+$navigations: 14px;
+
+@media screen and (max-width: 1024px) {
+  :root {
+    --paragraph: 14px;
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>> About Us <<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+.--about--us-- {
+  position: relative;
+  padding: 52px 0px 80px 0px;
+  width: 100%;
+  background: #f7f5fb;
+  .container {
+    max-width: 860px;
+
+    /* >>>>> Input responsible for <<<<< */
+    /* >>>>> toggling showText/hideText <<<<< */
+
+    input[type="checkbox"] {
+      display: none;
+    }
+
+    /* >>>>> Question <<<<< */
+    .--question-- {
+      cursor: pointer;
+      display: block;
+      position: relative;
+      margin-bottom: 0;
+      transition: all 0.25s ease-out;
+      margin-top: 30px;
+      font-family: "Poppins", serif;
+      font-size: 18px;
+      font-weight: 300;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.25;
+      letter-spacing: normal;
+      color: $black;
+      transition: 0.8s;
+      &::after {
+        float: right;
+        border-style: solid;
+        border-width: 1px 1px 0 0;
+        content: " ";
+        display: inline-block;
+        height: 10px;
+        left: 2px;
+        position: relative;
+        right: 20px;
+        top: 2px;
+        transform: rotate(135deg);
+        transition: 0.35s ease-in-out;
+        vertical-align: top;
+        width: 10px;
+      }
+    }
+
+    /* >>>>> Hidden Text <<<<< */
+    .faq-drawer__content-wrapper {
+      max-height: 0px;
+      overflow: hidden;
+      transition: 0.25s ease-in-out;
+      p {
+        font-size: var(--paragraph);
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.88;
+        letter-spacing: normal;
+        color: $black;
+        margin: 0px 0px 20px 0px;
+        &:last-child {
+          margin: 0px 0px 10px 0px;
+        }
+      }
+    }
+  }
+}
+
+/* >>>>> it will make sure that only check item display <<<<< */
+.--toggle--.active + .--question-- + .faq-drawer__content-wrapper {
+  max-height: fit-content;
+  padding-top: 30px;
+  transition: 0.25s ease-in-out;
+}
+.--toggle--.active + .--question--::after {
+  transform: rotate(-45deg);
+  transition: 0.25s ease-in-out;
+}
+.--toggle--:hover + .--question-- {
+  color: #ef4126;
+  transition: 0.8s;
+}
+.--toggle--.active + .--question-- {
+  color: #ef4126;
+}
+
+@media screen and (max-width: 1024px) {
+  .--about--us-- {
+    padding: 90px 0px 60px 0px;
+    .container {
+      max-width: 100%;
+      padding: 0px 99px 0px 99px;
+      /* >>>>> Hidden Text <<<<< */
+      .faq-drawer__content-wrapper {
+        p {
+          font-size: var(--paragraph);
+          margin: 0px 0px 20px 0px;
+          br {
+            display: none;
+          }
+        }
+      }
+
+      /* >>>>> Question <<<<< */
+      .--question-- {
+        position: relative;
+        padding-right: 40px;
+        &::after {
+          position: absolute;
+          left: unset;
+          width: 10px;
+          position: absolute;
+          top: 10px;
+          right: 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .--about--us-- {
+    padding: 35px 0px 60px 0px;
+    .container {
+      max-width: 100%;
+      padding: 0px 22px 0px 20px;
+      /* >>>>> Hidden Text <<<<< */
+      .faq-drawer__content-wrapper {
+        p {
+          font-size: var(--paragraph);
+          margin: 0px 0px 20px 0px;
+          br {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */

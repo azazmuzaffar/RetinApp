@@ -1,0 +1,604 @@
+/* >>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>> Konfidencial <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>> Common <<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>> Colors <<<<<<<<<<<<<< */
+/* >>> You change the whole theme <<<< */
+/* >>> by changing these colors <<<< */
+@import url("../../../fonts/Montserrat/stylesheet.css");
+@import url("../../../fonts/Poppins/stylesheet.css");
+@import url("../../../sass/common/body/body.css");
+@import url("../../../sass/common/header/navbar.css");
+@import url("../../../sass/common/banner/banner.css");
+@import url("../../../sass/common/signature/signature.css");
+@import url("../../../sass/common/ads/ads.css");
+@import url("../../../sass/common/footer/footer.css");
+@import url("../../../sass/common/login/login-pop-up.css");
+.heading-area- {
+  margin-bottom: 60px;
+}
+
+.--main-p-- {
+  font-family: "Poppins";
+  font-weight: 700;
+  text-transform: capitalize;
+  color: #ef4126;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.--main-h-- {
+  font-family: "Montserrat";
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #2f2e41;
+  text-align: center;
+}
+
+.--main-h-- span {
+  color: #ef4126;
+}
+
+/* >>>>>>>>>>>>>> Font Family <<<<<<<<<<<<<< */
+/* >> Fonts are directly coming from fonts folder << */
+/* >>>>>>>>> Montserrat <<<<<<<<< */
+/* >>>>>>>>> Spectral <<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> Body <<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>> Navbar <<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+.navbar .--navbar--left-- {
+  margin-top: -104px;
+}
+
+.navbar .--navbar--right-- {
+  margin-top: -106px;
+}
+
+@media screen and (max-width: 1334px) {
+  .navbar .--navbar--left-- {
+    margin-top: 0px;
+  }
+  .navbar .--navbar--right-- {
+    margin-top: 0px;
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>> Banner <<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+@media screen and (max-width: 768px) {
+  .--banner-content-- {
+    top: unset;
+    bottom: 136px;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .--banner-content-- {
+    top: unset;
+    bottom: 148px;
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>> Contact Konfidential <<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+.--contact-konfidential-- {
+  padding: 80px 20px 25px 20px;
+}
+
+.--contact-konfidential-- .container {
+  padding: 0;
+  max-width: 1036px;
+  /* Main Heading and Back option */
+  /* Timing Paragraph */
+  /* Phone/Whatsapp/Email */
+  /* Contact Form */
+}
+
+.--contact-konfidential-- .container .--contact-heading-- {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 31px;
+}
+
+.--contact-konfidential-- .container .--contact-heading-- .--main-heading-- h1 {
+  font-family: "Montserrat";
+  font-size: 28px;
+  font-weight: 700;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.29;
+  letter-spacing: normal;
+  color: #2f2e41;
+}
+
+.--contact-konfidential-- .container .--contact-heading-- .--main-heading-- h1 span {
+  color: #ef4126;
+}
+
+.--contact-konfidential-- .container .--contact-heading-- .--go-back-- {
+  float: right;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.--contact-konfidential-- .container .--contact-heading-- .--go-back-- a {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.57;
+  letter-spacing: normal;
+  color: #2f2e41;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.--contact-konfidential-- .container .--contact-heading-- .--go-back-- a:hover {
+  color: #ef4126;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.--contact-konfidential-- .container .--timing-- p {
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.57;
+  letter-spacing: normal;
+  color: #ffffff;
+}
+
+.--contact-konfidential-- .container .--timing-- p:first-of-type {
+  margin-bottom: 25px;
+}
+
+.--contact-konfidential-- .container .--contact--through-- {
+  margin: 38px 0px 30px 0px;
+}
+
+.--contact-konfidential-- .container .--contact--through-- .row {
+  margin: 0;
+  padding: 0;
+}
+
+.--contact-konfidential-- .container .--contact--through-- .row .col-lg-4 {
+  margin: 0;
+  text-align: center;
+  padding: 14px 0px;
+  border: 1px solid #ef4126;
+  border-right: none;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.--contact-konfidential-- .container .--contact--through-- .row .col-lg-4.-phone {
+  border-left: none;
+}
+
+.--contact-konfidential-- .container .--contact--through-- .row .col-lg-4.-email {
+  border-right: none;
+}
+
+.--contact-konfidential-- .container .--contact--through-- .row .col-lg-4 a {
+  text-decoration: none;
+  color: unset;
+}
+
+.--contact-konfidential-- .container .--contact--through-- .row .col-lg-4 span {
+  color: #2f2e41;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.--contact-konfidential-- .container .--contact--through-- .row .col-lg-4 span svg .svg-fill {
+  fill: #ef4126;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.--contact-konfidential-- .container .--contact--through-- .row .col-lg-4:hover {
+  background: #ef4126;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.--contact-konfidential-- .container .--contact--through-- .row .col-lg-4:hover span {
+  color: #ffffff;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.--contact-konfidential-- .container .--contact--through-- .row .col-lg-4:hover span svg .svg-fill {
+  fill: #ffffff;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.--contact-konfidential-- .container .--contact--form-- {
+  margin-bottom: 35px;
+  position: relative;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.--contact-konfidential-- .container .--contact--form-- h2 {
+  font-family: "Spectral";
+  font-size: 24px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  color: #c9a882;
+}
+
+.--contact-konfidential-- .container .--contact--form-- form .row {
+  margin: 0;
+  padding: 0;
+  /* label */
+  /* input/textarea */
+  /* input borderon error */
+  /* Error Message */
+}
+
+.--contact-konfidential-- .container .--contact--form-- form .row .col-lg-6,
+.--contact-konfidential-- .container .--contact--form-- form .row .col-lg-12 {
+  padding-left: 0;
+  margin-top: 21px;
+  padding: 0;
+}
+
+.--contact-konfidential-- .container .--contact--form-- form .row .col-lg-6 {
+  margin: 0;
+}
+
+.--contact-konfidential-- .container .--contact--form-- form .row .col-lg-6:first-of-type, .--contact-konfidential-- .container .--contact--form-- form .row .col-lg-6:nth-child(3) {
+  padding-right: 30px;
+}
+
+.--contact-konfidential-- .container .--contact--form-- form .row label {
+  font-size: 12px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.67;
+  letter-spacing: normal;
+  color: #ffffff;
+  padding: 0;
+}
+
+.--contact-konfidential-- .container .--contact--form-- form .row input,
+.--contact-konfidential-- .container .--contact--form-- form .row textarea {
+  width: 100%;
+  display: block;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.57;
+  letter-spacing: normal;
+  color: #2f2e41;
+  border: none;
+  outline: none;
+  background: transparent;
+  background: #f7f5fb;
+  padding: 15px 15px;
+}
+
+.--contact-konfidential-- .container .--contact--form-- form .row input::-webkit-input-placeholder,
+.--contact-konfidential-- .container .--contact--form-- form .row textarea::-webkit-input-placeholder {
+  color: #2f2e41;
+}
+
+.--contact-konfidential-- .container .--contact--form-- form .row input:-ms-input-placeholder,
+.--contact-konfidential-- .container .--contact--form-- form .row textarea:-ms-input-placeholder {
+  color: #2f2e41;
+}
+
+.--contact-konfidential-- .container .--contact--form-- form .row input::-ms-input-placeholder,
+.--contact-konfidential-- .container .--contact--form-- form .row textarea::-ms-input-placeholder {
+  color: #2f2e41;
+}
+
+.--contact-konfidential-- .container .--contact--form-- form .row input::placeholder,
+.--contact-konfidential-- .container .--contact--form-- form .row textarea::placeholder {
+  color: #2f2e41;
+}
+
+.--contact-konfidential-- .container .--contact--form-- form .row input.error {
+  border: 1px solid #ef4126;
+}
+
+.--contact-konfidential-- .container .--contact--form-- form .row textarea {
+  height: 115px;
+}
+
+.--contact-konfidential-- .container .--contact--form-- form .row .error-message {
+  font-size: 12px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.67;
+  margin-top: 5px;
+  letter-spacing: normal;
+  color: #ef4126;
+}
+
+.--contact-konfidential-- .container .--contact--form-- form .row input[type="submit"] {
+  font-size: 16px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  margin: 0 auto;
+  cursor: pointer;
+  color: #ffffff;
+  width: 213px;
+  padding: 8px 0px;
+  text-transform: capitalize;
+  border-radius: 30px;
+  background-color: #ef4126;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+.--contact-konfidential-- .container .--contact--form-- form .row input[type="submit"]:hover {
+  background-color: #2f2e41;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+.--contact-konfidential-- .container .--contact--form-- form .row .all-conditions-required {
+  margin-top: 25px;
+}
+
+.--contact-konfidential-- .container .--contact--form-- form .row .all-conditions-required p {
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.67;
+  letter-spacing: normal;
+  color: #2f2e41;
+  margin: 0;
+}
+
+@media screen and (max-width: 1334px) {
+  .--contact-konfidential-- {
+    padding: 55px 100px 35px 100px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .--contact-konfidential-- .container {
+    /* Phone/Whatsapp/Email */
+  }
+  .--contact-konfidential-- .container .--contact--through-- .row {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .--contact-konfidential-- .container .--contact--through-- .row .col-lg-4 {
+    max-width: 171px;
+  }
+  .--contact-konfidential-- .container .--contact--through-- .row .col-lg-4.-email {
+    border-right: none;
+    max-width: 226px !important;
+  }
+  .--contact-konfidential-- .container .--contact--through-- .row .col-lg-4 span {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .--contact-konfidential-- {
+    padding: 81px 100px 25px 100px;
+  }
+  .--contact-konfidential-- .container {
+    /* Contact form */
+  }
+  .--contact-konfidential-- .container .--contact-heading-- {
+    /* Display none on tab */
+  }
+  .--contact-konfidential-- .container .--contact-heading-- .--go-back-- {
+    display: none;
+  }
+  .--contact-konfidential-- .container .--contact--form-- form .row .col-lg-6:first-of-type, .--contact-konfidential-- .container .--contact--form-- form .row .col-lg-6:nth-child(3) {
+    padding-right: 20px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .--contact-konfidential-- {
+    padding: 44px 80px 20px 80px;
+  }
+  .--contact-konfidential-- .container {
+    /* Main Heading */
+    /* Phone/Whatsapp/Email */
+    /* Contact form */
+  }
+  .--contact-konfidential-- .container .--contact-heading-- {
+    margin-bottom: 21px;
+  }
+  .--contact-konfidential-- .container .--contact-heading-- .--main-heading-- h1 {
+    font-size: 24px;
+  }
+  .--contact-konfidential-- .container .--contact--through-- .row {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    display: block;
+  }
+  .--contact-konfidential-- .container .--contact--through-- .row .col-lg-4 {
+    max-width: 100%;
+    border-left: none;
+    border-bottom: none;
+  }
+  .--contact-konfidential-- .container .--contact--through-- .row .col-lg-4.-email {
+    max-width: 100% !important;
+    border-bottom: 1px solid #c9a882;
+  }
+  .--contact-konfidential-- .container .--contact--through-- .row .col-lg-4 span {
+    font-size: 14px;
+  }
+  .--contact-konfidential-- .container .--contact--form-- form .row .col-lg-6,
+  .--contact-konfidential-- .container .--contact--form-- form .row .col-lg-12 {
+    margin-top: 16px;
+  }
+  .--contact-konfidential-- .container .--contact--form-- form .row .col-lg-6:first-of-type, .--contact-konfidential-- .container .--contact--form-- form .row .col-lg-6:nth-child(3) {
+    padding-right: 0px;
+  }
+  .--contact-konfidential-- .container .--contact--form-- form .row .error-message {
+    margin: 5px 0px 0px;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .--contact-konfidential-- {
+    padding: 44px 20px 20px 20px;
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>> Confirmation Message <<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+.--confirmation-message-- {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  z-index: 99999;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+}
+
+.--confirmation-message-- .--content-- {
+  text-align: center;
+  position: relative;
+  top: 37%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.--confirmation-message-- .--content-- .--confirmed--icon-- {
+  position: relative;
+  margin: 0 auto;
+  width: 115px;
+  height: 115px;
+  border: solid 1px #ef4126;
+  border-radius: 50%;
+  margin-bottom: 25px;
+}
+
+.--confirmation-message-- .--content-- .--confirmed--icon-- svg {
+  width: 54px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.--confirmation-message-- .--content-- .--text-- {
+  margin-bottom: 42px;
+}
+
+.--confirmation-message-- .--content-- .--text-- p {
+  font-size: 16px;
+  line-height: 1.88;
+}
+
+.--confirmation-message-- .--content-- .--confirmed-- span {
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.57;
+  letter-spacing: normal;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+@media screen and (max-width: 768px) {
+  .--confirmation-message-- .--content-- {
+    padding: 0px 30px;
+  }
+  .--confirmation-message-- .--content-- .--text-- p br {
+    display: none;
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>> Signature <<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>> Signature position <<<<<<< */
+.--signature-- {
+  top: 389px;
+  right: 175px;
+}
+
+@media screen and (max-width: 768px) {
+  /* >>>>>>>> Signature position <<<<<<< */
+  .--signature-- {
+    right: 51px;
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> Ads <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>> Footer <<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>> Login to Konfidential Pop Up <<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/*# sourceMappingURL=contactos.css.map */

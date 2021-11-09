@@ -1,0 +1,250 @@
+/* >>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>> Konfidencial <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<< */
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>> Common <<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+/* >>>>>>>>>>>>>> Colors <<<<<<<<<<<<<< */
+/* >>> You change the whole theme <<<< */
+/* >>> by changing these colors <<<< */
+
+$bgcolor: #121212;
+$black: #2f2e41;
+$white: #ffffff;
+$golden: #c9a882;
+$golden04: #c9a8825b;
+$golden06: #c9a882d2;
+$sharpGolden: rgba(154, 136, 2, 0.4);
+$lightGolden: rgba(255, 255, 255, 0.45);
+$almostWhite: #d8d8d8;
+$inputBG: #242424;
+$messageError: #ce3737;
+$orange: #ef4126;
+
+.heading-area- {
+  margin-bottom: 90px;
+}
+.--main-p-- {
+  font-family: "Poppins";
+  font-weight: 700;
+  text-transform: capitalize;
+  color: #ef4126;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.--main-h-- {
+  font-family: "Montserrat";
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #2f2e41;
+  text-align: center;
+}
+
+/* >>>>>>>>>>>>>> Font Family <<<<<<<<<<<<<< */
+/* >> Fonts are directly coming from fonts folder << */
+
+/* >>>>>>>>> Montserrat <<<<<<<<< */
+@import url("../../../fonts/Montserrat/stylesheet.css");
+
+/* >>>>>>>>> Spectral <<<<<<<<< */
+@import url("../../../fonts/Poppins/stylesheet.css");
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> Body <<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+@import url("../../../sass/common/body/body.css");
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>> Navbar <<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+@import url("../../../sass/common/header/navbar.css");
+
+.navbar {
+  .--navbar--left-- {
+    margin-top: -104px;
+  }
+  .--navbar--right-- {
+    margin-top: -106px;
+  }
+}
+@media screen and (max-width: 1334px) {
+  .navbar {
+    .--navbar--left-- {
+      margin-top: 0px;
+    }
+    .--navbar--right-- {
+      margin-top: 0px;
+    }
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>>> FAQ <<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+@import url("../../../sass/common/FAQ/FAQ.css");
+
+.--about--us-- {
+  min-height: calc(100vh - 157px);
+  padding: 282px 20px 70px 20px;
+  background: white;
+  .container {
+    padding: 0;
+    max-width: 1035px;
+    h1 {
+      font-family: "Montserrat";
+      font-size: 35px;
+      font-weight: 700;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1;
+      letter-spacing: normal;
+      text-align: center;
+      margin-bottom: 86px;
+      color: $black;
+    }
+    .--frequently--asked--question-- {
+      .--f-a-q-- {
+        padding: 19px 0px;
+        border-bottom: 1px solid $black;
+        .--question-- {
+          margin: 0;
+          font-size: 18px;
+          font-weight: 300;
+          color: $black;
+
+          label {
+            margin: 0;
+            cursor: pointer;
+          }
+          &::after {
+            top: 8px;
+          }
+        }
+        .faq-drawer__content-wrapper {
+          padding: 0;
+        }
+        p {
+          font-size: 14px;
+          font-weight: normal;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: 1.67;
+          letter-spacing: normal;
+          margin: 0;
+          margin-bottom: 20px;
+          &:last-of-type {
+            margin-bottom: 0px;
+          }
+        }
+        .--toggle--.active + .--question-- {
+          color: $orange;
+          transition: 0.3s;
+        }
+        .--toggle--.active + .--question-- + .faq-drawer__content-wrapper {
+          margin: 15px 0px;
+        }
+        &:hover .--question-- {
+          color: $orange;
+          transition: 0.3s;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1334px) {
+  .--about--us-- {
+    padding: 202px 99px 70px 99px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .--about--us-- {
+    padding: 202px 99px 60px 99px;
+    .container {
+      h1 {
+        margin-bottom: 75px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .--about--us-- {
+    padding: 174px 20px 60px 20px;
+    .container {
+      h1 {
+        font-size: 35px;
+        margin-bottom: 58px;
+      }
+      .--frequently--asked--question-- {
+        .--f-a-q-- {
+          .--question-- {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>> Signature <<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+@import url("../../../sass/common/signature/signature.css");
+
+/* >>>>>>>> Signature position <<<<<<< */
+.--signature-- {
+  top: 401px;
+  right: 175px;
+}
+
+@media screen and (max-width: 768px) {
+  /* >>>>>>>> Signature position <<<<<<< */
+  .--signature-- {
+    right: 51px;
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>> Footer <<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+@import url("../../../sass/common/footer/footer.css");
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>> Login to Konfidential Pop Up <<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+
+@import url("../../../sass/common/login/login-pop-up.css");
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */

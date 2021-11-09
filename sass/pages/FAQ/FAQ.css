@@ -1,0 +1,217 @@
+/* >>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>> Konfidencial <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>> Common <<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>> Colors <<<<<<<<<<<<<< */
+/* >>> You change the whole theme <<<< */
+/* >>> by changing these colors <<<< */
+@import url("../../../fonts/Montserrat/stylesheet.css");
+@import url("../../../fonts/Poppins/stylesheet.css");
+@import url("../../../sass/common/body/body.css");
+@import url("../../../sass/common/header/navbar.css");
+@import url("../../../sass/common/FAQ/FAQ.css");
+@import url("../../../sass/common/signature/signature.css");
+@import url("../../../sass/common/footer/footer.css");
+@import url("../../../sass/common/login/login-pop-up.css");
+.heading-area- {
+  margin-bottom: 90px;
+}
+
+.--main-p-- {
+  font-family: "Poppins";
+  font-weight: 700;
+  text-transform: capitalize;
+  color: #ef4126;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.--main-h-- {
+  font-family: "Montserrat";
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #2f2e41;
+  text-align: center;
+}
+
+/* >>>>>>>>>>>>>> Font Family <<<<<<<<<<<<<< */
+/* >> Fonts are directly coming from fonts folder << */
+/* >>>>>>>>> Montserrat <<<<<<<<< */
+/* >>>>>>>>> Spectral <<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> Body <<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>> Navbar <<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+.navbar .--navbar--left-- {
+  margin-top: -104px;
+}
+
+.navbar .--navbar--right-- {
+  margin-top: -106px;
+}
+
+@media screen and (max-width: 1334px) {
+  .navbar .--navbar--left-- {
+    margin-top: 0px;
+  }
+  .navbar .--navbar--right-- {
+    margin-top: 0px;
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>>> FAQ <<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+.--about--us-- {
+  min-height: calc(100vh - 157px);
+  padding: 282px 20px 70px 20px;
+  background: white;
+}
+
+.--about--us-- .container {
+  padding: 0;
+  max-width: 1035px;
+}
+
+.--about--us-- .container h1 {
+  font-family: "Montserrat";
+  font-size: 35px;
+  font-weight: 700;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-align: center;
+  margin-bottom: 86px;
+  color: #2f2e41;
+}
+
+.--about--us-- .container .--frequently--asked--question-- .--f-a-q-- {
+  padding: 19px 0px;
+  border-bottom: 1px solid #2f2e41;
+}
+
+.--about--us-- .container .--frequently--asked--question-- .--f-a-q-- .--question-- {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 300;
+  color: #2f2e41;
+}
+
+.--about--us-- .container .--frequently--asked--question-- .--f-a-q-- .--question-- label {
+  margin: 0;
+  cursor: pointer;
+}
+
+.--about--us-- .container .--frequently--asked--question-- .--f-a-q-- .--question--::after {
+  top: 8px;
+}
+
+.--about--us-- .container .--frequently--asked--question-- .--f-a-q-- .faq-drawer__content-wrapper {
+  padding: 0;
+}
+
+.--about--us-- .container .--frequently--asked--question-- .--f-a-q-- p {
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.67;
+  letter-spacing: normal;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.--about--us-- .container .--frequently--asked--question-- .--f-a-q-- p:last-of-type {
+  margin-bottom: 0px;
+}
+
+.--about--us-- .container .--frequently--asked--question-- .--f-a-q-- .--toggle--.active + .--question-- {
+  color: #ef4126;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.--about--us-- .container .--frequently--asked--question-- .--f-a-q-- .--toggle--.active + .--question-- + .faq-drawer__content-wrapper {
+  margin: 15px 0px;
+}
+
+.--about--us-- .container .--frequently--asked--question-- .--f-a-q--:hover .--question-- {
+  color: #ef4126;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+@media screen and (max-width: 1334px) {
+  .--about--us-- {
+    padding: 202px 99px 70px 99px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .--about--us-- {
+    padding: 202px 99px 60px 99px;
+  }
+  .--about--us-- .container h1 {
+    margin-bottom: 75px;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .--about--us-- {
+    padding: 174px 20px 60px 20px;
+  }
+  .--about--us-- .container h1 {
+    font-size: 35px;
+    margin-bottom: 58px;
+  }
+  .--about--us-- .container .--frequently--asked--question-- .--f-a-q-- .--question-- {
+    font-size: 20px;
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>> Signature <<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>> Signature position <<<<<<< */
+.--signature-- {
+  top: 401px;
+  right: 175px;
+}
+
+@media screen and (max-width: 768px) {
+  /* >>>>>>>> Signature position <<<<<<< */
+  .--signature-- {
+    right: 51px;
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>> Footer <<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>> Login to Konfidential Pop Up <<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/*# sourceMappingURL=FAQ.css.map */
