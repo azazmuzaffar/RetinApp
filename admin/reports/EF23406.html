@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content=" width=device-width, initial-scale=1" name="viewport" />
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+    <!-- >>> Title & Favicon <<< -->
+    <title>Doctor Panel - RetinApp</title>
+    <link rel="shortcut icon" type="image/jpg" href="../../logo/Logo.png" />
+
+    <!-- >>> meta Description <<< -->
+    <meta
+      name="description"
+      content="RetinApp is a mobile based application which targets the medical needs of the society. 
+               This application helps detect the diabetic symptoms and its severity without any need of long and painful blood tests."
+    />
+    <!-- >>>> meta Keywords <<<< -->
+    <meta
+      name="keywords"
+      content="RetinApp is a mobile based application which targets the medical needs of the society. 
+               This application helps detect the diabetic symptoms and its severity without any need of long and painful blood tests."
+    />
+
+    <!-- >>> Fontawsome 5 | Used for icons <<< -->
+    <link href="../../font-awesome/css/all.css" rel="stylesheet" />
+
+    <!-- >>> Bootstrap v5.0.2 | Front End Framework <<< -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" />
+
+    <!-- >>> Custom CSS <<< -->
+    <link rel="stylesheet" href="../../sass/dashboard/app.css" />
+    <link rel="stylesheet" href="../../sass/dashboard/reports/each-report.css" />
+  </head>
+  <body>
+    <!-- >>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<< -->
+    <!-- >>>>>>>>>>>>>>>>> RetinApp <<<<<<<<<<<<<<<<< -->
+    <!-- >>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<< -->
+
+    <!-- >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<< -->
+    <!-- >>>>>>>>>>>> Dashboard <<<<<<<<<<<<< -->
+    <!-- >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<< -->
+
+    <div class="container-fluid">
+      <div class="row">
+        <!-- sidebar -->
+        <div class="col-md-3 col-lg-2 px-0 position-fixed h-100 bg-white shadow-sm sidebar" id="sidebar">
+          <div class="logo p-5">
+            <a href="../index.html"><img src="../../logo/logo.svg" alt="logo" /></a>
+          </div>
+          <div class="list-group rounded-0">
+            <a href="../index.html" class="list-group-item list-group-item-action border-0 d-flex align-items-center">
+              <span class="bi bi-border-all"></span>
+              <span class="ml-2">Dashboard</span>
+            </a>
+            <a href="../reports.html" class="list-group-item list-group-item-action active border-0 align-items-center">
+              <span class="fa fa-file"></span>
+              <span class="ml-2">Reports View</span>
+            </a>
+
+            <button
+              class="list-group-item list-group-item-action border-0 d-flex justify-content-between align-items-center"
+              data-toggle="collapse"
+              data-target="#sale-collapse"
+            >
+              <div>
+                <span class="fas fa-user-md"></span>
+                <span class="ml-2">Doctors</span>
+              </div>
+              <span class="bi bi-chevron-down small"></span>
+            </button>
+            <div class="collapse" id="sale-collapse" data-parent="#sidebar">
+              <div class="list-group">
+                <a href="../doctors.html" class="list-group-item list-group-item-action border-0 pl-5">See All Doctors</a>
+                <a href="#" class="list-group-item list-group-item-action border-0 pl-5">Add New Doctor</a>
+              </div>
+            </div>
+            <button
+              class="list-group-item list-group-item-action border-0 d-flex justify-content-between align-items-center"
+              data-toggle="collapse"
+              data-target="#purchase-collapse"
+            >
+              <div>
+                <span class="bi bi-person-check"></span>
+                <span class="ml-2">Volunteer</span>
+              </div>
+              <span class="bi bi-chevron-down small"></span>
+            </button>
+            <div class="collapse" id="purchase-collapse" data-parent="#sidebar">
+              <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action border-0 pl-5">See All Volunteers</a>
+                <a href="#" class="list-group-item list-group-item-action border-0 pl-5">Add New Volunteer</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- overlay to close sidebar on small screens -->
+        <div class="w-100 vh-100 position-fixed overlay d-none" id="sidebar-overlay"></div>
+        <!-- note: in the layout margin auto is the key as sidebar is fixed -->
+        <div class="col-md-9 col-lg-10 ml-md-auto px-0">
+          <!-- top nav -->
+          <nav class="w-100 d-flex px-4 py-2 mb-4 shadow-sm">
+            <!-- close sidebar -->
+            <button class="btn py-0 d-lg-none" id="open-sidebar">
+              <span class="bi bi-list h3" style="color: #ef4126"></span>
+            </button>
+            <div class="dropdown ml-auto">
+              <button class="btn py-0 d-flex align-items-center" id="logout-dropdown" data-toggle="dropdown" aria-expanded="false">
+                <span class="bi bi-person h4" style="color: #ef4126"></span>
+                <span class="bi bi-chevron-down ml-1 mb-2 small" style="color: #ef4126"></span>
+              </button>
+              <div class="dropdown-menu dropdown-menu-right border-0 shadow-sm" aria-labelledby="logout-dropdown">
+                <a class="dropdown-item" href="#">Logout</a>
+                <a class="dropdown-item" href="#">Settings</a>
+              </div>
+            </div>
+          </nav>
+          <!-- main content -->
+          <main class="container-fluid">
+            <section class="row">
+              <div class="col-md-6 col-lg-4">
+                <!-- card -->
+                <article class="p-3 pl-4 rounded shadow-sm border-left mb-4">
+                  <a href="../reports.html" class="d-flex align-items-center" style="text-decoration: none">
+                    &nbsp; <span class="fa fa-file h4" style="color: #ef4126"></span>&nbsp;&nbsp;
+                    <h5 class="ml-2" style="color: #2f2e41; font-family: 'Poppins'; font-size: 17px; text-decoration: none">Reports View</h5>
+                  </a>
+                </article>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <article class="p-3 pl-4 rounded shadow-sm border-left mb-4">
+                  <a href="#" class="d-flex align-items-center" style="text-decoration: none">
+                    &nbsp;<span class="bi bi-person h4" style="color: #ef4126"></span>&nbsp;&nbsp;
+                    <h5 class="ml-2" style="color: #2f2e41; font-family: 'Poppins'; font-size: 17px">Doctors</h5>
+                  </a>
+                </article>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <article class="p-3 pl-4 rounded shadow-sm border-left mb-8">
+                  <a href="#" class="d-flex align-items-center" style="text-decoration: none">
+                    &nbsp;
+                    <span class="bi bi-person-check h4" style="color: #ef4126"></span>&nbsp;&nbsp;
+                    <h5 class="ml-2" style="color: #2f2e41; font-family: 'Poppins'; font-size: 17px">Volunteers</h5>
+                  </a>
+                </article>
+              </div>
+            </section>
+            <div
+              class="jumbotron jumbotron-fluid rounded border-0 shadow-sm border-left px-4"
+              style="background: linear-gradient(45deg, #f6faff 50%, #ef4126 50%)"
+            >
+              <div class="main-heading">
+                <h1>RETIN<span style="color: #ef4126">APP Patient </span></h1>
+                <p class="lead" style="font-family: 'Poppins'; color: #2f2e41; font-size: 17px">All the stats will be viewed here.</p>
+              </div>
+            </div>
+          </main>
+          <!-- Reports View -->
+          <div class="container reports__view">
+            <!-- Adding Search Option -->
+            <form action="">
+              <div class="search__container">
+                <p class="search__title"><span>Go ahead,</span> Search Report by ID</p>
+                <div class="search__theReport">
+                  <input class="search__input" type="text" placeholder="EF23406" />
+                  <button><i class="fas fa-search"></i></button>
+                </div>
+              </div>
+              <div class="credits__container">
+                <p class="credits__text">
+                  ©RetinApp, 2021 All Rights Reserved.
+                  <a href="#" class="credits__link">Azaz Muzaffar</a>
+                </p>
+              </div>
+            </form>
+
+            <!-- Patient Details -->
+            <div class="--patient--">
+              <!-- Adding Dropdown and Back option -->
+              <div class="--select-or-go-back-- container">
+                <div class="--select-city--"></div>
+                <div class="--go-back--">
+                  <a href="../reports.html"><i class="fas fa-chevron-left"></i> &nbsp; Back</a>
+                </div>
+              </div>
+              <div class="--patient-info--">
+                <div class="--patient-image--">
+                  <img src="../../images/icons/user.svg" alt="user" />
+                  <div class="_status"></div>
+                </div>
+                <div class="--patient-details--">
+                  <p class="_name"><span class="_name_">Azaz Muzaffar</span></p>
+                  <p class="_date"><span>Checkup Date:</span> Jul 17, 2021</p>
+                  <p class="_gender"><span>Gender:</span> Male</p>
+                  <p class="_age"><span>Age:</span> 21</p>
+                </div>
+              </div>
+              <div class="--more-info--">
+                <h5>More Information:</h5>
+                <p>
+                  RetinApp is a mobile based application which targets the medical needs of the society. This application helps detect the diabetic
+                  symptoms and its severity without any need of long and painful blood tests. RetinApp is a mobile based application which targets the
+                  medical needs of the society. This application helps detect the diabetic symptoms and its severity without any need of long and
+                  painful blood tests.
+                </p>
+              </div>
+              <div class="--graph--">
+                <svg width="100%" height="65px" viewBox="0 0 1132 65">
+                  <g class="bars">
+                    <rect class="bg" fill="#f6faff" width="100%" height="25"></rect>
+                    <rect class="data" fill="#0074d9" width="45%" height="25"></rect>
+                  </g>
+                  <g class="markers">
+                    <rect fill="#001f3f" x="0%" y="0" width="2px" height="35"></rect>
+                    <rect fill="#001f3f" x="25%" y="0" width="2px" height="35"></rect>
+                    <rect fill="#001f3f" x="50%" y="0" width="2px" height="35"></rect>
+                    <rect fill="#001f3f" x="75%" y="0" width="2px" height="35"></rect>
+                    <rect text-anchor="" fill="#001f3f" x="1130" y="0" width="2px" height="35"></rect>
+                  </g>
+                  <g text-anchor="middle">
+                    <text text-anchor="start" fill="#2f2e41" x="0" y="60">0%</text>
+                    <text fill="#2f2e41" x="25%" y="60">25%</text>
+                    <text fill="#2f2e41" x="50%" y="60">50%</text>
+                    <text fill="#2f2e41" x="75%" y="60">75%</text>
+                    <text text-anchor="end" fill="#2f2e41" x="100%" y="60">100%</text>
+                  </g>
+                  <g>
+                    <text class="result" y="60px" x="69%">45%</text>
+                  </g>
+                </svg>
+              </div>
+              <div class="--more-info--">
+                <h5>Docter Recommendation & Feedback:</h5>
+                <p>
+                  RetinApp is a mobile based application which targets the medical needs of the society. This application helps detect the diabetic
+                  symptoms and its severity without any need of long and painful blood tests. RetinApp is a mobile based application which targets the
+                  medical needs of the society. This application helps detect the diabetic symptoms and its severity without any need of long and
+                  painful blood tests.
+                </p>
+              </div>
+              <div class="--graph-- two">
+                <svg width="100%" height="65px" viewBox="0 0 1132 65">
+                  <g class="bars">
+                    <rect class="bg" fill="#f6faff" width="100%" height="25"></rect>
+                    <rect class="data" fill="#0074d9" width="45%" height="25"></rect>
+                  </g>
+                  <g class="markers">
+                    <rect fill="#001f3f" x="0%" y="0" width="2px" height="35"></rect>
+                    <rect fill="#001f3f" x="25%" y="0" width="2px" height="35"></rect>
+                    <rect fill="#001f3f" x="50%" y="0" width="2px" height="35"></rect>
+                    <rect fill="#001f3f" x="75%" y="0" width="2px" height="35"></rect>
+                    <rect text-anchor="" fill="#001f3f" x="1130" y="0" width="2px" height="35"></rect>
+                  </g>
+                  <g text-anchor="middle">
+                    <text text-anchor="start" fill="#2f2e41" x="0" y="60">0%</text>
+                    <text fill="#2f2e41" x="25%" y="60">25%</text>
+                    <text fill="#2f2e41" x="50%" y="60">50%</text>
+                    <text fill="#2f2e41" x="75%" y="60">75%</text>
+                    <text text-anchor="end" fill="#2f2e41" x="100%" y="60">100%</text>
+                  </g>
+                  <g>
+                    <text class="result" y="60px" x="69%">45%</text>
+                  </g>
+                </svg>
+              </div>
+              <div class="--more-info--">
+                <p>
+                  RetinApp is a mobile based application which targets the medical needs of the society. This application helps detect the diabetic
+                  symptoms and its severity without any need of long and painful blood tests. RetinApp is a mobile based application which targets the
+                  medical needs of the society. This application helps detect the diabetic symptoms and its severity without any need of long and
+                  painful blood tests.
+                </p>
+                <p>
+                  RetinApp is a mobile based application which targets the medical needs of the society. This application helps detect the diabetic
+                  symptoms and its severity without any need of long and painful blood tests. RetinApp is a mobile based application which targets the
+                  medical needs of the society. This application helps detect the diabetic symptoms and its severity without any need of long and
+                  painful blood tests. RetinApp is a mobile based application which targets the medical needs of the society. This application helps
+                  detect the diabetic symptoms and its severity without any need of long and painful blood tests. RetinApp is a mobile based
+                  application which targets the medical needs of the society. This application helps detect the diabetic symptoms and its severity
+                  without any need of long and painful blood tests.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+    <script src="../js/dashboard.js"></script>
+  </body>
+</html>

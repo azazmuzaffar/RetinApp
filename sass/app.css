@@ -80,12 +80,13 @@
 }
 
 .-how-it-works .container {
+  padding: 0;
   max-width: 100%;
 }
 
 .-how-it-works .container .step-1-,
 .-how-it-works .container .step-3- {
-  background: #f7f5fb;
+  background: #f6faff;
 }
 
 .-how-it-works .container .container {
@@ -325,7 +326,7 @@
   font-style: normal;
   line-height: 1.67;
   letter-spacing: normal;
-  color: #121212;
+  color: #f6faff;
   padding: 0;
 }
 
@@ -343,7 +344,7 @@
   border: none;
   outline: none;
   background: transparent;
-  background: #f7f5fb;
+  background: #f6faff;
   padding: 15px 15px;
 }
 

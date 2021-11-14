@@ -100,10 +100,11 @@ $messageError: #ce3737;
 .-how-it-works {
   padding: 40px 0px 0px 0px;
   .container {
+    padding: 0;
     max-width: 100%;
     .step-1-,
     .step-3- {
-      background: #f7f5fb;
+      background: #f6faff;
     }
     .container {
       max-width: 1400px;
@@ -310,7 +311,7 @@ $messageError: #ce3737;
             font-style: normal;
             line-height: 1.67;
             letter-spacing: normal;
-            color: $bgcolor;
+            color: #f6faff;
             padding: 0;
           }
           /* input/textarea */
@@ -328,7 +329,7 @@ $messageError: #ce3737;
             border: none;
             outline: none;
             background: transparent;
-            background: #f7f5fb;
+            background: #f6faff;
             padding: 15px 15px;
             &::placeholder {
               color: $black;

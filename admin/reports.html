@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content=" width=device-width, initial-scale=1" name="viewport" />
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+    <!-- >>> Title & Favicon <<< -->
+    <title>Patient Reports - RetinApp</title>
+    <link rel="shortcut icon" type="image/jpg" href="../logo/Logo.png" />
+
+    <!-- >>> meta Description <<< -->
+    <meta
+      name="description"
+      content="RetinApp is a mobile based application which targets the medical needs of the society. 
+               This application helps detect the diabetic symptoms and its severity without any need of long and painful blood tests."
+    />
+    <!-- >>>> meta Keywords <<<< -->
+    <meta
+      name="keywords"
+      content="RetinApp is a mobile based application which targets the medical needs of the society. 
+               This application helps detect the diabetic symptoms and its severity without any need of long and painful blood tests."
+    />
+
+    <!-- >>> Fontawsome 5 | Used for icons <<< -->
+    <link href="../font-awesome/css/all.css" rel="stylesheet" />
+
+    <!-- >>> Bootstrap v5.0.2 | Front End Framework <<< -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" />
+
+    <!-- >>> Custom CSS <<< -->
+    <link rel="stylesheet" href="../sass/dashboard/app.css" />
+    <link rel="stylesheet" href="../sass/dashboard/reports/reports-view.css" />
+
+    <style>
+      @media (min-width: 768px) {
+        .responsive-table__row {
+          grid-template-columns: 2fr 4fr 3fr 2fr 2fr 2fr 4fr 1fr 1fr 1fr;
+        }
+      }
+      @media (min-width: 768px) and (max-width: 991px) {
+        .responsive-table__row {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- >>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<< -->
+    <!-- >>>>>>>>>>>>>>>>> RetinApp <<<<<<<<<<<<<<<<< -->
+    <!-- >>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<< -->
+
+    <!-- >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<< -->
+    <!-- >>>>>>>>>>>> Dashboard <<<<<<<<<<<<< -->
+    <!-- >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<< -->
+
+    <div class="container-fluid">
+      <div class="row">
+        <!-- sidebar -->
+        <div class="col-md-3 col-lg-2 px-0 position-fixed h-100 bg-white shadow-sm sidebar" id="sidebar">
+          <div class="logo p-5">
+            <a href="../index.html"><img src="../logo/logo.svg" alt="logo" /></a>
+          </div>
+          <div class="list-group rounded-0">
+            <a href="./index.html" class="list-group-item list-group-item-action border-0 d-flex align-items-center">
+              <span class="bi bi-border-all"></span>
+              <span class="ml-2">Dashboard</span>
+            </a>
+            <a href="./reports/" class="list-group-item list-group-item-action active border-0 align-items-center">
+              <span class="fa fa-file"></span>
+              <span class="ml-2">Reports View</span>
+            </a>
+
+            <button
+              class="list-group-item list-group-item-action border-0 d-flex justify-content-between align-items-center"
+              data-toggle="collapse"
+              data-target="#sale-collapse"
+            >
+              <div>
+                <span class="fas fa-user-md"></span>
+                <span class="ml-2">Doctors</span>
+              </div>
+              <span class="bi bi-chevron-down small"></span>
+            </button>
+            <div class="collapse" id="sale-collapse" data-parent="#sidebar">
+              <div class="list-group">
+                <a href="./doctors.html" class="list-group-item list-group-item-action border-0 pl-5">See All Doctors</a>
+                <a href="#" class="list-group-item list-group-item-action border-0 pl-5">Add New Doctor</a>
+              </div>
+            </div>
+            <button
+              class="list-group-item list-group-item-action border-0 d-flex justify-content-between align-items-center"
+              data-toggle="collapse"
+              data-target="#purchase-collapse"
+            >
+              <div>
+                <span class="bi bi-person-check"></span>
+                <span class="ml-2">Volunteer</span>
+              </div>
+              <span class="bi bi-chevron-down small"></span>
+            </button>
+            <div class="collapse" id="purchase-collapse" data-parent="#sidebar">
+              <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action border-0 pl-5">See All Volunteers</a>
+                <a href="#" class="list-group-item list-group-item-action border-0 pl-5">Add New Volunteer</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- overlay to close sidebar on small screens -->
+        <div class="w-100 vh-100 position-fixed overlay d-none" id="sidebar-overlay"></div>
+        <!-- note: in the layout margin auto is the key as sidebar is fixed -->
+        <div class="col-md-9 col-lg-10 ml-md-auto px-0">
+          <!-- top nav -->
+          <nav class="w-100 d-flex px-4 py-2 mb-4 shadow-sm">
+            <!-- close sidebar -->
+            <button class="btn py-0 d-lg-none" id="open-sidebar">
+              <span class="bi bi-list h3" style="color: #ef4126"></span>
+            </button>
+            <div class="dropdown ml-auto">
+              <button class="btn py-0 d-flex align-items-center" id="logout-dropdown" data-toggle="dropdown" aria-expanded="false">
+                <span class="bi bi-person h4" style="color: #ef4126"></span>
+                <span class="bi bi-chevron-down ml-1 mb-2 small" style="color: #ef4126"></span>
+              </button>
+              <div class="dropdown-menu dropdown-menu-right border-0 shadow-sm" aria-labelledby="logout-dropdown">
+                <a class="dropdown-item" href="#">Logout</a>
+                <a class="dropdown-item" href="#">Settings</a>
+              </div>
+            </div>
+          </nav>
+          <!-- main content -->
+          <main class="container-fluid">
+            <section class="row">
+              <div class="col-md-6 col-lg-4">
+                <!-- card -->
+                <article class="p-3 pl-4 rounded shadow-sm border-left mb-4">
+                  <a href="./reports.html" class="d-flex align-items-center" style="text-decoration: none">
+                    &nbsp; <span class="fa fa-file h4" style="color: #ef4126"></span>&nbsp;&nbsp;
+                    <h5 class="ml-2" style="color: #2f2e41; font-family: 'Poppins'; font-size: 17px; text-decoration: none">Reports View</h5>
+                  </a>
+                </article>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <article class="p-3 pl-4 rounded shadow-sm border-left mb-4">
+                  <a href="./doctors.html" class="d-flex align-items-center" style="text-decoration: none">
+                    &nbsp;<span class="bi bi-person h4" style="color: #ef4126"></span>&nbsp;&nbsp;
+                    <h5 class="ml-2" style="color: #2f2e41; font-family: 'Poppins'; font-size: 17px">Doctors</h5>
+                  </a>
+                </article>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <article class="p-3 pl-4 rounded shadow-sm border-left mb-8">
+                  <a href="#" class="d-flex align-items-center" style="text-decoration: none">
+                    &nbsp;
+                    <span class="bi bi-person-check h4" style="color: #ef4126"></span>&nbsp;&nbsp;
+                    <h5 class="ml-2" style="color: #2f2e41; font-family: 'Poppins'; font-size: 17px">Volunteers</h5>
+                  </a>
+                </article>
+              </div>
+            </section>
+            <div
+              class="jumbotron jumbotron-fluid rounded border-0 shadow-sm border-left px-4"
+              style="background: linear-gradient(45deg, #f6faff 50%, #ef4126 50%)"
+            >
+              <div class="main-heading">
+                <h1>RETIN<span style="color: #ef4126">APP Patients </span></h1>
+                <p class="lead" style="font-family: 'Poppins'; color: #2f2e41; font-size: 17px">All the stats will be viewed here.</p>
+              </div>
+            </div>
+          </main>
+          <!-- Reports View -->
+          <div class="container reports__view">
+            <!-- Adding Search Option -->
+            <form action="">
+              <div class="search__container">
+                <p class="search__title"><span>Go ahead,</span> Search Report by ID</p>
+                <div class="search__theReport">
+                  <input class="search__input" type="text" placeholder="Search" />
+                  <button><i class="fas fa-search"></i></button>
+                </div>
+              </div>
+              <div class="credits__container">
+                <p class="credits__text">
+                  ©RetinApp, 2021 All Rights Reserved.
+                  <a href="#" class="credits__link">Azaz Muzaffar</a>
+                </p>
+              </div>
+            </form>
+
+            <!-- Adding Dropdown and Back option -->
+            <div class="--select-or-go-back-- container">
+              <div class="--select-city--">
+                <div class="dropdown">
+                  <div class="select">
+                    <span>Date Added</span>
+                    <i class="fas fa-chevron-down"></i>
+                  </div>
+                  <input type="hidden" name="gender" />
+                  <ul class="dropdown-menu">
+                    <li>Reviewed</li>
+                    <li>Not Reviewed</li>
+                    <li>Ascending</li>
+                    <li>Descending</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="--go-back--">
+                <a href="./index.html"><i class="fas fa-chevron-left"></i> &nbsp; Back</a>
+              </div>
+            </div>
+
+            <!-- Responsive Table Section -->
+            <table class="responsive-table">
+              <!-- Responsive Table Header Section -->
+              <thead class="responsive-table__head">
+                <tr class="responsive-table__row">
+                  <th class="responsive-table__head__title responsive-table__head__title--status">ID</th>
+                  <th class="responsive-table__head__title responsive-table__head__title--name">
+                    Name
+                    <svg
+                      version="1.1"
+                      class="up-arrow"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      x="0px"
+                      y="0px"
+                      viewBox="0 0 512 512"
+                      style="enable-background: new 0 0 512 512"
+                      xml:space="preserve"
+                      fill="white"
+                    >
+                      <path
+                        d="M374.176,110.386l-104-104.504c-0.006-0.006-0.013-0.011-0.019-0.018c-7.818-7.832-20.522-7.807-28.314,0.002c-0.006,0.006-0.013,0.011-0.019,0.018l-104,104.504c-7.791,7.829-7.762,20.493,0.068,28.285    c7.829,7.792,20.492,7.762,28.284-0.067L236,68.442V492c0,11.046,8.954,20,20,20c11.046,0,20-8.954,20-20V68.442l69.824,70.162c7.792,7.829,20.455,7.859,28.284,0.067C381.939,130.878,381.966,118.214,374.176,110.386z"
+                      />
+                    </svg>
+                  </th>
+                  <th class="responsive-table__head__title responsive-table__head__title--status">Diabetes</th>
+                  <th class="responsive-table__head__title responsive-table__head__title--reviewed">Reviewed</th>
+                  <th class="responsive-table__head__title responsive-table__head__title--age">Age</th>
+                  <th class="responsive-table__head__title responsive-table__head__title--gender">Gender</th>
+                  <th class="responsive-table__head__title responsive-table__head__title--date">Checkup Added</th>
+                  <th class="responsive-table__head__title responsive-table__head__title--report">Report</th>
+                  <th class="responsive-table__head__title responsive-table__head__title--delete">Delete</th>
+                  <th class="responsive-table__head__title responsive-table__head__title--edit">Edit</th>
+                </tr>
+              </thead>
+              <!-- Responsive Table Body Section -->
+              <tbody class="responsive-table__body">
+                <tr class="responsive-table__row">
+                  <td class="responsive-table__body__text responsive-table__body__text--age">EF23406</td>
+                  <td class="responsive-table__body__text responsive-table__body__text--name">
+                    <img class="user-icon" src="../images/icons/user.svg" alt="RetinApp User" />
+                    Azaz Muzaffar
+                  </td>
+                  <td class="responsive-table__body__text responsive-table__body__text--status">
+                    <span class="status-indicator status-indicator--normal"></span>Normal
+                  </td>
+                  <td class="responsive-table__body__text responsive-table__body__text--age">Yes</td>
+                  <td class="responsive-table__body__text responsive-table__body__text--age">21</td>
+                  <td class="responsive-table__body__text responsive-table__body__text--gender">Male</td>
+                  <td class="responsive-table__body__text responsive-table__body__text--date">Jul 17, 2021, 01:14 PM</td>
+                  <td class="responsive-table__body__text responsive-table__body__text--report">
+                    <a href="./reports/EF23406.html"><i class="fas fa-file-pdf"></i></a>
+                  </td>
+                  <td class="responsive-table__body__text responsive-table__body__text--delete">
+                    <a href="./reports/EF23406.html"><i class="fas fa-trash-alt"></i></a>
+                  </td>
+                  <td class="responsive-table__body__text responsive-table__body__text--report">
+                    <a href="./reports/EF23406.html"><i class="fas fa-edit"></i> </a>
+                  </td>
+                </tr>
+                <tr class="responsive-table__row">
+                  <td class="responsive-table__body__text responsive-table__body__text--age">EF73806</td>
+                  <td class="responsive-table__body__text responsive-table__body__text--name">
+                    <img class="user-icon" src="../images/icons/user.svg" alt="RetinApp User" />
+                    Ahsan Aman
+                  </td>
+                  <td class="responsive-table__body__text responsive-table__body__text--status">
+                    <span class="status-indicator status-indicator--moderate"></span>Moderate
+                  </td>
+                  <td class="responsive-table__body__text responsive-table__body__text--reviewed">Yes</td>
+                  <td class="responsive-table__body__text responsive-table__body__text--age">23</td>
+                  <td class="responsive-table__body__text responsive-table__body__text--gender">Male</td>
+                  <td class="responsive-table__body__text responsive-table__body__text--date">Apr 24, 2021, 11:36 AM</td>
+                  <td class="responsive-table__body__text responsive-table__body__text--report">
+                    <a href="./reports/EF23406.html"><i class="fas fa-file-pdf"></i></a>
+                  </td>
+                  <td class="responsive-table__body__text responsive-table__body__text--delete">
+                    <a href="./reports/EF23406.html"><i class="fas fa-trash-alt"></i></a>
+                  </td>
+                  <td class="responsive-table__body__text responsive-table__body__text--report">
+                    <a href="./reports/EF23406.html"><i class="fas fa-edit"></i> </a>
+                  </td>
+                </tr>
+                <tr class="responsive-table__row">
+                  <td class="responsive-table__body__text responsive-table__body__text--age">EF23607</td>
+                  <td class="responsive-table__body__text responsive-table__body__text--name">
+                    <img class="user-icon" src="../images/icons/user.svg" alt="RetinApp User" />
+                    Raja Sultan
+                  </td>
+                  <td class="responsive-table__body__text responsive-table__body__text--status">
+                    <span class="status-indicator status-indicator--minor"></span>Minor
+                  </td>
+                  <td class="responsive-table__body__text responsive-table__body__text--reviewed">Yes</td>
+                  <td class="responsive-table__body__text responsive-table__body__text--age">19</td>
+                  <td class="responsive-table__body__text responsive-table__body__text--gender">Male</td>
+                  <td class="responsive-table__body__text responsive-table__body__text--date">Aug 30, 2021, 05:54 PM</td>
+                  <td class="responsive-table__body__text responsive-table__body__text--report">
+                    <a href="./reports/EF23406.html"><i class="fas fa-file-pdf"></i></a>
+                  </td>
+                  <td class="responsive-table__body__text responsive-table__body__text--delete">
+                    <a href="./reports/EF23406.html"><i class="fas fa-trash-alt"></i></a>
+                  </td>
+                  <td class="responsive-table__body__text responsive-table__body__text--report">
+                    <a href="./reports/EF23406.html"><i class="fas fa-edit"></i> </a>
+                  </td>
+                </tr>
+                <tr class="responsive-table__row">
+                  <td class="responsive-table__body__text responsive-table__body__text--age">EF25410</td>
+                  <td class="responsive-table__body__text responsive-table__body__text--name">
+                    <img class="user-icon" src="../images/icons/user.svg" alt="RetinApp User" />
+                    Akhtar Rizwan
+                  </td>
+                  <td class="responsive-table__body__text responsive-table__body__text--status">
+                    <span class="status-indicator status-indicator--severe"></span>Severe
+                  </td>
+                  <td class="responsive-table__body__text responsive-table__body__text--reviewed">Yes</td>
+                  <td class="responsive-table__body__text responsive-table__body__text--age">27</td>
+                  <td class="responsive-table__body__text responsive-table__body__text--gender">Female</td>
+                  <td class="responsive-table__body__text responsive-table__body__text--date">Dec 15, 2021, 08:25 AM</td>
+                  <td class="responsive-table__body__text responsive-table__body__text--report">
+                    <a href="./reports/EF23406.html"><i class="fas fa-file-pdf"></i></a>
+                  </td>
+                  <td class="responsive-table__body__text responsive-table__body__text--delete">
+                    <a href="./reports/EF23406.html"><i class="fas fa-trash-alt"></i></a>
+                  </td>
+                  <td class="responsive-table__body__text responsive-table__body__text--report">
+                    <a href="./reports/EF23406.html"><i class="fas fa-edit"></i> </a>
+                  </td>
+                </tr>
+                <tr class="responsive-table__row">
+                  <td class="responsive-table__body__text responsive-table__body__text--age">EF29801</td>
+                  <td class="responsive-table__body__text responsive-table__body__text--name">
+                    <img class="user-icon" src="../images/icons/user.svg" alt="RetinApp User" />
+                    Azaz Muzaffar
+                  </td>
+                  <td class="responsive-table__body__text responsive-table__body__text--status">
+                    <span class="status-indicator status-indicator--normal"></span>Normal
+                  </td>
+                  <td class="responsive-table__body__text responsive-table__body__text--reviewed">No</td>
+                  <td class="responsive-table__body__text responsive-table__body__text--age">21</td>
+                  <td class="responsive-table__body__text responsive-table__body__text--gender">Male</td>
+                  <td class="responsive-table__body__text responsive-table__body__text--date">Jul 17, 2021, 01:14 PM</td>
+                  <td class="responsive-table__body__text responsive-table__body__text--report">
+                    <a href="./reports/EF23406.html"><i class="fas fa-file-pdf"></i></a>
+                  </td>
+                  <td class="responsive-table__body__text responsive-table__body__text--delete">
+                    <a href="./reports/EF23406.html"><i class="fas fa-trash-alt"></i></a>
+                  </td>
+                </tr>
+                <tr class="responsive-table__row">
+                  <td class="responsive-table__body__text responsive-table__body__text--age">EF23908</td>
+                  <td class="responsive-table__body__text responsive-table__body__text--name">
+                    <img class="user-icon" src="../images/icons/user.svg" alt="RetinApp User" />
+                    Ahsan Aman
+                  </td>
+                  <td class="responsive-table__body__text responsive-table__body__text--status">
+                    <span class="status-indicator status-indicator--moderate"></span>Moderate
+                  </td>
+                  <td class="responsive-table__body__text responsive-table__body__text--reviewed">No</td>
+                  <td class="responsive-table__body__text responsive-table__body__text--age">23</td>
+                  <td class="responsive-table__body__text responsive-table__body__text--gender">Male</td>
+                  <td class="responsive-table__body__text responsive-table__body__text--date">Apr 24, 2021, 11:36 AM</td>
+                  <td class="responsive-table__body__text responsive-table__body__text--report">
+                    <a href="./reports/EF23406.html"><i class="fas fa-file-pdf"></i></a>
+                  </td>
+                  <td class="responsive-table__body__text responsive-table__body__text--delete">
+                    <a href="./reports/EF23406.html"><i class="fas fa-trash-alt"></i></a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- Pagination -->
+          <div class="container">
+            <div class="pagination">
+              <ul class="pagination-2">
+                <li class="page-number prev"><a href="#">&laquo;</a></li>
+                <li class="page-number"><a href="#">1</a></li>
+                <li class="page-number active"><a href="#">2</a></li>
+                <li class="page-number"><a href="#">3</a></li>
+                <li class="page-number"><a href="#">4</a></li>
+                <li class="page-number"><a href="#">5</a></li>
+                <li class="page-number"><a href="#">6</a></li>
+                <li class="page-number"><a href="#">7</a></li>
+                <li class="page-number"><a href="#">8</a></li>
+                <li class="page-number"><a href="#">9</a></li>
+                <li class="page-number"><a href="#">10</a></li>
+                <li class="page-number prev"><a href="#">&raquo;</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+
+    <script src="../js/dashboard.js"></script>
+  </body>
+</html>

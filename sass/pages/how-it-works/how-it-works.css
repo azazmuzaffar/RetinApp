@@ -82,12 +82,13 @@
 }
 
 .-how-it-works .container {
+  padding: 0;
   max-width: 100%;
 }
 
 .-how-it-works .container .step-1-,
 .-how-it-works .container .step-3- {
-  background: #f7f5fb;
+  background: #f6faff;
 }
 
 .-how-it-works .container .container {

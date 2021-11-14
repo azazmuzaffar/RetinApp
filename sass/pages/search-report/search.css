@@ -1,0 +1,494 @@
+/* >>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>> Konfidencial <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>> Common <<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>> Colors <<<<<<<<<<<<<< */
+/* >>> You change the whole theme <<<< */
+/* >>> by changing these colors <<<< */
+@import url("../../../fonts/Montserrat/stylesheet.css");
+@import url("../../../fonts/Poppins/stylesheet.css");
+@import url("../../../sass/common/body/body.css");
+@import url("../../../sass/common/header/navbar.css");
+@import url("../../../sass/common/footer/footer.css");
+@import url("../../../sass/common/login/login-pop-up.css");
+.heading-area- {
+  margin-bottom: 90px;
+}
+
+.--main-p-- {
+  font-family: "Poppins";
+  font-weight: 700;
+  text-transform: capitalize;
+  color: #ef4126;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.--main-h-- {
+  font-family: "Montserrat";
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #2f2e41;
+  text-align: center;
+}
+
+/* >>>>>>>>>>>>>> Font Family <<<<<<<<<<<<<< */
+/* >> Fonts are directly coming from fonts folder << */
+/* >>>>>>>>> Montserrat <<<<<<<<< */
+/* >>>>>>>>> Spectral <<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> Body <<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>> Navbar <<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+.navbar .--navbar--left-- {
+  margin-top: -104px;
+}
+
+.navbar .--navbar--right-- {
+  margin-top: -106px;
+}
+
+@media screen and (max-width: 1334px) {
+  .navbar .--navbar--left-- {
+    margin-top: 0px;
+  }
+  .navbar .--navbar--right-- {
+    margin-top: 0px;
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>> Select or Go Back <<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>> Adding Dropdown and Back option <<<< */
+.--select-or-go-back-- {
+  padding: 0;
+  color: #2f2e41;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 100%;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.--select-or-go-back-- .--go-back-- {
+  float: right;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.--select-or-go-back-- .--go-back-- a {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.57;
+  letter-spacing: normal;
+  color: #2f2e41;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.--select-or-go-back-- .--select-city-- .dropdown {
+  width: 202px;
+  display: inline-block;
+  background-color: transparent;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  position: relative;
+  font-size: 14px;
+  color: #2f2e41;
+  height: 100%;
+  text-align: left;
+  outline: none;
+  border: none;
+}
+
+.--select-or-go-back-- .--select-city-- .dropdown .select {
+  cursor: pointer;
+  display: block;
+  padding: 10px;
+  border-bottom: 1px solid #ef4126;
+}
+
+.--select-or-go-back-- .--select-city-- .dropdown .select i {
+  font-size: 13px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  float: right;
+  line-height: 20px;
+}
+
+.--select-or-go-back-- .--select-city-- .dropdown .dropdown-menu {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  background: white;
+  margin-top: 0px;
+  border-radius: 0 1px 2px 2px;
+  overflow: hidden;
+  display: none;
+  max-height: -webkit-fit-content;
+  max-height: -moz-fit-content;
+  -webkit-box-shadow: 0 0 10px rgba(190, 190, 190, 0.411);
+  box-shadow: 0 0 10px rgba(190, 190, 190, 0.411);
+  max-height: fit-content;
+  overflow-y: auto;
+  padding: 0;
+  list-style: none;
+  z-index: 9;
+  border: none;
+}
+
+.--select-or-go-back-- .--select-city-- .dropdown .dropdown-menu li {
+  font-size: 14px;
+  color: #2f2e41;
+  padding: 10px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.--select-or-go-back-- .--select-city-- .dropdown .dropdown-menu li:hover {
+  background: #ef4126;
+  color: #fff;
+}
+
+.--select-or-go-back-- .--select-city-- .dropdown.active i {
+  -webkit-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+}
+
+@media screen and (max-width: 768px) {
+  .--select-or-go-back-- {
+    margin-bottom: 40px;
+    padding: 0px 10px;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .--select-or-go-back-- .--go-back-- {
+    display: none;
+  }
+  .--select-or-go-back-- .--select-city-- {
+    width: 100%;
+  }
+  .--select-or-go-back-- .--select-city-- .dropdown {
+    width: 100%;
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>> Search Report <<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+.reports__view {
+  padding: 220px 0px 0px 0px;
+}
+
+.search__container {
+  padding-top: 64px;
+}
+
+.search__title {
+  font-size: 24px;
+  font-family: "Montserrat";
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  color: #ef4126;
+}
+
+.search__title span {
+  color: #2f2e41;
+}
+
+.search__input {
+  width: 100%;
+  padding: 12px 24px;
+  background-color: transparent;
+  -webkit-transition: -webkit-transform 250ms ease-in-out;
+  transition: -webkit-transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
+  font-size: 14px;
+  line-height: 18px;
+  color: #2f2e41;
+  border-radius: 50px;
+  border: 1px solid #2f2e41;
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.search__theReport {
+  position: relative;
+}
+
+.search__theReport button {
+  border: none;
+  outline: none;
+  background: transparent;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  -webkit-transform: translatey(-50%);
+          transform: translatey(-50%);
+}
+
+.search__input::-webkit-input-placeholder {
+  color: rgba(87, 87, 86, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.search__input:-ms-input-placeholder {
+  color: rgba(87, 87, 86, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.search__input::-ms-input-placeholder {
+  color: rgba(87, 87, 86, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.search__input::placeholder {
+  color: rgba(87, 87, 86, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.search__input:hover,
+.search__input:focus {
+  padding: 12px 0;
+  outline: 0;
+  border: 1px solid transparent;
+  border-bottom: 1px solid #2f2e41;
+  border-radius: 0;
+  background-position: 100% center;
+}
+
+.credits__container {
+  margin-top: 24px;
+  margin-bottom: 100px;
+}
+
+.credits__text {
+  text-align: center;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.credits__link {
+  color: #ff8b88;
+  text-decoration: none;
+  -webkit-transition: color 250ms ease-in;
+  transition: color 250ms ease-in;
+}
+
+.credits__link:hover,
+.credits__link:focus {
+  color: #bf8987;
+}
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>> Patient Details <<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+.--patient-- {
+  max-width: 900px;
+  margin: 0 auto;
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
+
+.--patient-- .--patient-info-- {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.--patient-- .--patient-info-- .--patient-image-- {
+  margin-right: 40px;
+  position: relative;
+}
+
+.--patient-- .--patient-info-- .--patient-image-- img {
+  width: 150px;
+}
+
+.--patient-- .--patient-info-- .--patient-image-- ._status {
+  width: 30px;
+  height: 30px;
+  background: #febb02;
+  position: absolute;
+  bottom: -10px;
+  border: 4px solid #fff;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  border-radius: 50%;
+}
+
+.--patient-- .--patient-info-- .--patient-details-- p {
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+.--patient-- .--patient-info-- .--patient-details-- p span {
+  font-weight: 900;
+}
+
+.--patient-- .--patient-info-- .--patient-details-- p span._name_ {
+  font-size: 20px;
+}
+
+.--patient-- .--patient-info-- .--patient-details-- p p {
+  margin-top: 20px;
+}
+
+.--patient-- .--more-info-- {
+  margin: 40px 0px;
+}
+
+.--patient-- .--more-info-- h5 {
+  font-size: 16px;
+  font-weight: 900;
+  margin-bottom: 11px;
+}
+
+.--patient-- .--more-info-- p {
+  text-align: justify;
+  margin-bottom: 30px;
+}
+
+.--patient-- form {
+  text-align: center;
+}
+
+.--patient-- form textarea {
+  padding: 10px;
+  outline: none;
+  display: block;
+  width: 100%;
+  height: 150px;
+}
+
+.--patient-- form button {
+  border: none;
+  outline: none;
+  padding: 11px 20%;
+  margin-top: 30px;
+  border-radius: 30px;
+  margin: 20px 0px;
+  background: #ef4126;
+  color: white;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.--patient-- form button:hover {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  color: white;
+  background: #2f2e41;
+}
+
+.--graph-- {
+  margin-bottom: 40px;
+}
+
+.--graph-- .data {
+  fill: #2f2e41;
+}
+
+.--graph--.two .data {
+  fill: #ef4126;
+}
+
+.--graph-- * {
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+}
+
+.--graph--:hover {
+  cursor: pointer;
+}
+
+.--graph--:hover .data {
+  -webkit-transform: scale(2);
+          transform: scale(2);
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  fill: #f36b55;
+}
+
+.--graph--:hover .bg {
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+}
+
+.--graph--:hover text {
+  opacity: 0;
+}
+
+.--graph--:hover .markers {
+  opacity: 0;
+}
+
+.--graph--:hover .result {
+  opacity: 1;
+  font-size: 80px;
+  font-weight: bold;
+  -webkit-animation: flicker 2s ease infinite;
+          animation: flicker 2s ease infinite;
+}
+
+.result {
+  opacity: 0;
+}
+
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>> Footer <<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>> Login to Konfidential Pop Up <<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/*# sourceMappingURL=search.css.map */

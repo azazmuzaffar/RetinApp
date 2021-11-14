@@ -20,6 +20,9 @@ body {
 ::selection {
   background: $golden04;
 }
+::-webkit-scrollbar {
+  display: none;
+}
 
 /* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
 /* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */

@@ -1,0 +1,113 @@
+/* >>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>> Konfidencial <<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>> Common <<<<<<<<<<<<<< */
+/* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
+/* >>>>>>>>>>>>>> Colors <<<<<<<<<<<<<< */
+/* >>> You change the whole theme <<<< */
+/* >>> by changing these colors <<<< */
+@import url("../../fonts/Montserrat/stylesheet.css");
+@import url("../../fonts/Poppins/stylesheet.css");
+.heading-area- {
+  margin-bottom: 90px;
+}
+
+.--main-p-- {
+  font-family: "Poppins";
+  font-weight: 700;
+  text-transform: capitalize;
+  color: #ef4126;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.--main-h-- {
+  font-family: "Montserrat";
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  color: #2f2e41;
+}
+
+/* >>>>>>>>>>>>>> Font Family <<<<<<<<<<<<<< */
+/* >> Fonts are directly coming from fonts folder << */
+/* >>>>>>>>> Montserrat <<<<<<<<< */
+/* >>>>>>>>> Spectral <<<<<<<<< */
+body {
+  font-family: "Poppins";
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.border-left {
+  border-left: 2px solid #ef4126 !important;
+}
+
+.sidebar {
+  top: 0;
+  left: 0;
+  z-index: 100;
+  overflow-y: auto;
+}
+
+.sidebar .list-group-item.sub {
+  background: #f6faff;
+}
+
+.sidebar .list-group-item span {
+  color: #2f2e41;
+}
+
+.sidebar .list-group-item span.fa, .sidebar .list-group-item span.fas, .sidebar .list-group-item span.bi {
+  color: #ef4126;
+}
+
+.sidebar .list-group-item.active {
+  background: #ef4126;
+}
+
+.sidebar .list-group-item.active span {
+  color: white;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.342);
+  z-index: 99;
+}
+
+/* sidebar for small screens */
+@media screen and (max-width: 767px) {
+  .sidebar {
+    max-width: 18rem;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+    -webkit-transition: -webkit-transform 0.4s ease-out;
+    transition: -webkit-transform 0.4s ease-out;
+    transition: transform 0.4s ease-out;
+    transition: transform 0.4s ease-out, -webkit-transform 0.4s ease-out;
+  }
+  .sidebar.active {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+.main-heading {
+  padding: 0px 7%;
+}
+
+.main-heading h1 {
+  color: #ef4126;
+  font-family: "Montserrat";
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #2f2e41;
+}
+/*# sourceMappingURL=app.css.map */
