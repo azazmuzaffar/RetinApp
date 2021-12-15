@@ -1,3 +1,30 @@
+<?php
+session_start();
+require "../../config/connection.php";
+
+ $patientName = $_POST['report_id'];  
+ 
+ //to prevent from mysqli injection  
+ $patientName = stripcslashes($patientName);  
+ $patientName = mysqli_real_escape_string($con, $patientName);   
+      
+ $sql = "SELECT patientPDFReport, feedback FROM reports WHERE patientName='$patientName'";
+ $result = $con->query($sql);
+
+if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+    $reportPDF = $row["patientPDFReport"];
+    $doctorFeedback = $row["feedback"];  
+
+  }
+} else {
+  $reportPDF = 0;
+}
+$con->close();
+ 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,7 +33,7 @@
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 
     <!-- >>> Title & Favicon <<< -->
-    <title>Doctor Panel - RetinApp</title>
+    <title><?php echo $patientName?> - RetinApp</title>
     <link rel="shortcut icon" type="image/jpg" href="../../logo/Logo.png" />
 
     <!-- >>> meta Description <<< -->
@@ -38,6 +65,15 @@
     <!-- >>>>>>>>>>>>>>>>> RetinApp <<<<<<<<<<<<<<<<< -->
     <!-- >>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<< -->
 
+    <div class="preloader">
+      <div class="loader">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
     <!-- >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<< -->
     <!-- >>>>>>>>>>>> Dashboard <<<<<<<<<<<<< -->
     <!-- >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<< -->
@@ -47,14 +83,14 @@
         <!-- sidebar -->
         <div class="col-md-3 col-lg-2 px-0 position-fixed h-100 bg-white shadow-sm sidebar" id="sidebar">
           <div class="logo p-5">
-            <a href="../index.html"><img src="../../logo/logo.svg" alt="logo" /></a>
+            <a href="../index.php"><img src="../../logo/logo.svg" alt="logo" /></a>
           </div>
           <div class="list-group rounded-0">
-            <a href="../index.html" class="list-group-item list-group-item-action border-0 d-flex align-items-center">
+            <a href="../index.php" class="list-group-item list-group-item-action border-0 d-flex align-items-center">
               <span class="bi bi-border-all"></span>
               <span class="ml-2">Dashboard</span>
             </a>
-            <a href="../reports.html" class="list-group-item list-group-item-action active border-0 align-items-center">
+            <a href="../reports.php" class="list-group-item list-group-item-action active border-0 align-items-center">
               <span class="fa fa-file"></span>
               <span class="ml-2">Reports View</span>
             </a>
@@ -71,14 +107,7 @@
               <span class="bi bi-list h3" style="color: #ef4126"></span>
             </button>
             <div class="dropdown ml-auto">
-              <button class="btn py-0 d-flex align-items-center" id="logout-dropdown" data-toggle="dropdown" aria-expanded="false">
-                <span class="bi bi-person h4" style="color: #ef4126"></span>
-                <span class="bi bi-chevron-down ml-1 mb-2 small" style="color: #ef4126"></span>
-              </button>
-              <div class="dropdown-menu dropdown-menu-right border-0 shadow-sm" aria-labelledby="logout-dropdown">
-                <a class="dropdown-item" href="#">Logout</a>
-                <a class="dropdown-item" href="#">Settings</a>
-              </div>
+              <a href="#" style="color:unset"><i class="fas fa-sign-out-alt" style="color:#ef4126"></i> &nbsp;Logout</a>
             </div>
           </nav>
           <!-- main content -->
@@ -87,7 +116,7 @@
               <div class="col-md-12 col-lg-12">
                 <!-- card -->
                 <article class="p-3 pl-4 rounded shadow-sm border-left mb-4">
-                  <a href="../reports.html" class="d-flex align-items-center" style="text-decoration: none">
+                  <a href="../reports.php" class="d-flex align-items-center" style="text-decoration: none">
                     &nbsp; <span class="fa fa-file h4" style="color: #ef4126"></span>&nbsp;&nbsp;
                     <h5 class="ml-2" style="color: #2f2e41; font-family: 'Poppins'; font-size: 17px; text-decoration: none">Reports View</h5>
                   </a>
@@ -107,12 +136,12 @@
           <!-- Reports View -->
           <div class="container reports__view">
             <!-- Adding Search Option -->
-            <form action="">
+            <form action="./reports-preview.php" method="post">
               <div class="search__container">
                 <p class="search__title"><span>Go ahead,</span> Search Report by Name</p>
                 <div class="search__theReport">
-                  <input class="search__input" type="text" placeholder="EF23406" />
-                  <button><i class="fas fa-search"></i></button>
+                  <input class="search__input" name="report_id" type="text" placeholder="Search Report by Name" />
+                  <button type="submit" name="submit"><i class="fas fa-search"></i></button>
                 </div>
               </div>
               <div class="credits__container">
@@ -129,61 +158,15 @@
               <div class="--select-or-go-back-- container">
                 <div class="--select-city--"></div>
                 <div class="--go-back--">
-                  <a href="../reports.html"><i class="fas fa-chevron-left"></i> &nbsp; Back</a>
+                  <a href="../reports.php"><i class="fas fa-chevron-left"></i> &nbsp; Back</a>
                 </div>
               </div>
-              <div class="--patient-info--">
-                <div class="--patient-image--">
-                  <img src="../../images/icons/user.svg" alt="user" />
-                  <div class="_status"></div>
-                </div>
-                <div class="--patient-details--">
-                  <p class="_name"><span class="_name_">Azaz Muzaffar</span></p>
-                  <p class="_date"><span>Checkup Date:</span> Jul 17, 2021</p>
-                  <p class="_gender"><span>Gender:</span> Male</p>
-                  <p class="_age"><span>Age:</span> 21</p>
-                </div>
-              </div>
-              <div class="--more-info--">
-                <h5>More Information:</h5>
-                <p>
-                  RetinApp is a mobile based application which targets the medical needs of the society. This application helps detect the diabetic
-                  symptoms and its severity without any need of long and painful blood tests. RetinApp is a mobile based application which targets the
-                  medical needs of the society. This application helps detect the diabetic symptoms and its severity without any need of long and
-                  painful blood tests.
-                </p>
-              </div>
-              <div class="--graph--">
-                <svg width="100%" height="65px" viewBox="0 0 1132 65">
-                  <g class="bars">
-                    <rect class="bg" fill="#ccc" width="100%" height="25"></rect>
-                    <rect class="data" fill="#0074d9" width="45%" height="25"></rect>
-                  </g>
-                  <g class="markers">
-                    <rect fill="#001f3f" x="0%" y="0" width="2px" height="35"></rect>
-                    <rect fill="#001f3f" x="25%" y="0" width="2px" height="35"></rect>
-                    <rect fill="#001f3f" x="50%" y="0" width="2px" height="35"></rect>
-                    <rect fill="#001f3f" x="75%" y="0" width="2px" height="35"></rect>
-                    <rect text-anchor="" fill="#001f3f" x="1130" y="0" width="2px" height="35"></rect>
-                  </g>
-                  <g text-anchor="middle">
-                    <text text-anchor="start" fill="#2f2e41" x="0" y="60">0%</text>
-                    <text fill="#2f2e41" x="25%" y="60">25%</text>
-                    <text fill="#2f2e41" x="50%" y="60">50%</text>
-                    <text fill="#2f2e41" x="75%" y="60">75%</text>
-                    <text text-anchor="end" fill="#2f2e41" x="100%" y="60">100%</text>
-                  </g>
-                  <g>
-                    <text class="result" y="60px" x="69%">45%</text>
-                  </g>
-                </svg>
-              </div>
-              <form action="">
-                <textarea name="" id="">
-RetinApp is a mobile-based application that targets the medical needs of society. This application helps detect diabetic symptoms and their severity without any need for long and painful blood tests. RetinApp is a mobile-based application that targets the medical needs of society. This application helps detect diabetic symptoms and their severity without any need for long and painful blood tests.
-                    </textarea
-                >
-                <button>Update</button>
+              <embed style="margin-top:30px;height:800px;" width="100%" height="100%" name="plugin" id="pdf" src="../../PDFReports/<?php echo $reportPDF; ?>" type="application/pdf">
+              <br><br><br>
+              <form action="./reports-view.php?report_id=<?php echo $report_id; ?>" method="post">
+                <textarea name="comment" placeholder="Add your comment." required></textarea>
+                <button id="reviewedit" type="submit" name="submit">Reviewed</button>
+                <p id="recordAddedMessage" style="margin-top: 30px; color:green;"></p>
               </form>
             </div>
           </div>
@@ -194,9 +177,7 @@ RetinApp is a mobile-based application that targets the medical needs of society
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
-    <script src="../js/dashboard.js"></script>
-    <script>
-      $("textarea").focus();
-    </script>
+    <script src="../../js/dashboard.js"></script>
+
   </body>
 </html>

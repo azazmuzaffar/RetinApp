@@ -1,3 +1,30 @@
+<?php
+session_start();
+require "../../config/connection.php";
+
+ $patientName = $_POST['report_id'];  
+ 
+ //to prevent from mysqli injection  
+ $patientName = stripcslashes($patientName);  
+ $patientName = mysqli_real_escape_string($con, $patientName);   
+      
+ $sql = "SELECT patientPDFReport, feedback FROM reports WHERE patientName='$patientName'";
+ $result = $con->query($sql);
+
+if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+    $reportPDF = $row["patientPDFReport"];
+    $doctorFeedback = $row["feedback"];  
+
+  }
+} else {
+  $reportPDF = 0;
+}
+$con->close();
+ 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,8 +33,8 @@
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 
     <!-- >>> Title & Favicon <<< -->
-    <title>Admin Dashboard - RetinApp</title>
-    <link rel="shortcut icon" type="image/jpg" href="../logo/Logo.png" />
+    <title><?php echo $patientName?> - RetinApp</title>
+    <link rel="shortcut icon" type="image/jpg" href="../../logo/Logo.png" />
 
     <!-- >>> meta Description <<< -->
     <meta
@@ -23,19 +50,29 @@
     />
 
     <!-- >>> Fontawsome 5 | Used for icons <<< -->
-    <link href="../font-awesome/css/all.css" rel="stylesheet" />
+    <link href="../../font-awesome/css/all.css" rel="stylesheet" />
 
     <!-- >>> Bootstrap v5.0.2 | Front End Framework <<< -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" />
 
     <!-- >>> Custom CSS <<< -->
-    <link rel="stylesheet" href="../sass/dashboard/app.css" />
+    <link rel="stylesheet" href="../../sass/dashboard/app.css" />
+    <link rel="stylesheet" href="../../sass/dashboard/reports/each-report.css" />
   </head>
   <body>
     <!-- >>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<< -->
     <!-- >>>>>>>>>>>>>>>>> RetinApp <<<<<<<<<<<<<<<<< -->
     <!-- >>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<< -->
+
+    <div class="preloader">
+      <div class="loader">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
 
     <!-- >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<< -->
     <!-- >>>>>>>>>>>> Dashboard <<<<<<<<<<<<< -->
@@ -46,22 +83,17 @@
         <!-- sidebar -->
         <div class="col-md-3 col-lg-2 px-0 position-fixed h-100 bg-white shadow-sm sidebar" id="sidebar">
           <div class="logo p-5">
-            <a href="../index.html"><img src="../logo/logo.svg" alt="logo" /></a>
+            <a href="../index.php"><img src="../../logo/logo.svg" alt="logo" /></a>
           </div>
           <div class="list-group rounded-0">
-            <a
-              href="./index.html"
-              class="list-group-item list-group-item-action active border-0 d-flex align-items-center"
-              style="background: #ef4126"
-            >
+            <a href="../index.php" class="list-group-item list-group-item-action border-0 d-flex align-items-center">
               <span class="bi bi-border-all"></span>
               <span class="ml-2">Dashboard</span>
             </a>
-            <a href="./reports.html" class="list-group-item list-group-item-action border-0 align-items-center">
+            <a href="../reports.php" class="list-group-item list-group-item-action active border-0 align-items-center">
               <span class="fa fa-file"></span>
               <span class="ml-2">Reports View</span>
             </a>
-
             <button
               class="list-group-item list-group-item-action border-0 d-flex justify-content-between align-items-center"
               data-toggle="collapse"
@@ -75,8 +107,8 @@
             </button>
             <div class="collapse" id="sale-collapse" data-parent="#sidebar">
               <div class="list-group">
-                <a href="./doctors.html" class="list-group-item list-group-item-action border-0 pl-5">See All Doctors</a>
-                <a href="#" class="list-group-item list-group-item-action border-0 pl-5">Add New Doctor</a>
+                <a href="./doctors.php" class="list-group-item list-group-item-action border-0 pl-5">See All Doctors</a>
+                <a href="./add-new-doctor.php" class="list-group-item list-group-item-action border-0 pl-5">Add New Doctor</a>
               </div>
             </div>
             <button
@@ -92,8 +124,7 @@
             </button>
             <div class="collapse" id="purchase-collapse" data-parent="#sidebar">
               <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action border-0 pl-5">See All Volunteers</a>
-                <a href="#" class="list-group-item list-group-item-action border-0 pl-5">Add New Volunteer</a>
+                <a href="./volunteer.php" class="list-group-item list-group-item-action border-0 pl-5">See All Volunteers</a>
               </div>
             </div>
           </div>
@@ -109,23 +140,16 @@
               <span class="bi bi-list h3" style="color: #ef4126"></span>
             </button>
             <div class="dropdown ml-auto">
-              <button class="btn py-0 d-flex align-items-center" id="logout-dropdown" data-toggle="dropdown" aria-expanded="false">
-                <span class="bi bi-person h4" style="color: #ef4126"></span>
-                <span class="bi bi-chevron-down ml-1 mb-2 small" style="color: #ef4126"></span>
-              </button>
-              <div class="dropdown-menu dropdown-menu-right border-0 shadow-sm" aria-labelledby="logout-dropdown">
-                <a class="dropdown-item" href="#">Logout</a>
-                <a class="dropdown-item" href="#">Settings</a>
-              </div>
+              <a href="#" style="color:unset"><i class="fas fa-sign-out-alt" style="color:#ef4126"></i> &nbsp;Logout</a>
             </div>
           </nav>
           <!-- main content -->
           <main class="container-fluid">
-            <section class="row">
+          <section class="row">
               <div class="col-md-6 col-lg-4">
                 <!-- card -->
                 <article class="p-3 pl-4 rounded shadow-sm border-left mb-4">
-                  <a href="./reports.html" class="d-flex align-items-center" style="text-decoration: none">
+                  <a href="./reports.php" class="d-flex align-items-center" style="text-decoration: none">
                     &nbsp; <span class="fa fa-file h4" style="color: #ef4126"></span>&nbsp;&nbsp;
                     <h5 class="ml-2" style="color: #2f2e41; font-family: 'Poppins'; font-size: 17px; text-decoration: none">Reports View</h5>
                   </a>
@@ -133,7 +157,7 @@
               </div>
               <div class="col-md-6 col-lg-4">
                 <article class="p-3 pl-4 rounded shadow-sm border-left mb-4">
-                  <a href="./doctors.html" class="d-flex align-items-center" style="text-decoration: none">
+                  <a href="./doctors.php" class="d-flex align-items-center" style="text-decoration: none">
                     &nbsp;<span class="bi bi-person h4" style="color: #ef4126"></span>&nbsp;&nbsp;
                     <h5 class="ml-2" style="color: #2f2e41; font-family: 'Poppins'; font-size: 17px">Doctors</h5>
                   </a>
@@ -141,7 +165,7 @@
               </div>
               <div class="col-md-6 col-lg-4">
                 <article class="p-3 pl-4 rounded shadow-sm border-left mb-8">
-                  <a href="#" class="d-flex align-items-center" style="text-decoration: none">
+                  <a href="./volunteer.php" class="d-flex align-items-center" style="text-decoration: none">
                     &nbsp;
                     <span class="bi bi-person-check h4" style="color: #ef4126"></span>&nbsp;&nbsp;
                     <h5 class="ml-2" style="color: #2f2e41; font-family: 'Poppins'; font-size: 17px">Volunteers</h5>
@@ -154,11 +178,45 @@
               style="background: linear-gradient(45deg, #f6faff 50%, #ef4126 50%)"
             >
               <div class="main-heading">
-                <h1>RETIN<span style="color: #ef4126">APP Dashboard </span></h1>
+                <h1>RETIN<span style="color: #ef4126">APP Doctor </span></h1>
                 <p class="lead" style="font-family: 'Poppins'; color: #2f2e41; font-size: 17px">All the stats will be viewed here.</p>
               </div>
             </div>
           </main>
+          <!-- Reports View -->
+          <div class="container reports__view">
+            <!-- Adding Search Option -->
+            <form action="./reports-preview.php" method="post">
+              <div class="search__container">
+                <p class="search__title"><span>Go ahead,</span> Search Report by Name</p>
+                <div class="search__theReport">
+                  <input class="search__input" name="report_id" type="text" placeholder="Search Report by Name" />
+                  <button type="submit" name="submit"><i class="fas fa-search"></i></button>
+                </div>
+              </div>
+              <div class="credits__container">
+                <p class="credits__text">
+                  ©RetinApp, 2021 All Rights Reserved.
+                  <a href="#" class="credits__link">Azaz Muzaffar</a>
+                </p>
+              </div>
+            </form>
+
+            <!-- Patient Details -->
+            <div class="--patient--">
+              <!-- Adding Dropdown and Back option -->
+              <div class="--select-or-go-back-- container">
+                <div class="--select-city--"></div>
+                <div class="--go-back--">
+                  <a href="../reports.php"><i class="fas fa-chevron-left"></i> &nbsp; Back</a>
+                </div>
+              </div>
+              <embed style="margin-top:30px;height:800px;" width="100%" height="100%" name="plugin" id="pdf" src="../../PDFReports/<?php echo $reportPDF; ?>" type="application/pdf">
+              <br><br><br>
+              <p><b>Doctor Feedback:</b></p>
+              <p><?php echo $doctorFeedback ?></p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -166,6 +224,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
-    <script src="../js/dashboard.js"></script>
+    <script src="../../js/dashboard.js"></script>
+
   </body>
 </html>

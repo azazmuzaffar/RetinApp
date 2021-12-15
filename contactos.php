@@ -36,6 +36,15 @@
     <!-- >>>>>>>>>>>>>> Konfidencial <<<<<<<<<<<<<<<< -->
     <!-- >>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<< -->
 
+    <div class="preloader">
+      <div class="loader">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
     <!-- >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<< -->
     <!-- >>>>>>>>>>>>>> Navbar <<<<<<<<<<<<<< -->
     <!-- >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<< -->
@@ -82,7 +91,7 @@
       <div class="--navbar--center-- mx-auto order-0">
         <!-- Logo -->
         <div class="--logo--">
-          <a class="navbar-brand mx-auto" href="./index.html">
+          <a class="navbar-brand mx-auto" href="./index.php">
             <span>Menu</span>
             <div class="svg-container">
               <img src="./logo/logo.svg" alt="logo" />
@@ -117,24 +126,24 @@
         <!-- All Navigations -->
         <ul class="--center--list-- navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="./index.html">Home</a>
+            <a class="nav-link" href="./index.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./how-it-works.html">How It Works</a>
+            <a class="nav-link" href="./how-it-works.php">How It Works</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./FAQ.html">FAQ</a>
+            <a class="nav-link" href="./FAQ.php">FAQ</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./blog.html">blog</a>
+            <a class="nav-link" href="./blog.php">blog</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="./contactos.html">Contact Us</a>
+            <a class="nav-link" href="./contactos.php">Contact Us</a>
           </li>
         </ul>
         <!-- >>>>>>>> Pages Direction <<<<<<< -->
         <div class="--page-direction--">
-          <span><a href="./index.html">Home</a><span>/</span>Contact Us</span>
+          <span><a href="./index.php">Home</a><span>/</span>Contact Us</span>
         </div>
       </div>
 
@@ -143,10 +152,10 @@
       <div class="--navbar--right-- navbar-collapse collapse w-40">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <h6>Pesquise aqui</h6>
+            <h6>Search Report By ID</h6>
             <!-- Form Start -->
-            <form action="./search-report.html" method="">
-              <input type="text" placeholder="EF23406" required />
+            <form action="search-report.php" method="post">
+              <input type="text" placeholder="Enter your CNIC #" name="cnic" required />
               <button>
                 <div class="--search--">
                   <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
@@ -233,7 +242,7 @@
             <h1></h1>
           </div>
           <div class="--go-back--">
-            <a href="./index.html"><i class="fas fa-chevron-left"></i> &nbsp; Back</a>
+            <a href="./index.php"><i class="fas fa-chevron-left"></i> &nbsp; Back</a>
           </div>
         </div>
         <!-- contact konfidential through -->
@@ -291,35 +300,35 @@
         <!-- Contact Form -->
         <div class="--contact--form--">
           <!-- Form -->
-          <form action="">
+          <form action="https://formspree.io/f/mwkykbba" method="POST" id="my-form">
             <div class="row">
               <!-- Name -->
               <div class="col-md-6 col-lg-6">
                 <label for="name">Name</label>
                 <!-- just add class "error" to the input on error -->
-                <input class="error" type="text" placeholder="Enter Your Name" required />
+                <input class="error" type="text" name="Name:" placeholder="Enter Your Name" required />
                 <!-- just add the error message in p tag -->
-                <p class="error-message">*You cannot leave this field blank.</p>
+                <!-- <p class="error-message">*You cannot leave this field blank.</p> -->
               </div>
               <!-- Email -->
               <div class="col-md-6 col-lg-6">
                 <label for="email">Email</label>
-                <input type="email" placeholder="Enter Your Email" required />
+                <input type="email" name="_replyto" placeholder="Enter Your Email" required />
               </div>
               <!-- Phone -->
               <div class="col-md-6 col-lg-6">
                 <label for="telefone">Phone</label>
-                <input type="text" placeholder="Enter Your Phone" required />
+                <input type="text" name="Phone:" placeholder="Enter Your Phone" required />
               </div>
               <!-- Assunto -->
               <div class="col-md-6 col-lg-6">
                 <label for="assunto">Subject</label>
-                <input type="text" placeholder="Subject" required />
+                <input type="text" name="Subject:" placeholder="Subject" required />
               </div>
               <!-- Message -->
               <div class="col-md-12 col-lg-12">
                 <label for="mensagem">Message</label>
-                <textarea placeholder="Enter Your Message"></textarea>
+                <textarea name="Message:" placeholder="Enter Your Message"></textarea>
               </div>
               <div class="all-conditions-required">
                 <p>*All fields are required</p>
@@ -327,50 +336,19 @@
 
               <!-- Form Submission -->
               <div class="col-lg-12">
-                <input class="enable-confirmation" type="submit" value="Make Contact" />
+                <input id="my-form-button" class="enable-confirmation" type="submit" value="Make Contact" />
               </div>
+
+              <div class="col-md-12 col-lg-12" style="text-align: center;">
+              <p style="color: #ef4126" id="my-form-status"></p>
+              </div>
+              
             </div>
           </form>
         </div>
       </div>
     </div>
 
-    <!-- >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<< -->
-    <!-- >>>>>>>>>>> Confirmation <<<<<<<<<<< -->
-    <!-- >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<< -->
-
-    <div class="--confirmation-message--">
-      <div class="--content--">
-        <div class="--confirmed--icon--">
-          <svg width="54" height="54" xmlns="http://www.w3.org/2000/svg">
-            <g fill="none" fill-rule="evenodd">
-              <path d="M0 0h54v54H0z" />
-              <path fill="#ef4126" d="M20.41 36.706 45.866 11.25l3.182 3.182L20.41 43.07 4.5 27.16l3.182-3.182z" />
-            </g>
-          </svg>
-        </div>
-        <div class="--text--">
-          <p>
-            Contact request sent successfully! <br />
-            We will contact you shortly.
-          </p>
-        </div>
-        <div class="--confirmed--">
-          <span>
-            Close &nbsp;
-            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-              <g fill="none" fill-rule="evenodd" opacity=".65">
-                <path d="M0 0h24v24H0z" />
-                <path
-                  fill="#ef4126"
-                  d="m13.414 12 6.364 6.364-1.414 1.414L12 13.414l-6.364 6.364-1.414-1.414L10.586 12 4.222 5.636l1.414-1.414L12 10.586l6.364-6.364 1.414 1.414z"
-                />
-              </g>
-            </svg>
-          </span>
-        </div>
-      </div>
-    </div>
 
     <!-- >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<< -->
     <!-- >>>>>>>>>>>>>>> Footer <<<<<<<<<<<<< -->
@@ -381,11 +359,11 @@
         <!-- >>>>>>> Navigations <<<<<< -->
         <div class="--pages--">
           <ul>
-            <li><a href="./acompanhantes.html">Home</a></li>
-            <li><a href="./how-it-works.html">How It Works</a></li>
-            <li><a href="./blog.html">FAQ</a></li>
-            <li><a href="./sobre-a-konfidential.html">Blog</a></li>
-            <li><a class="active" href="./contactos.html">Contact Us</a></li>
+            <li><a href="./acompanhantes.php">Home</a></li>
+            <li><a href="./how-it-works.php">How It Works</a></li>
+            <li><a href="./blog.php">FAQ</a></li>
+            <li><a href="./sobre-a-konfidential.php">Blog</a></li>
+            <li><a class="active" href="./contactos.php">Contact Us</a></li>
           </ul>
         </div>
         <!-- >>>>>>>> Copyright <<<<<<< -->
@@ -403,16 +381,16 @@
       <div class="pop-up-contant">
         <div class="inner-content">
           <p>Retin<span>App</span> Login</p>
-          <form action="./docter_panel/index.html">
+          <form method="post" action="config/login.php">
             <!-- get Email -->
             <div class="fetch-email">
               <label for="Email">Email</label>
-              <input type="Email" placeholder="Email" required />
+              <input type="Email" placeholder="Email" name="doc_email" required />
             </div>
             <!-- get Password -->
             <div class="fetch-password">
               <label for="password">Password</label>
-              <input type="password" placeholder="***********" required />
+              <input type="password" placeholder="***********" name="doc_password"  required />
               <!-- Eye icon responsible for showing password -->
               <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
                 <g fill="none" fill-rule="evenodd">
@@ -424,6 +402,7 @@
                 </g>
               </svg>
             </div>
+            <p class="error" id="errorMessage"></p>
             <!-- Submit info -->
             <div class="form-submission">
               <input type="submit" value="Login" />
@@ -457,5 +436,16 @@
 
     <!-- >>> CUSTOM JS <<< -->
     <script src="./js/app.js"></script>
+
+    <?php
+        if(isset($_GET['invalidInfo']))
+        {
+            echo 
+            '<script type="text/JavaScript"> 
+                $(".login-to-konfidential").css("display", "block");
+                document.getElementById("errorMessage").innerHTML = "Invalid email or password, please try again!";
+            </script>';
+        }
+    ?>
   </body>
 </html>

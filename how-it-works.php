@@ -6,8 +6,8 @@
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 
     <!-- >>> Title & Favicon <<< -->
-    <title>EF23406 - RetinApp</title>
-    <link rel="icon" href="./logo/Logo.png" type="image/gif" sizes="32x32" />
+    <title>How It Works - RetinApp </title>
+    <link rel="shortcut icon" type="image/jpg" href="./logo/Logo.png" />
 
     <!-- >>> meta Description <<< -->
     <meta
@@ -22,6 +22,9 @@
                This application helps detect the diabetic symptoms and its severity without any need of long and painful blood tests."
     />
 
+    <!-- >>> Slick Slider <<< -->
+    <link href="./slick/slick.css" rel="stylesheet" />
+
     <!-- >>> Fontawsome 5 | Used for icons <<< -->
     <link href="./font-awesome/css/all.css" rel="stylesheet" />
 
@@ -29,16 +32,27 @@
     <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" />
 
     <!-- >>> Custom CSS <<< -->
-    <link rel="stylesheet" href="./sass/pages/search-report/search.css" />
+    <link rel="stylesheet" href="./sass/pages/how-it-works/how-it-works.css" />
   </head>
   <body>
     <!-- >>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<< -->
     <!-- >>>>>>>>>>>>>> Konfidencial <<<<<<<<<<<<<<<< -->
     <!-- >>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<< -->
 
+    <div class="preloader">
+      <div class="loader">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
     <!-- >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<< -->
     <!-- >>>>>>>>>>>>>> Navbar <<<<<<<<<<<<<< -->
     <!-- >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<< -->
+
+
 
     <nav class="navbar navbar-expand">
       <!-- Header Left/Center/Right -->
@@ -82,7 +96,7 @@
       <div class="--navbar--center-- mx-auto order-0">
         <!-- Logo -->
         <div class="--logo--">
-          <a class="navbar-brand mx-auto" href="./index.html">
+          <a class="navbar-brand mx-auto" href="./index.php">
             <span>Menu</span>
             <div class="svg-container">
               <img src="./logo/logo.svg" alt="logo" />
@@ -117,24 +131,24 @@
         <!-- All Navigations -->
         <ul class="--center--list-- navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="./index.html">Home</a>
+            <a class="nav-link" href="./index.php">Home</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="./how-it-works.php">How It Works</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./how-it-works.html">How It Works</a>
+            <a class="nav-link" href="./FAQ.php">FAQ</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./FAQ.html">FAQ</a>
+            <a class="nav-link" href="./blog.php">blog</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./blog.html">blog</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./contactos.html">Contact Us</a>
+            <a class="nav-link" href="./contactos.php">Contact Us</a>
           </li>
         </ul>
         <!-- >>>>>>>> Pages Direction <<<<<<< -->
         <div class="--page-direction--">
-          <span><a href="./index.html">Home</a><span>/</span>FAQ</span>
+          <span><a href="./index.php">Home</a><span>/</span>How It Works</span>
         </div>
       </div>
 
@@ -143,10 +157,10 @@
       <div class="--navbar--right-- navbar-collapse collapse w-40">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <h6>Pesquise aqui</h6>
+            <h6>Search Report By ID</h6>
             <!-- Form Start -->
-            <form action="./search-report.html" method="">
-              <input type="text" placeholder="EF23406" required />
+            <form action="search-report.php" method="post">
+              <input type="text" placeholder="Enter your CNIC #" name="cnic" required />
               <button>
                 <div class="--search--">
                   <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
@@ -198,129 +212,108 @@
     </nav>
 
     <!-- >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<< -->
-    <!-- >>>>>>>>>> Search Report <<<<<<<<<<< -->
+    <!-- >>>>>>>>>>>>>> Banner <<<<<<<<<<<<<< -->
     <!-- >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<< -->
 
-    <!-- Reports View -->
-    <div class="container reports__view">
-      <!-- Adding Search Option -->
-      <form action="">
-        <div class="search__container">
-          <p class="search__title"><span>Go ahead,</span> Search Report by ID</p>
-          <div class="search__theReport">
-            <input class="search__input" type="text" placeholder="EF23406" />
-            <button><i class="fas fa-search"></i></button>
-          </div>
-        </div>
-        <div class="credits__container">
-          <p class="credits__text">
-            ©RetinApp, 2021 All Rights Reserved.
-            <a href="#" class="credits__link">Azaz Muzaffar</a>
-          </p>
-        </div>
-      </form>
+    <div class="--banner--">
+      <div class="--banner-bg--">
+        <picture>
+          <!-- <source media="(max-width:375px)" srcset="./images/acompanhantes/banner-mob.jpg" /> -->
+          <!-- <source media="(max-width:768px)" srcset="./images/acompanhantes/banner-tab.png" /> -->
+          <img src="./images/home/banner-bg.svg" alt="banner" />
+        </picture>
+      </div>
+      <div class="--banner-content--">
+        <h2>How Retin<span>App</span> Works</h2>
+        <p>Please checkout our blogs for more info.</p>
+      </div>
+    </div>
 
-      <!-- Patient Details -->
-      <div class="--patient--">
-        <!-- Adding Dropdown and Back option -->
-        <div class="--select-or-go-back-- container">
-          <div class="--select-city--"></div>
-          <div class="--go-back--">
-            <a href="./index.html"><i class="fas fa-chevron-left"></i> &nbsp; Back</a>
+    <!-- >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<< -->
+    <!-- >>>>>>>>>>> How it Works <<<<<<<<<<< -->
+    <!-- >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<< -->
+
+    <div class="-how-it-works">
+      <div class="container">
+        <!-- Main Heading and Back option -->
+        <div class="heading-area-">
+          <!-- >>>>>>>>> Tagline <<<<<<<< -->
+          <p class="--main-p--">Whats The Function</p>
+          <!-- >>>>>>>>> Main Heading <<<<<<<< -->
+          <h3 class="--main-h--">LET’S SEE HOW IT WORKS</h3>
+        </div>
+        <div class="step-1-">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-7">
+                <img src="./images/how-it-works/step-1.svg" class="img-fluid" alt="" />
+              </div>
+              <div class="col-lg-5 my-auto">
+                <h2>
+                  Open Retin<span>App</span> <br />
+                  On your Phone
+                </h2>
+                <p>
+                  RetinApp is a mobile based application which targets the medical needs of the society. RetinApp is a mobile based application which
+                  targets the medical needs of the society. RetinApp is a mobile based application which targets the medical needs of the society.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="--patient-info--">
-          <div class="--patient-image--">
-            <img src="./images/icons/user.svg" alt="user" />
-            <div class="_status"></div>
+        <div class="step-2-">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-5 my-auto">
+                <h2>
+                  Login to <span>your</span> <br />
+                  Account
+                </h2>
+                <p>
+                  RetinApp is a mobile based application which targets the medical needs of the society. RetinApp is a mobile based application which
+                  targets the medical and needs of the society and society.
+                </p>
+              </div>
+              <div class="col-lg-7">
+                <img src="./images/how-it-works/step-2.svg" class="img-fluid" alt="" />
+              </div>
+            </div>
           </div>
-          <div class="--patient-details--">
-            <p class="_name"><span class="_name_">Azaz Muzaffar</span></p>
-            <p class="_date"><span>Checkup Date:</span> Jul 17, 2021</p>
-            <p class="_gender"><span>Gender:</span> Male</p>
-            <p class="_age"><span>Age:</span> 21</p>
+        </div>
+        <div class="step-3-">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-7">
+                <img src="./images/how-it-works/step-3.svg" class="img-fluid" alt="" />
+              </div>
+              <div class="col-lg-5 my-auto">
+                <h2>Run <span>your</span> Test</h2>
+                <p>
+                  RetinApp is a mobile based application which targets the medical needs of the society. RetinApp is a mobile based application which
+                  targets the medical needs of the society. RetinApp is a mobile based.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="--more-info--">
-          <h5>More Information:</h5>
-          <p>
-            RetinApp is a mobile based application which targets the medical needs of the society. This application helps detect the diabetic symptoms
-            and its severity without any need of long and painful blood tests. RetinApp is a mobile based application which targets the medical needs
-            of the society. This application helps detect the diabetic symptoms and its severity without any need of long and painful blood tests.
-          </p>
-        </div>
-        <div class="--graph--">
-          <svg width="100%" height="65px" viewBox="0 0 1132 65">
-            <g class="bars">
-              <rect class="bg" fill="#f6faff" width="100%" height="25"></rect>
-              <rect class="data" fill="#0074d9" width="45%" height="25"></rect>
-            </g>
-            <g class="markers">
-              <rect fill="#001f3f" x="0%" y="0" width="2px" height="35"></rect>
-              <rect fill="#001f3f" x="25%" y="0" width="2px" height="35"></rect>
-              <rect fill="#001f3f" x="50%" y="0" width="2px" height="35"></rect>
-              <rect fill="#001f3f" x="75%" y="0" width="2px" height="35"></rect>
-              <rect text-anchor="" fill="#001f3f" x="1130" y="0" width="2px" height="35"></rect>
-            </g>
-            <g text-anchor="middle">
-              <text text-anchor="start" fill="#2f2e41" x="0" y="60">0%</text>
-              <text fill="#2f2e41" x="25%" y="60">25%</text>
-              <text fill="#2f2e41" x="50%" y="60">50%</text>
-              <text fill="#2f2e41" x="75%" y="60">75%</text>
-              <text text-anchor="end" fill="#2f2e41" x="100%" y="60">100%</text>
-            </g>
-            <g>
-              <text class="result" y="60px" x="69%">45%</text>
-            </g>
-          </svg>
-        </div>
-        <div class="--more-info--">
-          <h5>Docter Recommendation & Feedback:</h5>
-          <p>
-            RetinApp is a mobile based application which targets the medical needs of the society. This application helps detect the diabetic symptoms
-            and its severity without any need of long and painful blood tests. RetinApp is a mobile based application which targets the medical needs
-            of the society. This application helps detect the diabetic symptoms and its severity without any need of long and painful blood tests.
-          </p>
-        </div>
-        <div class="--graph-- two">
-          <svg width="100%" height="65px" viewBox="0 0 1132 65">
-            <g class="bars">
-              <rect class="bg" fill="#f6faff" width="100%" height="25"></rect>
-              <rect class="data" fill="#0074d9" width="45%" height="25"></rect>
-            </g>
-            <g class="markers">
-              <rect fill="#001f3f" x="0%" y="0" width="2px" height="35"></rect>
-              <rect fill="#001f3f" x="25%" y="0" width="2px" height="35"></rect>
-              <rect fill="#001f3f" x="50%" y="0" width="2px" height="35"></rect>
-              <rect fill="#001f3f" x="75%" y="0" width="2px" height="35"></rect>
-              <rect text-anchor="" fill="#001f3f" x="1130" y="0" width="2px" height="35"></rect>
-            </g>
-            <g text-anchor="middle">
-              <text text-anchor="start" fill="#2f2e41" x="0" y="60">0%</text>
-              <text fill="#2f2e41" x="25%" y="60">25%</text>
-              <text fill="#2f2e41" x="50%" y="60">50%</text>
-              <text fill="#2f2e41" x="75%" y="60">75%</text>
-              <text text-anchor="end" fill="#2f2e41" x="100%" y="60">100%</text>
-            </g>
-            <g>
-              <text class="result" y="60px" x="69%">45%</text>
-            </g>
-          </svg>
-        </div>
-        <div class="--more-info--">
-          <p>
-            RetinApp is a mobile based application which targets the medical needs of the society. This application helps detect the diabetic symptoms
-            and its severity without any need of long and painful blood tests. RetinApp is a mobile based application which targets the medical needs
-            of the society. This application helps detect the diabetic symptoms and its severity without any need of long and painful blood tests.
-          </p>
-          <p>
-            RetinApp is a mobile based application which targets the medical needs of the society. This application helps detect the diabetic symptoms
-            and its severity without any need of long and painful blood tests. RetinApp is a mobile based application which targets the medical needs
-            of the society. This application helps detect the diabetic symptoms and its severity without any need of long and painful blood tests.
-            RetinApp is a mobile based application which targets the medical needs of the society. This application helps detect the diabetic symptoms
-            and its severity without any need of long and painful blood tests. RetinApp is a mobile based application which targets the medical needs
-            of the society. This application helps detect the diabetic symptoms and its severity without any need of long and painful blood tests.
-          </p>
+        <div class="step-4-">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-5 my-auto">
+                <h2>
+                  Generate <span>your</span> <br />
+                  Report
+                </h2>
+                <p>
+                  RetinApp is a mobile based application which targets the medical needs of the society. RetinApp is a mobile based application which
+                  targets the medical and needs of the society and society.
+                </p>
+              </div>
+              <div class="col-lg-7">
+                <img src="./images/how-it-works/step-4.svg" class="img-fluid" alt="" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -334,11 +327,11 @@
         <!-- >>>>>>> Navigations <<<<<< -->
         <div class="--pages--">
           <ul>
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./how-it-works.html">How It Works</a></li>
-            <li><a href="./FAQ.html">FAQ</a></li>
-            <li><a href="./blog.html">Blog</a></li>
-            <li><a href="./contactos.html">Contact Us</a></li>
+            <li><a href="./index.php">Home</a></li>
+            <li><a class="active" href="./how-it-works.php">How It Works</a></li>
+            <li><a href="./FAQ.php">FAQ</a></li>
+            <li><a href="./blog.php">Blog</a></li>
+            <li><a href="./contactos.php">Contact Us</a></li>
           </ul>
         </div>
         <!-- >>>>>>>> Copyright <<<<<<< -->
@@ -356,16 +349,16 @@
       <div class="pop-up-contant">
         <div class="inner-content">
           <p>Retin<span>App</span> Login</p>
-          <form action="./docter_panel/index.html">
+          <form method="post" action="config/login.php">
             <!-- get Email -->
             <div class="fetch-email">
               <label for="Email">Email</label>
-              <input type="Email" placeholder="Email" required />
+              <input type="Email" placeholder="Email" name="doc_email" required />
             </div>
             <!-- get Password -->
             <div class="fetch-password">
               <label for="password">Password</label>
-              <input type="password" placeholder="***********" required />
+              <input type="password" placeholder="***********" name="doc_password"  required />
               <!-- Eye icon responsible for showing password -->
               <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
                 <g fill="none" fill-rule="evenodd">
@@ -377,6 +370,7 @@
                 </g>
               </svg>
             </div>
+            <p class="error" id="errorMessage"></p>
             <!-- Submit info -->
             <div class="form-submission">
               <input type="submit" value="Login" />
@@ -408,7 +402,21 @@
     <!-- >>> Bootstrap v5.0.2 | Front End Framework <<< -->
     <script src="./bootstrap/js/bootstrap.min.js"></script>
 
+    <!-- >>> Slick Slider <<< -->
+    <script src="./slick/slick.min.js"></script>
+
     <!-- >>> CUSTOM JS <<< -->
     <script src="./js/app.js"></script>
+
+    <?php
+        if(isset($_GET['invalidInfo']))
+        {
+            echo 
+            '<script type="text/JavaScript"> 
+                $(".login-to-konfidential").css("display", "block");
+                document.getElementById("errorMessage").innerHTML = "Invalid email or password, please try again!";
+            </script>';
+        }
+    ?>
   </body>
 </html>

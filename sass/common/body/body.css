@@ -22,10 +22,22 @@ body {
   background: #c9a8825b;
 }
 
-::-webkit-scrollbar {
-  display: none;
+::-webkit-scrollbar-track {
+  background: #fff;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 19px;
+  background: #adadad;
+}
+
+/* ::-webkit-scrollbar {
+  display: none;
+} */
 /* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
 /* >>>>>>>>>>>>>>> End <<<<<<<<<<<<<<<< */
 /* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */

@@ -37,7 +37,7 @@ $navigations: 14px;
     z-index: 999999999;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.596);
     text-align: center;
     /* Main Area */
     .pop-up-contant {
@@ -65,6 +65,15 @@ $navigations: 14px;
           span {
             color: #ef4126;
           }
+          &.error {
+            font-size: 11px;
+            text-align: left;
+            font-family: "Poppins";
+            text-transform: unset;
+            margin-top: 0;
+            color: red;
+            margin: 10px 0px 20px 0px;
+          }
         }
         /* Form */
         form {
@@ -76,7 +85,7 @@ $navigations: 14px;
           /* Password */
           .fetch-password {
             position: relative;
-            margin-bottom: 30px;
+            margin-bottom: 0px;
             /* Eye ICon */
             svg {
               position: absolute;

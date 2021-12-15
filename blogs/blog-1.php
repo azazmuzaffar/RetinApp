@@ -6,8 +6,8 @@
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 
     <!-- >>> Title & Favicon <<< -->
-    <title>RetinApp - We are Intelligent</title>
-    <link rel="shortcut icon" type="image/jpg" href="./logo/Logo.png" />
+    <title>How Are Diabetes Diagnosed? - RetinApp</title>
+    <link rel="icon" href="../logo/Logo.png" type="image/gif" sizes="32x32" />
 
     <!-- >>> meta Description <<< -->
     <meta
@@ -22,22 +22,28 @@
                This application helps detect the diabetic symptoms and its severity without any need of long and painful blood tests."
     />
 
-    <!-- >>> Slick Slider <<< -->
-    <link href="./slick/slick.css" rel="stylesheet" />
-
     <!-- >>> Fontawsome 5 | Used for icons <<< -->
-    <link href="./font-awesome/css/all.css" rel="stylesheet" />
+    <link href="../font-awesome/css/all.css" rel="stylesheet" />
 
     <!-- >>> Bootstrap v5.0.2 | Front End Framework <<< -->
-    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
 
     <!-- >>> Custom CSS <<< -->
-    <link rel="stylesheet" href="./sass/pages/how-it-works/how-it-works.css" />
+    <link rel="stylesheet" href="../sass/pages/blog/single-blog.css" />
   </head>
   <body>
     <!-- >>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<< -->
     <!-- >>>>>>>>>>>>>> Konfidencial <<<<<<<<<<<<<<<< -->
     <!-- >>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<< -->
+
+    <div class="preloader">
+      <div class="loader">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
 
     <!-- >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<< -->
     <!-- >>>>>>>>>>>>>> Navbar <<<<<<<<<<<<<< -->
@@ -85,10 +91,10 @@
       <div class="--navbar--center-- mx-auto order-0">
         <!-- Logo -->
         <div class="--logo--">
-          <a class="navbar-brand mx-auto" href="./index.html">
+          <a class="navbar-brand mx-auto" href="../index.php">
             <span>Menu</span>
             <div class="svg-container">
-              <img src="./logo/logo.svg" alt="logo" />
+              <img src="../logo/logo.svg" alt="logo" />
             </div>
           </a>
           <!-- Toggle Menus > Search - Menu -->
@@ -120,36 +126,36 @@
         <!-- All Navigations -->
         <ul class="--center--list-- navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="./index.html">Home</a>
+            <a class="nav-link" href="../index.php">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../how-it-works.php">How It Works</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../FAQ.php">FAQ</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="./how-it-works.html">How It Works</a>
+            <a class="nav-link" href="../blog.php">blog</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./FAQ.html">FAQ</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./blog.html">blog</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./contactos.html">Contact Us</a>
+            <a class="nav-link" href="../contactos.php">Contact Us</a>
           </li>
         </ul>
         <!-- >>>>>>>> Pages Direction <<<<<<< -->
         <div class="--page-direction--">
-          <span><a href="./index.html">Home</a><span>/</span>How It Works</span>
+          <span><a href="../index.php">Home</a><span>/</span><a href="../blog.php">Blog</a><span>/</span>How Are Diabetes Diagnosed?</span>
         </div>
       </div>
 
-      <!-- Right  -->
+    <!-- Right  -->
 
-      <div class="--navbar--right-- navbar-collapse collapse w-40">
+    <div class="--navbar--right-- navbar-collapse collapse w-40">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <h6>Pesquise aqui</h6>
+            <h6>Search Report By ID</h6>
             <!-- Form Start -->
-            <form action="./search-report.html" method="">
-              <input type="text" placeholder="EF23406" required />
+            <form action="../search-report.php" method="post">
+              <input type="text" placeholder="Enter your CNIC #" name="cnic" required />
               <button>
                 <div class="--search--">
                   <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
@@ -200,6 +206,11 @@
       </div>
     </nav>
 
+
+    <!-- >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<< -->
+    <!-- >>>>>>>>>> Banner Carousel <<<<<<<<< -->
+    <!-- >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<< -->
+
     <!-- >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<< -->
     <!-- >>>>>>>>>>>>>> Banner <<<<<<<<<<<<<< -->
     <!-- >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<< -->
@@ -209,99 +220,74 @@
         <picture>
           <!-- <source media="(max-width:375px)" srcset="./images/acompanhantes/banner-mob.jpg" /> -->
           <!-- <source media="(max-width:768px)" srcset="./images/acompanhantes/banner-tab.png" /> -->
-          <img src="./images/home/banner-bg.svg" alt="banner" />
+          <img src="../images/home/banner-bg.svg" alt="banner" />
         </picture>
       </div>
       <div class="--banner-content--">
-        <h2>How Retin<span>App</span> Works</h2>
-        <p>Please checkout our blogs for more info.</p>
+        <h2>How <span>Diabetes</span> Diagnosed?</h2>
+        <p>Most people with diabetes need to check their blood sugar (glucose) levels regularly.</p>
       </div>
     </div>
 
     <!-- >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<< -->
-    <!-- >>>>>>>>>>> How it Works <<<<<<<<<<< -->
+    <!-- >>>>>>>>>>>> Our Blogs <<<<<<<<<<<<< -->
     <!-- >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<< -->
 
-    <div class="-how-it-works">
+    <div class="--konfidential-blog--">
+      <div class="come-back container">
+        <a href="../blog.php"><i class="fas fa-chevron-left"></i> &nbsp; Back</a>
+      </div>
       <div class="container">
-        <!-- Main Heading and Back option -->
-        <div class="heading-area-">
-          <!-- >>>>>>>>> Tagline <<<<<<<< -->
-          <p class="--main-p--">Whats The Function</p>
-          <!-- >>>>>>>>> Main Heading <<<<<<<< -->
-          <h3 class="--main-h--">LET’S SEE HOW IT WORKS</h3>
+        <!-- >>>>>>>> Blog Title <<<<<<< -->
+        <div class="title">
+          <h1>How Are Diabetes Diagnosed?</h1>
         </div>
-        <div class="step-1-">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-7">
-                <img src="./images/how-it-works/step-1.svg" class="img-fluid" alt="" />
-              </div>
-              <div class="col-lg-5 my-auto">
-                <h2>
-                  Open Retin<span>App</span> <br />
-                  On your Phone
-                </h2>
-                <p>
-                  RetinApp is a mobile based application which targets the medical needs of the society. RetinApp is a mobile based application which
-                  targets the medical needs of the society. RetinApp is a mobile based application which targets the medical needs of the society.
-                </p>
-              </div>
-            </div>
+        <!-- >>>>>>>> Blog Publish Date <<<<<<< -->
+        <div class="-publish-date-">
+          <p>23 June 2021</p>
+        </div>
+        <!-- >>>>>>>> Blog Image <<<<<<< -->
+        <div class="--blog-img--">
+          <img src="../images/blog/blogs/main-blog-1.jpg" alt="regras básicas de acompanhante" />
+        </div>
+        <!-- >>>>>>>> Blog Description <<<<<<< -->
+        <div class="description">
+          <p>
+            Diabetes is a chronic disease that occurs either when the pancreas does not produce enough insulin or when the body cannot effectively use
+            the insulin it produces. Insulin is a hormone that regulates blood sugar. Hyperglycaemia, or raised blood sugar, is a common effect of
+            uncontrolled diabetes and over time leads to serious damage to many of the body's systems, especially the nerves and blood vessels.
+          </p>
+          <p>
+            In 2014, 8.5% of adults aged 18 years and older had diabetes. In 2019, diabetes was the direct cause of 1.5 million deaths. To present a
+            more accurate picture of the deaths causes by diabetes, however, deaths due to higher-than-optimal blood glucose through cardiovascular
+            disease, chronic kidney disease and tuberculosis should be added. In 2012 (year of the latest available data), there were another 2.2
+            million deaths due to high blood glucose.
+          </p>
+          <h2>Type 2 diabetes</h2>
+          <p>
+            Type 2 diabetes (formerly called non-insulin-dependent, or adult-onset) results from the body’s ineffective use of insulin. The majority
+            of people with diabetes have type 2 diabetes. This type of diabetes is largely the result of excess body weight and physical inactivity.
+          </p>
+          <p>
+            Symptoms may be similar to those of type 1 diabetes, but are often less marked. As a result, the disease may be diagnosed several years
+            after onset, after complications have already arisen.
+          </p>
+          <p>Until recently, this type of diabetes was seen only in adults but it is now also occurring increasingly frequently in children.</p>
+          <h2>Prevention</h2>
+          <p>
+            Simple lifestyle measures have been shown to be effective in preventing or delaying the onset of type 2 diabetes. To help prevent type 2
+            diabetes and its complications, people should: achieve and maintain a healthy body weight; be physically active – doing at least 30
+            minutes of regular, moderate-intensity activity on most days. More activity is required for weight control; eat a healthy diet, avoiding
+            sugar and saturated fats; and avoid tobacco use – smoking increases the risk of diabetes and cardiovascular disease.
+          </p>
+        </div>
+        <div class="--next-back--">
+          <!-- >>>>>>>> Blog Read More <<<<<<< -->
+          <div class="go -back-">
+            <a href="#"><i class="fas fa-chevron-left"></i> &nbsp; Back</a>
           </div>
-        </div>
-        <div class="step-2-">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-5 my-auto">
-                <h2>
-                  Login to <span>your</span> <br />
-                  Account
-                </h2>
-                <p>
-                  RetinApp is a mobile based application which targets the medical needs of the society. RetinApp is a mobile based application which
-                  targets the medical and needs of the society and society.
-                </p>
-              </div>
-              <div class="col-lg-7">
-                <img src="./images/how-it-works/step-2.svg" class="img-fluid" alt="" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="step-3-">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-7">
-                <img src="./images/how-it-works/step-3.svg" class="img-fluid" alt="" />
-              </div>
-              <div class="col-lg-5 my-auto">
-                <h2>Run <span>your</span> Test</h2>
-                <p>
-                  RetinApp is a mobile based application which targets the medical needs of the society. RetinApp is a mobile based application which
-                  targets the medical needs of the society. RetinApp is a mobile based.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="step-4-">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-5 my-auto">
-                <h2>
-                  Generate <span>your</span> <br />
-                  Report
-                </h2>
-                <p>
-                  RetinApp is a mobile based application which targets the medical needs of the society. RetinApp is a mobile based application which
-                  targets the medical and needs of the society and society.
-                </p>
-              </div>
-              <div class="col-lg-7">
-                <img src="./images/how-it-works/step-4.svg" class="img-fluid" alt="" />
-              </div>
-            </div>
+          <div class="go -next-">
+            <a href="#">Next &nbsp; <i class="fas fa-chevron-right"></i></a>
           </div>
         </div>
       </div>
@@ -316,16 +302,16 @@
         <!-- >>>>>>> Navigations <<<<<< -->
         <div class="--pages--">
           <ul>
-            <li><a href="./index.html">Home</a></li>
-            <li><a class="active" href="./how-it-works.html">How It Works</a></li>
-            <li><a href="./FAQ.html">FAQ</a></li>
-            <li><a href="./blog.html">Blog</a></li>
-            <li><a href="./contactos.html">Contact Us</a></li>
+            <li><a class="active" href="../acompanhantes.php">Home</a></li>
+            <li><a href="../how-it-works.php">How It Works</a></li>
+            <li><a href="../blog.php">FAQ</a></li>
+            <li><a href="../sobre-a-konfidential.php">Blog</a></li>
+            <li><a href="../contactos.php">Contact Us</a></li>
           </ul>
         </div>
         <!-- >>>>>>>> Copyright <<<<<<< -->
         <div class="--copyright--">
-          <p>©RetinApp, 2021 All Rights Reserved.</p>
+          <p href="#">©RetinApp, 2021 All Rights Reserved.</p>
         </div>
       </div>
     </footer>
@@ -338,16 +324,16 @@
       <div class="pop-up-contant">
         <div class="inner-content">
           <p>Retin<span>App</span> Login</p>
-          <form action="./docter_panel/index.html">
+          <form method="post" action="../config/login.php">
             <!-- get Email -->
             <div class="fetch-email">
               <label for="Email">Email</label>
-              <input type="Email" placeholder="Email" required />
+              <input type="Email" placeholder="Email" name="doc_email" required />
             </div>
             <!-- get Password -->
             <div class="fetch-password">
               <label for="password">Password</label>
-              <input type="password" placeholder="***********" required />
+              <input type="password" placeholder="***********" name="doc_password"  required />
               <!-- Eye icon responsible for showing password -->
               <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
                 <g fill="none" fill-rule="evenodd">
@@ -359,6 +345,7 @@
                 </g>
               </svg>
             </div>
+            <p class="error" id="errorMessage"></p>
             <!-- Submit info -->
             <div class="form-submission">
               <input type="submit" value="Login" />
@@ -385,15 +372,23 @@
     <!-- >>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<< -->
 
     <!-- >>> JQUERY <<< -->
-    <script src="./jquery/jquery.min.js"></script>
+    <script src="../jquery/jquery.min.js"></script>
 
     <!-- >>> Bootstrap v5.0.2 | Front End Framework <<< -->
-    <script src="./bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- >>> Slick Slider <<< -->
-    <script src="./slick/slick.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
 
     <!-- >>> CUSTOM JS <<< -->
-    <script src="./js/app.js"></script>
+    <script src="../js/app.js"></script>
+
+    <?php
+        if(isset($_GET['invalidInfo']))
+        {
+            echo 
+            '<script type="text/JavaScript"> 
+                $(".login-to-konfidential").css("display", "block");
+                document.getElementById("errorMessage").innerHTML = "Invalid email or password, please try again!";
+            </script>';
+        }
+    ?>
   </body>
 </html>

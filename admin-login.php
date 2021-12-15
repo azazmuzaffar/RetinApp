@@ -36,6 +36,15 @@
     <!-- >>>>>>>>>>>>>>>>> RetinApp <<<<<<<<<<<<<<<<< -->
     <!-- >>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<< -->
 
+    <div class="preloader">
+      <div class="loader">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
     <!-- >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<< -->
     <!-- >>>>>>>>>>>>>> Login <<<<<<<<<<<<<<< -->
     <!-- >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<< -->
@@ -44,16 +53,16 @@
       <div class="pop-up-contant">
         <div class="inner-content">
           <p>Retin<span>App</span> Admin</p>
-          <form action="./admin/index.html">
+          <form action="./config/adminLogin.php" method="post">
             <!-- get Email -->
             <div class="fetch-email">
               <label for="Email">Email</label>
-              <input type="Email" placeholder="Email" required />
+              <input type="Email" placeholder="Email" name="adminEmail" required />
             </div>
             <!-- get Password -->
-            <div class="fetch-password">
+            <div class="fetch-password" style="margin: 0;">
               <label for="password">Password</label>
-              <input type="password" placeholder="***********" required />
+              <input type="password" placeholder="***********" name="adminPassword" required />
               <!-- Eye icon responsible for showing password -->
               <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
                 <g fill="none" fill-rule="evenodd">
@@ -65,6 +74,7 @@
                 </g>
               </svg>
             </div>
+            <p id="errorMessage" style="margin: 10px 0px 20px 0px; font-family: Poppins; font-size:12px; color:red; text-align: left; text-transform: unset;"></p>
             <!-- Submit info -->
             <div class="form-submission">
               <input type="submit" value="Login" />
@@ -86,5 +96,15 @@
 
     <!-- >>> CUSTOM JS <<< -->
     <script src="./js/app.js"></script>
+
+    <?php
+        if(isset($_GET['invalidInfo']))
+        {
+            echo 
+            '<script type="text/JavaScript"> 
+                document.getElementById("errorMessage").innerHTML = "Invalid email or password, please try again!";
+            </script>';
+        }
+    ?>
   </body>
 </html>

@@ -1,3 +1,26 @@
+<?php
+session_start();
+require "../config/connection.php";
+
+error_reporting(E_ERROR); if($_GET['report_id']){
+  $report_id = $_GET['report_id'];  
+      
+  //to prevent from mysqli injection  
+  $report_id = stripcslashes($report_id);  
+  $report_id = mysqli_real_escape_string($con, $report_id);   
+       
+ // sql to delete a record
+ $sql = "DELETE FROM volunteers WHERE id='$report_id'";
+ 
+ if ($con->query($sql) === TRUE) {
+   header("location: ./volunteer.php");
+ } else {
+   echo "Error deleting record: " . $con->error;
+ }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,7 +29,7 @@
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 
     <!-- >>> Title & Favicon <<< -->
-    <title>Our Doctors - RetinApp</title>
+    <title>Doctors - RetinApp</title>
     <link rel="shortcut icon" type="image/jpg" href="../logo/Logo.png" />
 
     <!-- >>> meta Description <<< -->
@@ -34,9 +57,16 @@
     <link rel="stylesheet" href="../sass/dashboard/reports/reports-view.css" />
 
     <style>
-      @media (min-width: 768px) {
+      
+
+      .responsive-table__row{
+        grid-template-columns: 1fr 4fr 3fr 3fr 3fr 1fr 2fr 5fr 1fr 1fr ;
+          text-overflow: ellipsis;
+      }
+      @media (min-width: 1900px) {
         .responsive-table__row {
-          grid-template-columns: 2fr 5fr 3fr 4fr 2fr 5fr 1fr 1fr;
+          grid-template-columns: 1fr 200px 230px 3fr 3fr 1fr 2fr 5fr 1fr 1fr ;
+          text-overflow: ellipsis;
         }
       }
       @media (min-width: 768px) and (max-width: 991px) {
@@ -51,6 +81,15 @@
     <!-- >>>>>>>>>>>>>>>>> RetinApp <<<<<<<<<<<<<<<<< -->
     <!-- >>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<< -->
 
+    <div class="preloader">
+      <div class="loader">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
     <!-- >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<< -->
     <!-- >>>>>>>>>>>> Dashboard <<<<<<<<<<<<< -->
     <!-- >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<< -->
@@ -60,20 +99,19 @@
         <!-- sidebar -->
         <div class="col-md-3 col-lg-2 px-0 position-fixed h-100 bg-white shadow-sm sidebar" id="sidebar">
           <div class="logo p-5">
-            <a href="../index.html"><img src="../logo/logo.svg" alt="logo" /></a>
+            <a href="../index.php"><img src="../logo/logo.svg" alt="logo" /></a>
           </div>
           <div class="list-group rounded-0">
-            <a href="./index.html" class="list-group-item list-group-item-action border-0 d-flex align-items-center">
+            <a href="./index.php" class="list-group-item list-group-item-action border-0 d-flex align-items-center">
               <span class="bi bi-border-all"></span>
               <span class="ml-2">Dashboard</span>
             </a>
-            <a href="./reports.html" class="list-group-item list-group-item-action border-0 align-items-center">
+            <a href="./reports.php" class="list-group-item list-group-item-action border-0 align-items-center">
               <span class="fa fa-file"></span>
               <span class="ml-2">Reports View</span>
             </a>
-
             <button
-              class="list-group-item list-group-item-action active border-0 d-flex justify-content-between align-items-center"
+              class="list-group-item active list-group-item-action border-0 d-flex justify-content-between align-items-center"
               data-toggle="collapse"
               data-target="#sale-collapse"
             >
@@ -84,26 +122,25 @@
               <span class="bi bi-chevron-down small"></span>
             </button>
             <div class="collapse" id="sale-collapse" data-parent="#sidebar">
-              <div class="list-group active">
-                <a href="./doctors.html" class="list-group-item list-group-item-action border-0 pl-5">See All Doctors</a>
-                <a href="#" class="list-group-item list-group-item-action border-0 pl-5">Add New Doctor</a>
+              <div class="list-group">
+                <a href="./doctors.php" class="list-group-item list-group-item-action border-0 pl-5">See All Doctors</a>
+                <a href="./add-new-doctor.php" class="list-group-item list-group-item-action border-0 pl-5">Add New Doctor</a>
               </div>
             </div>
             <button
-              class="list-group-item list-group-item-action border-0 d-flex justify-content-between align-items-center"
+              class="list-group-item list-group-item-action  border-0 d-flex justify-content-between align-items-center"
               data-toggle="collapse"
               data-target="#purchase-collapse"
             >
               <div>
                 <span class="bi bi-person-check"></span>
-                <span class="ml-2">Volunteer</span>
+                <span class="ml-2">Volunteers</span>
               </div>
               <span class="bi bi-chevron-down small"></span>
             </button>
             <div class="collapse" id="purchase-collapse" data-parent="#sidebar">
               <div class="list-group">
-                <a href="#" class="list-group-item sub list-group-item-action border-0 pl-5">See All Volunteers</a>
-                <a href="#" class="list-group-item list-group-item-action border-0 pl-5">Add New Volunteer</a>
+                <a href="./volunteer.php" class="list-group-item list-group-item-action border-0 pl-5">See All Volunteers</a>
               </div>
             </div>
           </div>
@@ -111,7 +148,7 @@
         <!-- overlay to close sidebar on small screens -->
         <div class="w-100 vh-100 position-fixed overlay d-none" id="sidebar-overlay"></div>
         <!-- note: in the layout margin auto is the key as sidebar is fixed -->
-        <div class="col-md-9 col-lg-10 ml-md-auto px-0">
+        <div class="col-md-9 col-lg-10 ml-md-auto px-0 pb-5" >
           <!-- top nav -->
           <nav class="w-100 d-flex px-4 py-2 mb-4 shadow-sm">
             <!-- close sidebar -->
@@ -119,23 +156,16 @@
               <span class="bi bi-list h3" style="color: #ef4126"></span>
             </button>
             <div class="dropdown ml-auto">
-              <button class="btn py-0 d-flex align-items-center" id="logout-dropdown" data-toggle="dropdown" aria-expanded="false">
-                <span class="bi bi-person h4" style="color: #ef4126"></span>
-                <span class="bi bi-chevron-down ml-1 mb-2 small" style="color: #ef4126"></span>
-              </button>
-              <div class="dropdown-menu dropdown-menu-right border-0 shadow-sm" aria-labelledby="logout-dropdown">
-                <a class="dropdown-item" href="#">Logout</a>
-                <a class="dropdown-item" href="#">Settings</a>
-              </div>
+              <a href="#" style="color:unset"><i class="fas fa-sign-out-alt" style="color:#ef4126"></i> &nbsp;Logout</a>
             </div>
           </nav>
           <!-- main content -->
           <main class="container-fluid">
-            <section class="row">
+          <section class="row">
               <div class="col-md-6 col-lg-4">
                 <!-- card -->
                 <article class="p-3 pl-4 rounded shadow-sm border-left mb-4">
-                  <a href="./reports.html" class="d-flex align-items-center" style="text-decoration: none">
+                  <a href="./reports.php" class="d-flex align-items-center" style="text-decoration: none">
                     &nbsp; <span class="fa fa-file h4" style="color: #ef4126"></span>&nbsp;&nbsp;
                     <h5 class="ml-2" style="color: #2f2e41; font-family: 'Poppins'; font-size: 17px; text-decoration: none">Reports View</h5>
                   </a>
@@ -143,7 +173,7 @@
               </div>
               <div class="col-md-6 col-lg-4">
                 <article class="p-3 pl-4 rounded shadow-sm border-left mb-4">
-                  <a href="#" class="d-flex align-items-center" style="text-decoration: none">
+                  <a href="./doctors.php" class="d-flex align-items-center" style="text-decoration: none">
                     &nbsp;<span class="bi bi-person h4" style="color: #ef4126"></span>&nbsp;&nbsp;
                     <h5 class="ml-2" style="color: #2f2e41; font-family: 'Poppins'; font-size: 17px">Doctors</h5>
                   </a>
@@ -151,7 +181,7 @@
               </div>
               <div class="col-md-6 col-lg-4">
                 <article class="p-3 pl-4 rounded shadow-sm border-left mb-8">
-                  <a href="#" class="d-flex align-items-center" style="text-decoration: none">
+                  <a href="./volunteer.php" class="d-flex align-items-center" style="text-decoration: none">
                     &nbsp;
                     <span class="bi bi-person-check h4" style="color: #ef4126"></span>&nbsp;&nbsp;
                     <h5 class="ml-2" style="color: #2f2e41; font-family: 'Poppins'; font-size: 17px">Volunteers</h5>
@@ -172,12 +202,12 @@
           <!-- Reports View -->
           <div class="container reports__view">
             <!-- Adding Search Option -->
-            <form action="">
+            <form action="./doctors.php" method="post">
               <div class="search__container">
-                <p class="search__title"><span>Go ahead,</span> Search Doctors by ID</p>
+                <p class="search__title"><span>Go ahead,</span> Search Doctor by Name</p>
                 <div class="search__theReport">
-                  <input class="search__input" type="text" placeholder="Search" />
-                  <button><i class="fas fa-search"></i></button>
+                  <input class="search__input" type="text" placeholder="Search" name="patientName" />
+                  <button type="submit" name="submit"><i class="fas fa-search"></i></button>
                 </div>
               </div>
               <div class="credits__container">
@@ -188,25 +218,16 @@
               </div>
             </form>
 
+         
+
             <!-- Adding Dropdown and Back option -->
             <div class="--select-or-go-back-- container">
-              <div class="--select-city--">
-                <div class="dropdown">
-                  <div class="select">
-                    <span>Date Added</span>
-                    <i class="fas fa-chevron-down"></i>
-                  </div>
-                  <input type="hidden" name="gender" />
-                  <ul class="dropdown-menu">
-                    <li>Ascending</li>
-                    <li>Descending</li>
-                  </ul>
-                </div>
-              </div>
               <div class="--go-back--">
-                <a href="./index.html"><i class="fas fa-chevron-left"></i> &nbsp; Back</a>
+                <a href="./index.php"><i class="fas fa-chevron-left"></i> &nbsp; Back</a>
               </div>
             </div>
+
+
 
             <!-- Responsive Table Section -->
             <table class="responsive-table">
@@ -233,123 +254,151 @@
                       />
                     </svg>
                   </th>
-                  <th class="responsive-table__head__title responsive-table__head__title--reviewed">Qualification</th>
-                  <th class="responsive-table__head__title responsive-table__head__title--age">Reports Reviewed</th>
-                  <th class="responsive-table__head__title responsive-table__head__title--gender">Gender</th>
+                
+                  <th class="responsive-table__head__title responsive-table__head__title--age">Email</th>
+                  <th class="responsive-table__head__title responsive-table__head__title--age">Password</th>
+                  <th class="responsive-table__head__title responsive-table__head__title--age">CNIC</th>
+                  <th class="responsive-table__head__title responsive-table__head__title--age">Age</th>
+                  <th class="responsive-table__head__title responsive-table__head__title--age">Gender</th>
                   <th class="responsive-table__head__title responsive-table__head__title--date">Date Added</th>
+                  <th class="responsive-table__head__title responsive-table__head__title--delete">Edit</th>
                   <th class="responsive-table__head__title responsive-table__head__title--delete">Delete</th>
-                  <th class="responsive-table__head__title responsive-table__head__title--edit">Edit</th>
+                  
                 </tr>
               </thead>
               <!-- Responsive Table Body Section -->
               <tbody class="responsive-table__body">
-                <tr class="responsive-table__row">
-                  <td class="responsive-table__body__text responsive-table__body__text--age">EF23</td>
+
+              <?php
+
+                require "../config/connection.php";
+                      
+                $sql = "SELECT id, volunteerName, volunteerEmail, volunteerPassword, volunteerAge, volunteerGender, dateAdded, cnic FROM volunteers";
+                $result = $con->query($sql);
+
+                if ($result->num_rows > 0) {
+                  // output data of each row
+                  while($row = $result->fetch_assoc()) {
+                    $id = $row["id"];
+                    $volunteerName = $row["volunteerName"];    
+                    $volunteerEmail = $row["volunteerEmail"];    
+                    $volunteerPassword = $row["volunteerPassword"];    
+                    $volunteerAge = $row["volunteerAge"];    
+                    $volunteerGender = $row["volunteerGender"];    
+                    $dateAdded = $row["dateAdded"];     
+                    $cnic = $row["cnic"];    
+
+                   ?>
+
+                <?php
+                     if(isset($_POST["submit"])){
+
+                     /* ++++++++++++++++++++++++++++  */
+                     /* ++++++++++++++++++++++++++++  */
+                     /* ++++++++++++++++++++++++++++  */
+
+                     $volunName = $_POST['patientName'];  
+      
+                     //to prevent from mysqli injection  
+                     $volunName = stripcslashes($volunName);  
+                     $volunName = mysqli_real_escape_string($con, $volunName);   
+                          
+                     if($volunName === $volunteerName){
+                     ?>
+
+                  <tr class="responsive-table__row">
+                  <td class="responsive-table__body__text responsive-table__body__text--id"><?php echo $id ?></td>
                   <td class="responsive-table__body__text responsive-table__body__text--name">
                     <img class="user-icon" src="../images/icons/user.svg" alt="RetinApp User" />
-                    Azaz Muzaffar
+                    <?php echo $volunteerName ?>
                   </td>
-                  <td class="responsive-table__body__text responsive-table__body__text--age">Diabetologist</td>
-                  <td class="responsive-table__body__text responsive-table__body__text--age">21 Reviewed</td>
-                  <td class="responsive-table__body__text responsive-table__body__text--gender">Male</td>
-                  <td class="responsive-table__body__text responsive-table__body__text--date">Jul 17, 2021, 01:14 PM</td>
-                  <td class="responsive-table__body__text responsive-table__body__text--delete">
-                    <a href="./reports/EF23406.html"><i class="fas fa-trash-alt"></i></a>
-                  </td>
+                  <td class="responsive-table__body__text responsive-table__body__text--age"><?php echo $volunteerEmail ?></td>
+                  <td class="responsive-table__body__text responsive-table__body__text--age"><?php echo $volunteerPassword ?></td>
+                  <td class="responsive-table__body__text responsive-table__body__text--age"><?php echo $cnic ?></td>
+                  <td class="responsive-table__body__text responsive-table__body__text--age"><?php echo $volunteerAge ?></td>
+                  <td class="responsive-table__body__text responsive-table__body__text--age"><?php echo $volunteerGender ?></td>
+                  <td class="responsive-table__body__text responsive-table__body__text--date"><?php echo $dateAdded ?></td>
+                  <!-- Show edit option if feedback already provided -->
+              
                   <td class="responsive-table__body__text responsive-table__body__text--report">
-                    <a href="./reports/EF23406.html"><i class="fas fa-edit"></i> </a>
+                    <a href="./doctors/update-doctor.php?report_id=<?php echo $id ?>" target="_blank"><i class="fas fa-edit"></i> </a>
                   </td>
+
+                  <td class="responsive-table__body__text responsive-table__body__text--report">
+                    <a href="./doctors.php?report_id=<?php echo $id ?>" target="_blank"><i class="fas fa-trash-alt"></i></a>
+                  </td>
+            
                 </tr>
+                     
+                     <?php
+                     }
+
+                     else{
+                      ?>
+
+                 
+
+                  <?php
+                     }
+
+                     /* ++++++++++++++++++++++++++++  */
+                     /* ++++++++++++++++++++++++++++  */
+                     /* ++++++++++++++++++++++++++++  */
+                    
+                 
+                      
+                ?>
+
+
+
+                <?php      
+                    }
+                    else{
+                ?>      
+
                 <tr class="responsive-table__row">
-                  <td class="responsive-table__body__text responsive-table__body__text--age">EF73</td>
+                  <td class="responsive-table__body__text responsive-table__body__text--id"><?php echo $id ?></td>
                   <td class="responsive-table__body__text responsive-table__body__text--name">
                     <img class="user-icon" src="../images/icons/user.svg" alt="RetinApp User" />
-                    Ahsan Aman
+                    <?php echo $volunteerName ?>
                   </td>
-                  <td class="responsive-table__body__text responsive-table__body__text--reviewed">Diabetologist</td>
-                  <td class="responsive-table__body__text responsive-table__body__text--age">23 Reviewed</td>
-                  <td class="responsive-table__body__text responsive-table__body__text--gender">Male</td>
-                  <td class="responsive-table__body__text responsive-table__body__text--date">Apr 24, 2021, 11:36 AM</td>
-                  <td class="responsive-table__body__text responsive-table__body__text--delete">
-                    <a href="./reports/EF23406.html"><i class="fas fa-trash-alt"></i></a>
-                  </td>
+                  <td class="responsive-table__body__text responsive-table__body__text--age"><?php echo $volunteerEmail ?></td>
+                  <td class="responsive-table__body__text responsive-table__body__text--age"><?php echo $volunteerPassword ?></td>
+                  <td class="responsive-table__body__text responsive-table__body__text--age"><?php echo $cnic ?></td>
+                  <td class="responsive-table__body__text responsive-table__body__text--age"><?php echo $volunteerAge ?></td>
+                  <td class="responsive-table__body__text responsive-table__body__text--age"><?php echo $volunteerGender ?></td>
+                  <td class="responsive-table__body__text responsive-table__body__text--date"><?php echo $dateAdded ?></td>
+                  <!-- Show edit option if feedback already provided -->
+              
                   <td class="responsive-table__body__text responsive-table__body__text--report">
-                    <a href="./reports/EF23406.html"><i class="fas fa-edit"></i> </a>
+                    <a href="./doctors/update-doctor.php?report_id=<?php echo $id ?>" target="_blank"><i class="fas fa-edit"></i> </a>
                   </td>
-                </tr>
-                <tr class="responsive-table__row">
-                  <td class="responsive-table__body__text responsive-table__body__text--age">EF23</td>
-                  <td class="responsive-table__body__text responsive-table__body__text--name">
-                    <img class="user-icon" src="../images/icons/user.svg" alt="RetinApp User" />
-                    Raja Sultan
-                  </td>
-                  <td class="responsive-table__body__text responsive-table__body__text--reviewed">Diabetologist</td>
-                  <td class="responsive-table__body__text responsive-table__body__text--age">19 Reviewed</td>
-                  <td class="responsive-table__body__text responsive-table__body__text--gender">Male</td>
-                  <td class="responsive-table__body__text responsive-table__body__text--date">Aug 30, 2021, 05:54 PM</td>
-                  <td class="responsive-table__body__text responsive-table__body__text--delete">
-                    <a href="./reports/EF23406.html"><i class="fas fa-trash-alt"></i></a>
-                  </td>
+
                   <td class="responsive-table__body__text responsive-table__body__text--report">
-                    <a href="./reports/EF23406.html"><i class="fas fa-edit"></i> </a>
+                    <a href="./doctors.php?report_id=<?php echo $id ?>" target="_blank"><i class="fas fa-trash-alt"></i></a>
                   </td>
+               
                 </tr>
-                <tr class="responsive-table__row">
-                  <td class="responsive-table__body__text responsive-table__body__text--age">EF25</td>
-                  <td class="responsive-table__body__text responsive-table__body__text--name">
-                    <img class="user-icon" src="../images/icons/user.svg" alt="RetinApp User" />
-                    Akhtar Rizwan
-                  </td>
-                  <td class="responsive-table__body__text responsive-table__body__text--reviewed">Diabetologist</td>
-                  <td class="responsive-table__body__text responsive-table__body__text--age">27 Reviewed</td>
-                  <td class="responsive-table__body__text responsive-table__body__text--gender">Female</td>
-                  <td class="responsive-table__body__text responsive-table__body__text--date">Dec 15, 2021, 08:25 AM</td>
-                  <td class="responsive-table__body__text responsive-table__body__text--delete">
-                    <a href="./reports/EF23406.html"><i class="fas fa-trash-alt"></i></a>
-                  </td>
-                  <td class="responsive-table__body__text responsive-table__body__text--report">
-                    <a href="./reports/EF23406.html"><i class="fas fa-edit"></i> </a>
-                  </td>
-                </tr>
-                <tr class="responsive-table__row">
-                  <td class="responsive-table__body__text responsive-table__body__text--age">EF29</td>
-                  <td class="responsive-table__body__text responsive-table__body__text--name">
-                    <img class="user-icon" src="../images/icons/user.svg" alt="RetinApp User" />
-                    Azaz Muzaffar
-                  </td>
-                  <td class="responsive-table__body__text responsive-table__body__text--reviewed">Diabetologist</td>
-                  <td class="responsive-table__body__text responsive-table__body__text--age">21 Reviewed</td>
-                  <td class="responsive-table__body__text responsive-table__body__text--gender">Male</td>
-                  <td class="responsive-table__body__text responsive-table__body__text--date">Jul 17, 2021, 01:14 PM</td>
-                  <td class="responsive-table__body__text responsive-table__body__text--delete">
-                    <a href="./reports/EF23406.html"><i class="fas fa-trash-alt"></i></a>
-                  </td>
-                  <td class="responsive-table__body__text responsive-table__body__text--report">
-                    <a href="./reports/EF23406.html"><i class="fas fa-edit"></i> </a>
-                  </td>
-                </tr>
-                <tr class="responsive-table__row">
-                  <td class="responsive-table__body__text responsive-table__body__text--age">EF23</td>
-                  <td class="responsive-table__body__text responsive-table__body__text--name">
-                    <img class="user-icon" src="../images/icons/user.svg" alt="RetinApp User" />
-                    Ahsan Aman
-                  </td>
-                  <td class="responsive-table__body__text responsive-table__body__text--reviewed">Diabetologist</td>
-                  <td class="responsive-table__body__text responsive-table__body__text--age">23 Reviewed</td>
-                  <td class="responsive-table__body__text responsive-table__body__text--gender">Male</td>
-                  <td class="responsive-table__body__text responsive-table__body__text--date">Apr 24, 2021, 11:36 AM</td>
-                  <td class="responsive-table__body__text responsive-table__body__text--delete">
-                    <a href="./reports/EF23406.html"><i class="fas fa-trash-alt"></i></a>
-                  </td>
-                  <td class="responsive-table__body__text responsive-table__body__text--report">
-                    <a href="./reports/EF23406.html"><i class="fas fa-edit"></i> </a>
-                  </td>
-                </tr>
+                
+                <?php     
+                    }
+                ?>
+
+                <?php
+                  }
+                } else {
+                  $reportPDF = 0;
+                }
+                $con->close();
+                
+                ?>
+
+                
               </tbody>
             </table>
           </div>
           <!-- Pagination -->
-          <div class="container">
+          <!-- <div class="container">
             <div class="pagination">
               <ul class="pagination-2">
                 <li class="page-number prev"><a href="#">&laquo;</a></li>
@@ -366,7 +415,7 @@
                 <li class="page-number prev"><a href="#">&raquo;</a></li>
               </ul>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>

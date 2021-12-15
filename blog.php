@@ -36,6 +36,15 @@
     <!-- >>>>>>>>>>>>>> Konfidencial <<<<<<<<<<<<<<<< -->
     <!-- >>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<< -->
 
+    <div class="preloader">
+      <div class="loader">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
     <!-- >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<< -->
     <!-- >>>>>>>>>>>>>> Navbar <<<<<<<<<<<<<< -->
     <!-- >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<< -->
@@ -82,7 +91,7 @@
       <div class="--navbar--center-- mx-auto order-0">
         <!-- Logo -->
         <div class="--logo--">
-          <a class="navbar-brand mx-auto" href="./index.html">
+          <a class="navbar-brand mx-auto" href="./index.php">
             <span>Menu</span>
             <div class="svg-container">
               <img src="./logo/logo.svg" alt="logo" />
@@ -117,24 +126,24 @@
         <!-- All Navigations -->
         <ul class="--center--list-- navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="./index.html">Home</a>
+            <a class="nav-link" href="./index.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./how-it-works.html">How It Works</a>
+            <a class="nav-link" href="./how-it-works.php">How It Works</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./FAQ.html">FAQ</a>
+            <a class="nav-link" href="./FAQ.php">FAQ</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="./blog.html">blog</a>
+            <a class="nav-link" href="./blog.php">blog</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./contactos.html">Contact Us</a>
+            <a class="nav-link" href="./contactos.php">Contact Us</a>
           </li>
         </ul>
         <!-- >>>>>>>> Pages Direction <<<<<<< -->
         <div class="--page-direction--">
-          <span><a href="./index.html">Home</a><span>/</span>Blog</span>
+          <span><a href="./index.php">Home</a><span>/</span>Blog</span>
         </div>
       </div>
 
@@ -143,10 +152,10 @@
       <div class="--navbar--right-- navbar-collapse collapse w-40">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <h6>Pesquise aqui</h6>
+            <h6>Search Report By ID</h6>
             <!-- Form Start -->
-            <form action="./search-report.html" method="">
-              <input type="text" placeholder="EF23406" required />
+            <form action="search-report.php" method="post">
+              <input type="text" placeholder="Enter your CNIC #" name="cnic" required />
               <button>
                 <div class="--search--">
                   <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
@@ -230,7 +239,7 @@
 
           <!-- >>>>>>>> Blog # 1 <<<<<<< -->
           <div class="col-md-6 col-lg-4">
-            <a href="./blogs/blog-1.html">
+            <a href="./blogs/blog-1.php">
               <!-- >>>>>>>> Blog Image <<<<<<< -->
               <div class="blog blog-1">
                 <div class="--blog-img--">
@@ -266,7 +275,7 @@
 
           <!-- >>>>>>>> Blog # 2 <<<<<<< -->
           <div class="col-md-6 col-lg-4">
-            <a href="./blogs/blog-1.html">
+            <a href="./blogs/blog-1.php">
               <div class="blog blog-2">
                 <!-- >>>>>>>> Blog Image <<<<<<< -->
                 <div class="--blog-img--">
@@ -302,7 +311,7 @@
 
           <!-- >>>>>>>> Blog # 3 <<<<<<< -->
           <div class="col-md-6 col-lg-4">
-            <a href="./blogs/blog-1.html">
+            <a href="./blogs/blog-1.php">
               <div class="blog blog-3">
                 <!-- >>>>>>>> Blog Image <<<<<<< -->
                 <div class="--blog-img--">
@@ -338,7 +347,7 @@
 
           <!-- >>>>>>>> Blog # 1 <<<<<<< -->
           <div class="col-md-6 col-lg-4">
-            <a href="./blogs/blog-1.html">
+            <a href="./blogs/blog-1.php">
               <!-- >>>>>>>> Blog Image <<<<<<< -->
               <div class="blog blog-1">
                 <div class="--blog-img--">
@@ -374,7 +383,7 @@
 
           <!-- >>>>>>>> Blog # 2 <<<<<<< -->
           <div class="col-md-6 col-lg-4">
-            <a href="./blogs/blog-1.html">
+            <a href="./blogs/blog-1.php">
               <div class="blog blog-2">
                 <!-- >>>>>>>> Blog Image <<<<<<< -->
                 <div class="--blog-img--">
@@ -410,7 +419,7 @@
 
           <!-- >>>>>>>> Blog # 3 <<<<<<< -->
           <div class="col-md-6 col-lg-4">
-            <a href="./blogs/blog-1.html">
+            <a href="./blogs/blog-1.php">
               <div class="blog blog-3">
                 <!-- >>>>>>>> Blog Image <<<<<<< -->
                 <div class="--blog-img--">
@@ -446,7 +455,7 @@
 
           <!-- >>>>>>>> Blog # 1 <<<<<<< -->
           <div class="col-md-6 col-lg-4">
-            <a href="./blogs/blog-1.html">
+            <a href="./blogs/blog-1.php">
               <!-- >>>>>>>> Blog Image <<<<<<< -->
               <div class="blog blog-1">
                 <div class="--blog-img--">
@@ -482,7 +491,7 @@
 
           <!-- >>>>>>>> Blog # 2 <<<<<<< -->
           <div class="col-md-6 col-lg-4">
-            <a href="./blogs/blog-1.html">
+            <a href="./blogs/blog-1.php">
               <div class="blog blog-2">
                 <!-- >>>>>>>> Blog Image <<<<<<< -->
                 <div class="--blog-img--">
@@ -518,7 +527,7 @@
 
           <!-- >>>>>>>> Blog # 3 <<<<<<< -->
           <div class="col-md-6 col-lg-4">
-            <a href="./blogs/blog-1.html">
+            <a href="./blogs/blog-1.php">
               <div class="blog blog-3">
                 <!-- >>>>>>>> Blog Image <<<<<<< -->
                 <div class="--blog-img--">
@@ -569,11 +578,11 @@
         <!-- >>>>>>> Navigations <<<<<< -->
         <div class="--pages--">
           <ul>
-            <li><a class="active" href="./acompanhantes.html">Home</a></li>
-            <li><a href="./how-it-works.html">How It Works</a></li>
-            <li><a href="./FAQ.html">FAQ</a></li>
-            <li><a href="./blog.html">Blog</a></li>
-            <li><a href="./contactos.html">Contact Us</a></li>
+            <li><a class="active" href="./acompanhantes.php">Home</a></li>
+            <li><a href="./how-it-works.php">How It Works</a></li>
+            <li><a href="./FAQ.php">FAQ</a></li>
+            <li><a href="./blog.php">Blog</a></li>
+            <li><a href="./contactos.php">Contact Us</a></li>
           </ul>
         </div>
         <!-- >>>>>>>> Copyright <<<<<<< -->
@@ -591,16 +600,16 @@
       <div class="pop-up-contant">
         <div class="inner-content">
           <p>Retin<span>App</span> Login</p>
-          <form action="./docter_panel/index.html">
+          <form method="post" action="config/login.php">
             <!-- get Email -->
             <div class="fetch-email">
               <label for="Email">Email</label>
-              <input type="Email" placeholder="Email" required />
+              <input type="Email" placeholder="Email" name="doc_email" required />
             </div>
             <!-- get Password -->
             <div class="fetch-password">
               <label for="password">Password</label>
-              <input type="password" placeholder="***********" required />
+              <input type="password" placeholder="***********" name="doc_password"  required />
               <!-- Eye icon responsible for showing password -->
               <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
                 <g fill="none" fill-rule="evenodd">
@@ -612,6 +621,7 @@
                 </g>
               </svg>
             </div>
+            <p class="error" id="errorMessage"></p>
             <!-- Submit info -->
             <div class="form-submission">
               <input type="submit" value="Login" />
@@ -645,5 +655,16 @@
 
     <!-- >>> CUSTOM JS <<< -->
     <script src="./js/app.js"></script>
+
+    <?php
+        if(isset($_GET['invalidInfo']))
+        {
+            echo 
+            '<script type="text/JavaScript"> 
+                $(".login-to-konfidential").css("display", "block");
+                document.getElementById("errorMessage").innerHTML = "Invalid email or password, please try again!";
+            </script>';
+        }
+    ?>
   </body>
 </html>
