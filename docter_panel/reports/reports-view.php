@@ -131,14 +131,23 @@ require "../../config/connection.php";
               <span class="bi bi-list h3" style="color: #ef4126"></span>
             </button>
             <div class="dropdown ml-auto">
-              <a href="#" style="color:unset"><i class="fas fa-sign-out-alt" style="color:#ef4126"></i> &nbsp;Logout</a>
+              <a href="../../index.php" style="color:unset"><i class="fas fa-sign-out-alt" style="color:#ef4126"></i> &nbsp;Logout</a>
             </div>
           </nav>
           <!-- main content -->
           <main class="container-fluid">
             <section class="row">
+            
               <div class="col-md-12 col-lg-12">
                 <!-- card -->
+                <div class="container">
+              <h1>I'm a dev, and these are my skills</h1>
+              <div class="chart" data-percent="95">HTML</div>
+              <div class="chart" data-percent="95">SCSS</div>
+              <div class="chart" data-percent="70">jQuery</div>
+              <div class="chart" data-percent="90">WP</div>
+              <div class="chart" data-percent="110"> Making Tea</div>
+            </div>
                 <article class="p-3 pl-4 rounded shadow-sm border-left mb-4">
                   <a href="../reports.php" class="d-flex align-items-center" style="text-decoration: none">
                     &nbsp; <span class="fa fa-file h4" style="color: #ef4126"></span>&nbsp;&nbsp;
@@ -182,7 +191,7 @@ require "../../config/connection.php";
               <div class="--select-or-go-back-- container">
                 <div class="--select-city--"></div>
                 <div class="--go-back--">
-                  <a href="../reports.php"><i class="fas fa-chevron-left"></i> &nbsp; Back</a>
+                  <a href="../reports.php"><i class="fas fa-chevron-left" style="color: #ef4126;"></i> &nbsp; Back</a>
                 </div>
               </div>
               <embed style="margin-top:30px;height:800px;" width="100%" height="100%" name="plugin" id="pdf" src="../../PDFReports/<?php echo $reportPDF; ?>" type="application/pdf">
@@ -201,6 +210,7 @@ require "../../config/connection.php";
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://rendro.github.io/easy-pie-chart/javascripts/jquery.easy-pie-chart.js"></script>
     <script src="../../js/dashboard.js"></script>
 
     <?php
@@ -214,5 +224,18 @@ require "../../config/connection.php";
     }
 
     ?>
+
+    <script>
+      $(function() {
+        $('.chart').easyPieChart({
+          scaleColor: false,
+          lineWidth: 10,
+          lineCap: 'round',
+          barColor: '#333',
+          size: 150,
+          animate: 500
+        });
+      });
+    </script>
   </body>
 </html>

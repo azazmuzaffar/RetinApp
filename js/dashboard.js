@@ -17,13 +17,8 @@ $(document).ready(() => {
 });
 
 /* >>>>> Dropdown Menu from Acompanhantes Page <<<<<<*/
-$(".dropdown").click(function () {
-  $(this).addClass("active");
-  $(this).find(".dropdown-menu").slideDown(300);
-});
-$(".dropdown").focusout(function () {
-  $(this).removeClass("active");
-  $(this).find(".dropdown-menu").slideUp(300);
+$(".sortit").click(function () {
+  $(".drop-down-menu").toggleClass("active");
 });
 
 $(window).on("load", function () {

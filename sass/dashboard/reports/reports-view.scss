@@ -226,7 +226,7 @@ body {
   max-width: 100%;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .--select-or-go-back-- .--go-back-- {
@@ -248,7 +248,7 @@ body {
   transition: 0.3s;
 }
 
-.--select-or-go-back-- .--select-city-- .dropdown {
+.--select-or-go-back-- .--select-city-- .drop-down {
   width: 202px;
   display: inline-block;
   background-color: transparent;
@@ -263,14 +263,14 @@ body {
   border: none;
 }
 
-.--select-or-go-back-- .--select-city-- .dropdown .sortit {
+.--select-or-go-back-- .--select-city-- .drop-down .sortit {
   cursor: pointer;
   display: block;
   padding: 10px;
   border-bottom: 1px solid #ef4126;
 }
 
-.--select-or-go-back-- .--select-city-- .dropdown .sortit i {
+.--select-or-go-back-- .--select-city-- .drop-down .sortit i {
   font-size: 13px;
   cursor: pointer;
   position: absolute;
@@ -282,7 +282,7 @@ body {
   padding-right: 10px;
 }
 
-.--select-or-go-back-- .--select-city-- .dropdown .dropdown-menu {
+.--select-or-go-back-- .--select-city-- .drop-down .drop-down-menu {
   position: absolute;
   width: 100%;
   left: 0;
@@ -290,23 +290,23 @@ body {
   margin-top: 0px;
   border-radius: 0 1px 2px 2px;
   overflow: hidden;
-  display: none;
-  max-height: -webkit-fit-content;
-  max-height: -moz-fit-content;
   -webkit-box-shadow: 0 0 10px rgba(190, 190, 190, 0.411);
   box-shadow: 0 0 10px rgba(190, 190, 190, 0.411);
-  max-height: fit-content;
-  overflow-y: auto;
+  max-height: 0px;
   padding: 0;
   list-style: none;
   z-index: 9;
   border: none;
+  transition: transform 0.26s ease;
+  &.active {
+    max-height: fit-content;
+    transition: transform 0.26s ease;
+  }
 }
 
-.--select-or-go-back-- .--select-city-- .dropdown .dropdown-menu li {
+.--select-or-go-back-- .--select-city-- .drop-down .drop-down-menu li {
   font-size: 14px;
   color: #2f2e41;
-  padding: 10px;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
@@ -316,6 +316,7 @@ body {
     width: 100%;
     height: 100%;
     color: unset;
+    padding: 10px;
   }
   &.active {
     background: #ef4126;
@@ -323,17 +324,17 @@ body {
   }
 }
 
-.--select-or-go-back-- .--select-city-- .dropdown .dropdown-menu li:hover {
+.--select-or-go-back-- .--select-city-- .drop-down .drop-down-menu li:hover {
   background: #ef4126;
   color: #fff;
 }
 
-.--select-or-go-back-- .--select-city-- .dropdown.active i {
+.--select-or-go-back-- .--select-city-- .drop-down.active i {
   -webkit-transform: rotate(-180deg);
   transform: rotate(-180deg);
 }
 
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   .--select-or-go-back-- {
     margin-bottom: 40px;
     padding: 0px 10px;
@@ -347,10 +348,10 @@ body {
   .--select-or-go-back-- .--select-city-- {
     width: 100%;
   }
-  .--select-or-go-back-- .--select-city-- .dropdown {
+  .--select-or-go-back-- .--select-city-- .drop-down {
     width: 100%;
   }
-}
+} */
 
 .add-new {
   max-width: 900px;

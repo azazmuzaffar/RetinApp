@@ -2,18 +2,18 @@
 session_start();
 require "../config/connection.php";
 
-error_reporting(E_ERROR); if($_GET['report_id']){
-  $report_id = $_GET['report_id'];  
+error_reporting(E_ERROR); if($_GET['doc_id']){
+  $doc_id = $_GET['doc_id'];  
       
   //to prevent from mysqli injection  
-  $report_id = stripcslashes($report_id);  
-  $report_id = mysqli_real_escape_string($con, $report_id);   
+  $doc_id = stripcslashes($doc_id);  
+  $doc_id = mysqli_real_escape_string($con, $doc_id);   
        
  // sql to delete a record
- $sql = "DELETE FROM volunteers WHERE id='$report_id'";
+ $sql = "DELETE FROM doctors WHERE id='$doc_id'";
  
  if ($con->query($sql) === TRUE) {
-   header("location: ./volunteer.php");
+   header("location: ./doctors.php");
  } else {
    echo "Error deleting record: " . $con->error;
  }
@@ -60,12 +60,12 @@ error_reporting(E_ERROR); if($_GET['report_id']){
       
 
       .responsive-table__row{
-        grid-template-columns: 1fr 4fr 3fr 3fr 3fr 1fr 2fr 5fr 1fr 1fr ;
+        grid-template-columns: 1fr 4fr 4fr 2fr 2fr 3fr 3fr 1fr 1fr ;
           text-overflow: ellipsis;
       }
       @media (min-width: 1900px) {
         .responsive-table__row {
-          grid-template-columns: 1fr 200px 230px 3fr 3fr 1fr 2fr 5fr 1fr 1fr ;
+          grid-template-columns: 1fr 4fr 250px 2fr 160px 2fr 3fr 1fr 1fr ;
           text-overflow: ellipsis;
         }
       }
@@ -223,7 +223,8 @@ error_reporting(E_ERROR); if($_GET['report_id']){
             <!-- Adding Dropdown and Back option -->
             <div class="--select-or-go-back-- container">
               <div class="--go-back--">
-                <a href="./index.php"><i class="fas fa-chevron-left"></i> &nbsp; Back</a>
+                <br>
+                <a href="./index.php"><i class="fas fa-chevron-left" style="color: #ef4126;"></i> &nbsp; Back</a>
               </div>
             </div>
 
@@ -236,7 +237,7 @@ error_reporting(E_ERROR); if($_GET['report_id']){
                 <tr class="responsive-table__row">
                   <th class="responsive-table__head__title responsive-table__head__title--status">ID</th>
                   <th class="responsive-table__head__title responsive-table__head__title--name">
-                    Name
+                    Doctor Name
                     <svg
                       version="1.1"
                       class="up-arrow"
@@ -257,9 +258,8 @@ error_reporting(E_ERROR); if($_GET['report_id']){
                 
                   <th class="responsive-table__head__title responsive-table__head__title--age">Email</th>
                   <th class="responsive-table__head__title responsive-table__head__title--age">Password</th>
-                  <th class="responsive-table__head__title responsive-table__head__title--age">CNIC</th>
-                  <th class="responsive-table__head__title responsive-table__head__title--age">Age</th>
-                  <th class="responsive-table__head__title responsive-table__head__title--age">Gender</th>
+                  <th class="responsive-table__head__title responsive-table__head__title--age">Speciality</th>
+                  <th class="responsive-table__head__title responsive-table__head__title--age">Reports</th>
                   <th class="responsive-table__head__title responsive-table__head__title--date">Date Added</th>
                   <th class="responsive-table__head__title responsive-table__head__title--delete">Edit</th>
                   <th class="responsive-table__head__title responsive-table__head__title--delete">Delete</th>
@@ -273,20 +273,19 @@ error_reporting(E_ERROR); if($_GET['report_id']){
 
                 require "../config/connection.php";
                       
-                $sql = "SELECT id, volunteerName, volunteerEmail, volunteerPassword, volunteerAge, volunteerGender, dateAdded, cnic FROM volunteers";
+                $sql = "SELECT id, docName, docEmail, docPassword, reportsReviewed, speciality, dateAdded FROM doctors";
                 $result = $con->query($sql);
 
                 if ($result->num_rows > 0) {
                   // output data of each row
                   while($row = $result->fetch_assoc()) {
                     $id = $row["id"];
-                    $volunteerName = $row["volunteerName"];    
-                    $volunteerEmail = $row["volunteerEmail"];    
-                    $volunteerPassword = $row["volunteerPassword"];    
-                    $volunteerAge = $row["volunteerAge"];    
-                    $volunteerGender = $row["volunteerGender"];    
+                    $docName = $row["docName"];    
+                    $docEmail = $row["docEmail"];    
+                    $docPassword = $row["docPassword"];    
+                    $reportsReviewed = $row["reportsReviewed"];   
+                    $speciality = $row["speciality"];     
                     $dateAdded = $row["dateAdded"];     
-                    $cnic = $row["cnic"];    
 
                    ?>
 
@@ -297,35 +296,34 @@ error_reporting(E_ERROR); if($_GET['report_id']){
                      /* ++++++++++++++++++++++++++++  */
                      /* ++++++++++++++++++++++++++++  */
 
-                     $volunName = $_POST['patientName'];  
+                     $doctorName = $_POST['patientName'];  
       
                      //to prevent from mysqli injection  
-                     $volunName = stripcslashes($volunName);  
-                     $volunName = mysqli_real_escape_string($con, $volunName);   
+                     $doctorName = stripcslashes($doctorName);  
+                     $doctorName = mysqli_real_escape_string($con, $doctorName);   
                           
-                     if($volunName === $volunteerName){
+                     if($doctorName === $docName){
                      ?>
 
                   <tr class="responsive-table__row">
                   <td class="responsive-table__body__text responsive-table__body__text--id"><?php echo $id ?></td>
                   <td class="responsive-table__body__text responsive-table__body__text--name">
                     <img class="user-icon" src="../images/icons/user.svg" alt="RetinApp User" />
-                    <?php echo $volunteerName ?>
+                    <?php echo $docName ?>
                   </td>
-                  <td class="responsive-table__body__text responsive-table__body__text--age"><?php echo $volunteerEmail ?></td>
-                  <td class="responsive-table__body__text responsive-table__body__text--age"><?php echo $volunteerPassword ?></td>
-                  <td class="responsive-table__body__text responsive-table__body__text--age"><?php echo $cnic ?></td>
-                  <td class="responsive-table__body__text responsive-table__body__text--age"><?php echo $volunteerAge ?></td>
-                  <td class="responsive-table__body__text responsive-table__body__text--age"><?php echo $volunteerGender ?></td>
+                  <td class="responsive-table__body__text responsive-table__body__text--age"><?php echo $docEmail ?></td>
+                  <td class="responsive-table__body__text responsive-table__body__text--age"><?php echo $docPassword ?></td>
+                  <td class="responsive-table__body__text responsive-table__body__text--age"><?php echo $speciality ?></td>
+                  <td class="responsive-table__body__text responsive-table__body__text--age"><?php echo $reportsReviewed ?></td>
                   <td class="responsive-table__body__text responsive-table__body__text--date"><?php echo $dateAdded ?></td>
                   <!-- Show edit option if feedback already provided -->
               
                   <td class="responsive-table__body__text responsive-table__body__text--report">
-                    <a href="./doctors/update-doctor.php?report_id=<?php echo $id ?>" target="_blank"><i class="fas fa-edit"></i> </a>
+                    <a href="./doctors/update-doctor.php?doc_id=<?php echo $id ?>" target="_blank"><i class="fas fa-edit"></i> </a>
                   </td>
 
                   <td class="responsive-table__body__text responsive-table__body__text--report">
-                    <a href="./doctors.php?report_id=<?php echo $id ?>" target="_blank"><i class="fas fa-trash-alt"></i></a>
+                    <a href="./doctors.php?doc_id=<?php echo $id ?>" target="_blank"><i class="fas fa-trash-alt"></i></a>
                   </td>
             
                 </tr>
@@ -360,22 +358,21 @@ error_reporting(E_ERROR); if($_GET['report_id']){
                   <td class="responsive-table__body__text responsive-table__body__text--id"><?php echo $id ?></td>
                   <td class="responsive-table__body__text responsive-table__body__text--name">
                     <img class="user-icon" src="../images/icons/user.svg" alt="RetinApp User" />
-                    <?php echo $volunteerName ?>
+                    <?php echo $docName ?>
                   </td>
-                  <td class="responsive-table__body__text responsive-table__body__text--age"><?php echo $volunteerEmail ?></td>
-                  <td class="responsive-table__body__text responsive-table__body__text--age"><?php echo $volunteerPassword ?></td>
-                  <td class="responsive-table__body__text responsive-table__body__text--age"><?php echo $cnic ?></td>
-                  <td class="responsive-table__body__text responsive-table__body__text--age"><?php echo $volunteerAge ?></td>
-                  <td class="responsive-table__body__text responsive-table__body__text--age"><?php echo $volunteerGender ?></td>
+                  <td class="responsive-table__body__text responsive-table__body__text--age"><?php echo $docEmail ?></td>
+                  <td class="responsive-table__body__text responsive-table__body__text--age"><?php echo $docPassword ?></td>
+                  <td class="responsive-table__body__text responsive-table__body__text--age"><?php echo $speciality ?></td>
+                  <td class="responsive-table__body__text responsive-table__body__text--age"><?php echo $reportsReviewed ?></td>
                   <td class="responsive-table__body__text responsive-table__body__text--date"><?php echo $dateAdded ?></td>
                   <!-- Show edit option if feedback already provided -->
               
                   <td class="responsive-table__body__text responsive-table__body__text--report">
-                    <a href="./doctors/update-doctor.php?report_id=<?php echo $id ?>" target="_blank"><i class="fas fa-edit"></i> </a>
+                    <a href="./doctors/update-doctor.php?doc_id=<?php echo $id ?>" target="_blank"><i class="fas fa-edit"></i> </a>
                   </td>
 
                   <td class="responsive-table__body__text responsive-table__body__text--report">
-                    <a href="./doctors.php?report_id=<?php echo $id ?>" target="_blank"><i class="fas fa-trash-alt"></i></a>
+                    <a href="./doctors.php?doc_id=<?php echo $id ?>" target="_blank"><i class="fas fa-trash-alt"></i></a>
                   </td>
                
                 </tr>

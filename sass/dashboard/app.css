@@ -9,6 +9,7 @@
 /* >>> by changing these colors <<<< */
 @import url("../../fonts/Montserrat/stylesheet.css");
 @import url("../../fonts/Poppins/stylesheet.css");
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
 .heading-area- {
   margin-bottom: 90px;
 }
@@ -333,5 +334,22 @@ a:hover {
     -webkit-transform: rotate(180deg) translate(0, 0);
             transform: rotate(180deg) translate(0, 0);
   }
+}
+
+.chart {
+  position: relative;
+  display: inline-block;
+  margin: 20px 10px;
+  color: #999;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.chart canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 /*# sourceMappingURL=app.css.map */

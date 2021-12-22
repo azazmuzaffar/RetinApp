@@ -2,25 +2,26 @@
 session_start();
 require "../../config/connection.php";
 
- $report_id = $_GET['report_id'];  
+ $doc_id = $_GET['doc_id'];  
       
  //to prevent from mysqli injection  
- $report_id = stripcslashes($report_id);  
- $report_id = mysqli_real_escape_string($con, $report_id);   
-      
- $sql = "SELECT id, volunteerName, volunteerEmail, volunteerPassword, volunteerAge, volunteerGender, dateAdded, cnic FROM volunteers WHERE id='$report_id'";
+ $doc_id = stripcslashes($doc_id);  
+ $doc_id = mysqli_real_escape_string($con, $doc_id);   
+
+ $sql = "SELECT id, docName, docEmail, docPassword, reportsReviewed, speciality, dateAdded FROM doctors WHERE id='$doc_id'";
+
  $result = $con->query($sql);
 
 if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
-    $volunteerName = $row["volunteerName"];    
-    $volunteerEmail = $row["volunteerEmail"];    
-    $volunteerPassword = $row["volunteerPassword"];    
-    $volunteerAge = $row["volunteerAge"];    
-    $volunteerGender = $row["volunteerGender"];    
+    $id = $row["id"];
+    $docName = $row["docName"];    
+    $docEmail = $row["docEmail"];    
+    $docPassword = $row["docPassword"];    
+    $reportsReviewed = $row["reportsReviewed"];   
+    $speciality = $row["speciality"];     
     $dateAdded = $row["dateAdded"];     
-    $cnic = $row["cnic"];    
   }
 } else {
   $reportPDF = 0;
@@ -33,14 +34,13 @@ if(isset($_POST["submit"])){
   $UpdatedName = $_POST['UpdatedName'];  
   $UpdatedEmail = $_POST['UpdatedEmail'];  
   $UpdatedPassword = $_POST['UpdatedPassword'];  
-  $UpdatedCNIC = $_POST['UpdatedCNIC'];  
-  $UpdatedAge = $_POST['UpdatedAge'];  
-  $Updatedradio = $_POST['Updatedradio'];  
+  $UpdatedSpeciality = $_POST['UpdatedSpeciality'];  
+  $UpdatedReportsReviewed = $_POST['UpdatedReportsReviewed'];  
       
-  $sql = "UPDATE volunteers SET volunteerName='$UpdatedName', volunteerEmail='$UpdatedEmail', volunteerPassword='$UpdatedPassword', volunteerAge='$UpdatedAge' , cnic='$UpdatedCNIC', volunteerGender='$Updatedradio'  WHERE id=$report_id";
+  $sql = "UPDATE doctors SET docName='$UpdatedName', docEmail='$UpdatedEmail', docPassword='$UpdatedPassword', speciality='$UpdatedSpeciality' , reportsReviewed='$UpdatedReportsReviewed' WHERE id=$doc_id";
 
   if (mysqli_query($con, $sql)) {
-    header("location: ./update-doctor.php?report_id=$report_id");
+    header("location: ./update-doctor.php?doc_id=$doc_id");
   } else {
     $recordAdded = false;
   }
@@ -130,7 +130,7 @@ if(isset($_POST["submit"])){
               <span class="ml-2">Reports View</span>
             </a>
             <button
-              class="list-group-item list-group-item-action  border-0 d-flex justify-content-between align-items-center"
+              class="list-group-item active list-group-item-action  border-0 d-flex justify-content-between align-items-center"
               data-toggle="collapse"
               data-target="#sale-collapse"
             >
@@ -147,7 +147,7 @@ if(isset($_POST["submit"])){
               </div>
             </div>
             <button
-              class="list-group-item list-group-item-action active border-0 d-flex justify-content-between align-items-center"
+              class="list-group-item list-group-item-action  border-0 d-flex justify-content-between align-items-center"
               data-toggle="collapse"
               data-target="#purchase-collapse"
             >
@@ -222,51 +222,38 @@ if(isset($_POST["submit"])){
           <div class="container add-new">
             <form action="" method="post">
               <div class="search__container">
+              <!-- Adding Dropdown and Back option -->
+              <div class="--select-or-go-back-- container">
+                <div class="--select-city--"></div>
+                <div class="--go-back--">
+                  <a href="../doctors.php"><i class="fas fa-chevron-left" style="color: #ef4126;"></i> &nbsp; Back</a>
+                  <br><br>
+                </div>
+              </div>
                 <p class="search__title"><span>Go ahead,</span> Update the Reports Details</p>
                 <br>
                 <div class="the-input">
-                  <input class="search__input" type="text" value="<?php echo $volunteerName ?>" placeholder="Name" name="UpdatedName" autofocus/>
+                  <input class="search__input" type="text" value="<?php echo $docName ?>" placeholder="Name" name="UpdatedName" autofocus/>
                   <i class="fas fa-user"></i>
                 </div>
                 <div class="the-input">
-                  <input class="search__input" type="text" value="<?php echo $volunteerEmail ?>" placeholder="Email" name="UpdatedEmail"/>
+                  <input class="search__input" type="text" value="<?php echo $docEmail ?>" placeholder="Email" name="UpdatedEmail"/>
                   <i class="fas fa-envelope"></i>
                 </div>
                 <div class="the-input">
-                  <input class="search__input" type="text" value="<?php echo $volunteerPassword ?>" placeholder="Phone #" name="UpdatedPassword"/>
+                  <input class="search__input" type="text" value="<?php echo $docPassword ?>" placeholder="Phone #" name="UpdatedPassword"/>
                   <i class="fas fa-key"></i>
                 </div>
                 <div class="the-input">
-                  <input class="search__input" type="text" value="<?php echo $cnic ?>" placeholder="CNIC #" name="UpdatedCNIC"/>
+                  <input class="search__input" type="text" value="<?php echo $speciality ?>" placeholder="Speciality" name="UpdatedSpeciality"/>
                   <i class="fas fa-user-nurse"></i>
                 </div>
                 <div class="the-input">
-                  <input class="search__input" type="text" value="<?php echo $volunteerAge ?>" placeholder="Age" name="UpdatedAge"/>
+                  <input class="search__input" type="text" value="<?php echo $reportsReviewed ?>" placeholder="Age" name="UpdatedReportsReviewed"/>
                   <i class="fas fa-phone"></i>
                 </div>
-                <div class="row">
-                  <div class="col-lg-2">
-                    <div class="radio">
-                    <?php if($volunteerGender === "Male"){ ?>
-                      <input id="radio-1" name="Updatedradio" type="radio" value="Male" checked />
-                    <?php } else { ?>
-                        <input id="radio-1" name="Updatedradio" type="radio" value="Male" />
-                    <?php } ?>  
-                      <label for="radio-1" class="radio-label">Male</label>
-                    </div>
-                  </div>
-                  <div class="col-lg-2">
-                    <div class="radio">
-                    <?php if($volunteerGender === "Female"){ ?>
-                      <input id="radio-2" name="Updatedradio" type="radio" value="Female" checked />
-                    <?php } else { ?>
-                        <input id="radio-2" name="Updatedradio" type="radio" value="Female" />
-                    <?php } ?>  
-                      <label for="radio-2" class="radio-label">Female</label>
-                    </div>
-                  </div>
-                </div>
-                <input class="add-it" name="submit" type="submit" value="Update Volunteer" style="margin: 0 0 20px 0px;" />
+                <br>
+                <input class="add-it" name="submit" type="submit" value="Update Doctor" style="margin: 0 0 20px 0px;" />
                 <p id="recordAddedMessage" style="margin-bottom: 60px; color:green;"></p>
               </div>
 

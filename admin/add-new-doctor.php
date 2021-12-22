@@ -1,3 +1,30 @@
+<?php
+session_start();
+require "../config/connection.php";
+$recordAdded = false;
+
+if(isset($_POST["submit"])){
+  $doctorName = $_POST['doctorName'];  
+  $doctorEmail = $_POST['doctorEmail'];  
+  $doctorPassword = $_POST['doctorPassword'];  
+  $doctorSpeciality = $_POST['doctorSpeciality'];  
+  $radio = $_POST['radio'];  
+
+  $now = new DateTime();
+  $dateAdded = $now->format('Y-m-d H:i:s');    
+  echo $dateAdded;
+ 
+  $sql = "INSERT INTO doctors (docName, docEmail, docPassword, speciality, docGender, dateAdded) VALUES ('$doctorName',' $doctorEmail', '$doctorPassword','$doctorSpeciality','$radio','$dateAdded');";
+
+  if (mysqli_query($con, $sql)) {
+    $recordAdded = true;
+
+  } else {
+    $recordAdded = false;
+  }
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -170,10 +197,18 @@
             </div>
           </main>
           <div class="container add-new">
-            <form action="">
+            <form action="" method="post">
               <div class="search__container">
+              <!-- Adding Dropdown and Back option -->
+              <div class="--select-or-go-back-- container">
+                <div class="--select-city--"></div>
+                <div class="--go-back--">
+                  <a href="./doctors.php"><i class="fas fa-chevron-left" style="color: #ef4126;"></i> &nbsp; Back</a>
+                  <br><br>
+                </div>
+              </div>
                 <p class="search__title"><span>Go ahead,</span> Add NEw Doctor &nbsp;<i class="fas fa-user-nurse"></i></p>
-                <div class="avatar-upload">
+                <!-- <div class="avatar-upload">
                   <div class="avatar-edit">
                     <input type="file" id="imageUpload" accept=".png, .jpg, .jpeg" />
                     <label for="imageUpload"></label>
@@ -181,26 +216,23 @@
                   <div class="avatar-preview">
                     <div id="imagePreview" style="background-image: url(../images/icons/user.svg)"></div>
                   </div>
-                </div>
+                </div> -->
+                <br>
                 <div class="the-input">
-                  <input class="search__input" type="text" placeholder="Name" />
+                  <input class="search__input" type="text" placeholder="Name" name="doctorName"/>
                   <i class="fas fa-user"></i>
                 </div>
                 <div class="the-input">
-                  <input class="search__input" type="text" placeholder="Email" />
+                  <input class="search__input" type="text" placeholder="Email" name="doctorEmail"/>
                   <i class="fas fa-envelope"></i>
                 </div>
                 <div class="the-input">
-                  <input class="search__input" type="text" placeholder="Password" />
+                  <input class="search__input" type="text" placeholder="Password" name="doctorPassword"/>
                   <i class="fas fa-key"></i>
                 </div>
                 <div class="the-input">
-                  <input class="search__input" type="text" placeholder="Speciality" />
+                  <input class="search__input" type="text" placeholder="Speciality" name="doctorSpeciality"/>
                   <i class="fas fa-user-nurse"></i>
-                </div>
-                <div class="the-input">
-                  <input class="search__input" type="text" placeholder="Phone #" />
-                  <i class="fas fa-phone"></i>
                 </div>
                 <div class="row">
                   <div class="col-lg-2">
@@ -216,7 +248,9 @@
                     </div>
                   </div>
                 </div>
-                <input class="add-it" type="submit" value="Add New Doctor" />
+                <input class="add-it" name="submit" type="submit" value="Add New Doctor" />
+                <p id="recordAddedMessage"></p>
+                <br>
               </div>
 
               <div class="credits__container">
@@ -236,5 +270,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
 
     <script src="../js/dashboard.js"></script>
+
+    <?php
+
+    if($recordAdded){
+    echo 
+    '<script type="text/JavaScript"> 
+        document.getElementById("recordAddedMessage").innerHTML = "The record has been updated!";
+    </script>';
+    }
+
+    ?>
   </body>
 </html>

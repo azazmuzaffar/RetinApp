@@ -80,6 +80,7 @@ $messageError: #ce3737;
 
 .--banner-- {
   margin-top: 130px;
+
   .--banner-content-- {
     text-align: center;
 
@@ -89,6 +90,31 @@ $messageError: #ce3737;
     }
     p {
       text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .--banner-- {
+    background: #f6faff;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .--banner-- {
+    background: #f6faff;
+    height: fit-content;
+    .--banner-bg-- {
+      display: none;
+    }
+    .--banner-content-- {
+      position: relative;
+      left: unset;
+      top: unset;
+      transform: translateY(0);
+      z-index: 99;
+      width: 100%;
+      padding: 50px 20px;
     }
   }
 }

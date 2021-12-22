@@ -227,8 +227,17 @@ if(isset($_POST["submit"])){
           <div class="container add-new">
             <form action="" method="post">
               <div class="search__container">
+                <!-- Adding Dropdown and Back option -->
+              <div class="--select-or-go-back-- container">
+                <div class="--select-city--"></div>
+                <div class="--go-back--">
+                  <a href="../reports.php"><i class="fas fa-chevron-left" style="color: #ef4126;"></i> &nbsp; Back</a>
+                  <br><br>
+                </div>
+              </div>
                 <p class="search__title"><span>Go ahead,</span> Update the Reports Details</p>
                 <br>
+              </div>
                 <div class="the-input">
                   <input class="search__input" type="text" value="<?php echo $patientName ?>" placeholder="Name" name="UpdatedName" autofocus/>
                   <i class="fas fa-user"></i>
@@ -275,6 +284,7 @@ if(isset($_POST["submit"])){
                     </div>
                   </div>
                 </div>
+                <br>
                 <input class="add-it" name="submit" type="submit" value="Update Reports" style="margin: 0 0 20px 0px;" />
                 <p id="recordAddedMessage" style="margin-bottom: 60px; color:green;"></p>
               </div>

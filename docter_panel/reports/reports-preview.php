@@ -107,7 +107,7 @@ $con->close();
               <span class="bi bi-list h3" style="color: #ef4126"></span>
             </button>
             <div class="dropdown ml-auto">
-              <a href="#" style="color:unset"><i class="fas fa-sign-out-alt" style="color:#ef4126"></i> &nbsp;Logout</a>
+              <a href="../../index.php" style="color:unset"><i class="fas fa-sign-out-alt" style="color:#ef4126"></i> &nbsp;Logout</a>
             </div>
           </nav>
           <!-- main content -->
@@ -158,7 +158,7 @@ $con->close();
               <div class="--select-or-go-back-- container">
                 <div class="--select-city--"></div>
                 <div class="--go-back--">
-                  <a href="../reports.php"><i class="fas fa-chevron-left"></i> &nbsp; Back</a>
+                  <a href="../reports.php"><i class="fas fa-chevron-left" style="color: #ef4126;"></i> &nbsp; Back</a>
                 </div>
               </div>
               <embed style="margin-top:30px;height:800px;" width="100%" height="100%" name="plugin" id="pdf" src="../../PDFReports/<?php echo $reportPDF; ?>" type="application/pdf">

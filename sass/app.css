@@ -72,6 +72,34 @@
   text-align: center;
 }
 
+@media screen and (max-width: 1100px) {
+  .--banner-- {
+    background: #f6faff;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .--banner-- {
+    background: #f6faff;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .--banner-- .--banner-bg-- {
+    display: none;
+  }
+  .--banner-- .--banner-content-- {
+    position: relative;
+    left: unset;
+    top: unset;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    z-index: 99;
+    width: 100%;
+    padding: 50px 20px;
+  }
+}
+
 /* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */
 /* >>>>>>>>>>>> How It Works  <<<<<<<<< */
 /* >>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<  */

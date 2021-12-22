@@ -42,7 +42,7 @@
       }
       @media (min-width: 1900px) {
         .responsive-table__row {
-          grid-template-columns: 1fr 200px 230px 3fr 3fr 1fr 2fr 5fr 1fr 1fr ;
+          grid-template-columns: 1fr 200px 230px 3fr 3fr 1fr 2fr 3fr 1fr 1fr ;
           text-overflow: ellipsis;
         }
       }
@@ -83,7 +83,7 @@
               <span class="bi bi-border-all"></span>
               <span class="ml-2">Dashboard</span>
             </a>
-            <a href="./reports/" class="list-group-item list-group-item-action active border-0 align-items-center">
+            <a href="./reports.php" class="list-group-item list-group-item-action active border-0 align-items-center">
               <span class="fa fa-file"></span>
               <span class="ml-2">Reports View</span>
             </a>
@@ -200,7 +200,7 @@
             <!-- Adding Dropdown and Back option -->
             <div class="--select-or-go-back-- container">
               <div class="--select-city--">
-                <div class="dropdown">
+                <div class="drop-down">
                   <div class="sortit">
 
                   <?php
@@ -239,7 +239,7 @@
                     <i class="fas fa-chevron-down"></i>
                   </div>
                   <input type="hidden" name="gender" />
-                  <ul class="dropdown-menu">
+                  <ul class="drop-down-menu">
                   <li <?php echo $ascending; ?>><a href="reports.php">Ascending</a></li>
                     <li <?php echo $reviewed; ?>><a href="reports.php?Reviewed">Reviewed</a></li>
                     <li <?php echo $notreviewed; ?>><a href="reports.php?notReviewed">Not Reviewed</a></li>
@@ -248,7 +248,7 @@
                 </div>
               </div>
               <div class="--go-back--">
-                <a href="./index.php"><i class="fas fa-chevron-left"></i> &nbsp; Back</a>
+                <a href="./index.php"><i class="fas fa-chevron-left" style="color: #ef4126;"></i> &nbsp; Back</a>
               </div>
             </div>
 

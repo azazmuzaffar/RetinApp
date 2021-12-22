@@ -290,3 +290,22 @@ a:hover {
     transform: rotate(180deg) translate(0, 0);
   }
 }
+
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
+
+.chart {
+  position: relative;
+  display: inline-block;
+  margin: 20px 10px;
+  color: #999;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+
+  canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}

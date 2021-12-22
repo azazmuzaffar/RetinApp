@@ -218,10 +218,17 @@ if(isset($_POST["submit"])){
               </div>
             </div>
           </main>
-
           <div class="container add-new">
             <form action="" method="post">
               <div class="search__container">
+                <!-- Adding Dropdown and Back option -->
+                <div class="--select-or-go-back-- container">
+                  <div class="--select-city--"></div>
+                  <div class="--go-back--">
+                    <a href="../volunteer.php"><i class="fas fa-chevron-left" style="color: #ef4126;"></i> &nbsp; Back</a>
+                    <br><br>
+                  </div>
+                </div>
                 <p class="search__title"><span>Go ahead,</span> Update the Reports Details</p>
                 <br>
                 <div class="the-input">
@@ -266,6 +273,7 @@ if(isset($_POST["submit"])){
                     </div>
                   </div>
                 </div>
+                <br>
                 <input class="add-it" name="submit" type="submit" value="Update Volunteer" style="margin: 0 0 20px 0px;" />
                 <p id="recordAddedMessage" style="margin-bottom: 60px; color:green;"></p>
               </div>

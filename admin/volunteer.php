@@ -223,7 +223,8 @@ error_reporting(E_ERROR); if($_GET['report_id']){
             <!-- Adding Dropdown and Back option -->
             <div class="--select-or-go-back-- container">
               <div class="--go-back--">
-                <a href="./index.php"><i class="fas fa-chevron-left"></i> &nbsp; Back</a>
+                <br>
+                <a href="./index.php"><i class="fas fa-chevron-left" style="color: #ef4126;"></i> &nbsp; Back</a>
               </div>
             </div>
 
